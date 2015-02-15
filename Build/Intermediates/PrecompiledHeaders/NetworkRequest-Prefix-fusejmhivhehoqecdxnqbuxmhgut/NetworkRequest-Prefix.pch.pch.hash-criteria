@@ -1,0 +1,28 @@
+Contents of /Users/mkerekes/Dropbox/Software/CodeBase JSON/NetworkRequest/NetworkRequest-Prefix.pch
+-x
+objective-c
+-arch
+i386
+-std=gnu99
+-fobjc-arc
+-fpascal-strings
+-O0
+-DDEBUG=1
+-isysroot
+/Applications/Xcode 5.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk
+-fexceptions
+-fasm-blocks
+-g
+-fobjc-abi-version=2
+-fobjc-legacy-dispatch
+-mios-simulator-version-min=6.0
+-iquote
+-iquote
+-I/Users/mkerekes/Dropbox/Software/CodeBase JSON/Build/Products/Debug-iphonesimulator/include
+-I/Applications/Xcode 5.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-F/Users/mkerekes/Dropbox/Software/CodeBase JSON/Build/Products/Debug-iphonesimulator
+-F/Users/mkerekes/Dropbox/Software/CodeBase JSON
+i386-apple-darwin14.0.0
+"4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)"
+SDK_PRODUCT_BUILD_VERSION=11D167
+11D167

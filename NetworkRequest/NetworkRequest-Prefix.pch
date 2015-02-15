@@ -1,0 +1,57 @@
+//
+// Prefix header for all source files of the 'NetworkRequest' target in the 'NetworkRequest' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#pragma mark - General Imports
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+
+#pragma mark - Custom Imports
+
+//#import "Externals/Tapku/TapkuLibrary/TapkuLibrary.h"
+#define iOS6            ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+#define degreesToRadians(x)             (M_PI * x / 180.0)
+#define navigationBarItemHeight (([UIDevice isiPad] || UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) ? 30.0 : 24.0)
+#define navigationBarItemHeightForOrientation(orientation) (([UIDevice isiPad] || UIInterfaceOrientationIsPortrait(orientation)) ? 30.0 : 24.0)
+
+#import "UIImage+scaled.h"
+#import "NSString+Additions.h"
+#import "NSArray+Additions.h"
+#import "NSDictionary+Additions.h"
+#import "NSMutableDictionary+Additions.h"
+#import "NSDate+Additions.h"
+#import "DateHelper.h"
+#import "NSNotificationCenter+Additions.h"
+
+#import "UIButton+Additions.h"
+#import "UIView+Additions.h"
+#import "UIScrollView+Additions.h"
+#import "UIDevice+Additions.h"
+#import "UIApplication+Additions.h"
+#import "UIColor+Additions.h"
+
+#pragma mark - Notifications
+#define kNewsParsingFinished    @"kNewsParsingFinished"
+#define kNewsParsingFailed      @"kNewsParsingFailed"
+
+#define kWorkshopsParsingFinished   @"kWorkshopsParsingFinished"
+#define kWorkshopsParsingFailed     @"kWorkshopsParsingFailed"
+
+#define kArtistParsingFinished      @"kArtistParsingFinished"
+#define kArtistParsingFailed        @"kArtistParsingFailed"
+
+#define kAgendaParsingFinished      @"kAgendaParsingFinished"
+#define kAgendaParsingFailed        @"kAgendaParsingFailed"
+
+#endif

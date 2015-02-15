@@ -1,0 +1,9 @@
+dependencies: \
+  /Users/mkerekes/Dropbox/Software/CodeBase/NetworkRequest/SAF/ViewControllers/News/SAFNewDetailViewController.m \
+  /Users/mkerekes/Dropbox/Software/CodeBase/NetworkRequest/SAF/ViewControllers/News/SAFNewDetailViewController.h \
+  /Users/mkerekes/Dropbox/Software/CodeBase/NetworkRequest/ViewControllers/News/DetailsViewController.h \
+  /Users/mkerekes/Dropbox/Software/CodeBase/NetworkRequest/CoreData/NewsObject.h \
+  /Users/mkerekes/Dropbox/Software/CodeBase/NetworkRequest/Externals/VICoreDataManager/VIManagedObject.h \
+  /Users/mkerekes/Dropbox/Software/CodeBase/NetworkRequest/Externals/VICoreDataManager/VICoreDataManager.h \
+  /Users/mkerekes/Dropbox/Software/CodeBase/NetworkRequest/SAF/SAFDefines.h \
+  /Users/mkerekes/Dropbox/Software/CodeBase/NetworkRequest/ViewControllers/Shareing\ Category/UIViewController+Shareing.h

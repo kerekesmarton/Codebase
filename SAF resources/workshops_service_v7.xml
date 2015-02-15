@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss>
+	<channel>
+		<item>
+            <id>1</id>
+			<name>Kizomba Sensual</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393675200</time>
+			<difficulty>2</difficulty>
+			<instructor>5</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+        <item>
+            <id>2</id>
+			<name>Bachata</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393678800</time>
+			<difficulty>3</difficulty>
+			<instructor>15</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+        <item>
+            <id>3</id>
+			<name>Kizomba</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393682400</time>
+			<difficulty>4</difficulty>
+			<instructor>48</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+        <item>
+            <id>4</id>
+			<name>Dominican Bachata</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393686000</time>
+			<difficulty>3</difficulty>
+			<instructor>11</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+        <item>
+            <id>5</id>
+			<name>Kizomba</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393689600</time>
+			<difficulty>2</difficulty>
+			<instructor>12</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+		<item>
+            <id>6</id>
+			<name>Shines</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393675200</time>
+			<difficulty>1</difficulty>
+			<instructor>40</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>7</id>
+			<name>Shines</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393678800</time>
+			<difficulty>1</difficulty>
+			<instructor>44</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>8</id>
+			<name>Partner work on 2</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393682400</time>
+			<difficulty>3</difficulty>
+			<instructor>2</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>9</id>
+			<name>Shines on 2</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393686000</time>
+			<difficulty>1</difficulty>
+			<instructor>42</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>10</id>
+			<name>Shines</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393689600</time>
+			<difficulty>4</difficulty>
+			<instructor>38</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>11</id>
+			<name>Moves that improve your social dancing</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393696800</time>
+			<difficulty>5</difficulty>
+			<instructor>6</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>12</id>
+			<name>Shines on 2</name>
+			<loc>REHAB ROOM</loc>
+			<time>1393675200</time>
+			<difficulty>1</difficulty>
+			<instructor>41</instructor>
+			<desc>Location: REHAB ROOM</desc>
+		</item>
+        <item>
+            <id>13</id>
+			<name>Shines</name>
+			<loc>REHAB ROOM</loc>
+			<time>1393678800</time>
+			<difficulty>1</difficulty>
+			<instructor>45</instructor>
+			<desc>Location: REHAB ROOM</desc>
+		</item>
+        <item>
+            <id>14</id>
+			<name>Shines on 2</name>
+			<loc>REHAB ROOM</loc>
+			<time>1393682400</time>
+			<difficulty>1</difficulty>
+			<instructor>39</instructor>
+			<desc>Location: REHAB ROOM</desc>
+		</item>
+        <item>
+            <id>15</id>
+			<name>Shines on 2</name>
+			<loc>REHAB ROOM</loc>
+			<time>1393686000</time>
+			<difficulty>1</difficulty>
+			<instructor>43</instructor>
+			<desc>Location: REHAB ROOM</desc>
+		</item>
+		<item>
+            <id>16</id>
+			<name>Partner work on 2</name>
+			<loc>SURPRISE TREATMENT</loc>
+			<time>1393675200</time>
+			<difficulty>3</difficulty>
+			<instructor>9</instructor>
+			<desc>Location: SURPRISE</desc>
+		</item>
+        <item>
+            <id>17</id>
+			<name>Cha Cha Partner work</name>
+			<loc>SURPRISE TREATMENT</loc>
+			<time>1393678800</time>
+			<difficulty>2</difficulty>
+			<instructor>8</instructor>
+			<desc>Location: SURPRISE</desc>
+		</item>
+        <item>
+            <id>18</id>
+			<name>Cha Cha Boogaloo Shines</name>
+			<loc>SURPRISE TREATMENT</loc>
+			<time>1393682400</time>
+			<difficulty>1</difficulty>
+			<instructor>6</instructor>
+			<desc>Location: SURPRISE</desc>
+		</item>
+        <item>
+            <id>19</id>
+			<name>Partner work on 2</name>
+			<loc>SURPRISE TREATMENT</loc>
+			<time>1393686000</time>
+			<difficulty>2</difficulty>
+			<instructor>13</instructor>
+			<desc>Location: SURPRISE</desc>
+		</item>
+        <item>
+            <id>20</id>
+			<name>Kizomba</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393761600</time>
+			<difficulty>2</difficulty>
+			<instructor>12</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+        <item>
+            <id>21</id>
+			<name>Semba</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393765200</time>
+			<difficulty>4</difficulty>
+			<instructor>5</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+        <item>
+            <id>22</id>
+			<name>Bachata</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393768800</time>
+			<difficulty>3</difficulty>
+			<instructor>9</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+        <item>
+            <id>23</id>
+			<name>Semba</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393772400</time>
+			<difficulty>4</difficulty>
+			<instructor>12</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+        <item>
+            <id>24</id>
+			<name>Kizomba</name>
+			<loc>RECOVERY ROOM</loc>
+			<time>1393776000</time>
+			<difficulty>2</difficulty>
+			<instructor>5</instructor>
+			<desc>Location: RECOVERY ROOM</desc>
+		</item>
+        <item>
+            <id>25</id>
+			<name>Partner work on 2</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393761600</time>
+			<difficulty>1</difficulty>
+			<instructor>10</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>26</id>
+			<name>Partner work on 2</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393765200</time>
+			<difficulty>3</difficulty>
+			<instructor>6</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>27</id>
+			<name>Surprise class</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393768800</time>
+			<difficulty>1</difficulty>
+			<instructor>4</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>28</id>
+			<name>Partner work on 2</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393772400</time>
+			<difficulty>3</difficulty>
+			<instructor>3</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>29</id>
+			<name>Pachanga</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393776000</time>
+			<difficulty>4</difficulty>
+			<instructor>38</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>30</id>
+			<name>Special workshop</name>
+			<loc>MAIN ROOM</loc>
+			<time>1393783200</time>
+			<difficulty>5</difficulty>
+			<instructor>1</instructor>
+			<desc>Location: MAIN ROOM</desc>
+		</item>
+        <item>
+            <id>31</id>
+			<name>Partner work on 1</name>
+			<loc>REHAB ROOM</loc>
+			<time>1393761600</time>
+			<difficulty>1</difficulty>
+			<instructor>11</instructor>
+			<desc>Location: REHAB ROOM</desc>
+		</item>
+        <item>
+            <id>32</id>
+			<name>Partner work on 1</name>
+			<loc>REHAB ROOM</loc>
+			<time>1393765200</time>
+			<difficulty>1</difficulty>
+			<instructor>15</instructor>
+			<desc>Location: REHAB ROOM</desc>
+		</item>
+        <item>
+            <id>33</id>
+			<name>Musicality on 2</name>
+			<loc>REHAB ROOM</loc>
+			<time>1393768800</time>
+			<difficulty>1</difficulty>
+			<instructor>8</instructor>
+			<desc>Location: REHAB ROOM</desc>
+		</item>
+        <item>
+            <id>34</id>
+			<name>Salsa Music History</name>
+			<loc>REHAB ROOM</loc>
+			<time>1393772400</time>
+			<difficulty>4</difficulty>
+			<instructor>13</instructor>
+			<desc>Location: REHAB ROOM</desc>
+		</item>
+	</channel>
+</rss>
