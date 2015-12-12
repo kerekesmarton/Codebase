@@ -2527,7 +2527,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetworkRequest/NetworkRequest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/NetworkRequest/SAF-App.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",
@@ -2554,7 +2554,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetworkRequest/NetworkRequest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/NetworkRequest/SAF-App.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",

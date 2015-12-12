@@ -46,7 +46,6 @@
     
     self.viewControllers = items;
     
-//    self.tabBar.tintColor = [UIColor blackColor];
     CGSize imageSize = CGSizeMake(40, 40);
     UIColor *fillColor = [UIColor blackColor];
     UIGraphicsBeginImageContextWithOptions(imageSize, YES, 0);

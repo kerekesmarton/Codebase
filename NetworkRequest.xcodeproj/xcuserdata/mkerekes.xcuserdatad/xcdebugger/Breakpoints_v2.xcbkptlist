@@ -48,32 +48,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetworkRequest/SAF/ViewControllers/Workshops/SAFWorkshopDetailsViewController.m"
-            timestampString = "445709621.304125"
+            filePath = "NetworkRequest/CoreData/WorkshopObject.m"
+            timestampString = "446674761.47907"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
-            landmarkName = "-actionSheet:clickedButtonAtIndex:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NetworkRequest/SAF/ViewControllers/Workshops/SAFWorkshopDetailsViewController.m"
-            timestampString = "445709696.06276"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
-            landmarkName = "-actionSheet:didDismissWithButtonIndex:"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "+setInformationFromDictionary:forObject:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

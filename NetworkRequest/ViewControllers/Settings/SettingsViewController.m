@@ -20,10 +20,17 @@
     SettingsViewController *settings = [[SettingsViewController alloc] initWithNibName:NSStringFromClass([SettingsViewController class]) bundle:nil];
     settings.presenter = presenter;
     settings.settingOptionGroup = optionGroup;
-    UINavigationController *nav = [[UINavigationController alloc] initWithNavigationBarClass:[CustomNavigationBar class] toolbarClass:[UIToolbar class]];
-    nav.viewControllers = @[settings];
+    UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[CustomNavigationBar class] toolbarClass:[UIToolbar class]];
+    navController.viewControllers = @[settings];
     
-    return nav;
+    if ([navController.navigationBar respondsToSelector:@selector(barTintColor)]) {
+        navController.navigationBar.barTintColor = [UIColor blackColor];
+        navController.navigationBar.tintColor = [UIColor whiteColor];
+        [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+        navController.navigationBar.translucent = NO;
+    }
+    
+    return navController;
 }
 
 - (void)viewDidLoad

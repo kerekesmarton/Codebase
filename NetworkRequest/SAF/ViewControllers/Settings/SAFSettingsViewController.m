@@ -26,6 +26,13 @@
     navController.navigationBar.translucent = NO;
     navController.viewControllers = @[settings];
     
+    if ([navController.navigationBar respondsToSelector:@selector(barTintColor)]) {
+        navController.navigationBar.barTintColor = [UIColor blackColor];
+        navController.navigationBar.tintColor = [UIColor whiteColor];
+        [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+        navController.navigationBar.translucent = NO;
+    }
+    
     return navController;
 }
 

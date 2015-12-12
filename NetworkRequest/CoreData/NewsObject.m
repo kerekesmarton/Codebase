@@ -60,14 +60,14 @@
 +(NSArray *)fetchUndeletedNews {
     NSArray *results = [[VICoreDataManager getInstance] arrayForModel:NSStringFromClass([self class]) withPredicate:[NSPredicate predicateWithFormat:@"del == %@", @NO] forContext:[VICoreDataManager getInstance].managedObjectContext];
     return [results sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return [[(NewsObject *)obj1 timeStamp] compare:[(NewsObject *)obj2 timeStamp]];
+        return [[(NewsObject *)obj1 timeStamp] compare:[(NewsObject *)obj2 timeStamp]] * (-1);
     }];
 }
 
 +(NSArray *)fetchNews {
     NSArray *results = [[VICoreDataManager getInstance] arrayForModel:NSStringFromClass([self class])];
     return [results sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return [[(NewsObject *)obj1 timeStamp] compare:[(NewsObject *)obj2 timeStamp]];
+        return [[(NewsObject *)obj1 timeStamp] compare:[(NewsObject *)obj2 timeStamp]] * (-1);
     }];
 }
 

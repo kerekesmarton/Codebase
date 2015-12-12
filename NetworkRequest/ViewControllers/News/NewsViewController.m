@@ -18,6 +18,13 @@
 {
     [super viewDidLoad];
     
+    UIToolbar *toolbar = self.navigationController.toolbar;
+    if ([toolbar respondsToSelector:@selector(barTintColor)]) {
+        toolbar.barTintColor = [UIColor blackColor];
+        toolbar.tintColor = [UIColor whiteColor];
+        toolbar.translucent = NO;
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

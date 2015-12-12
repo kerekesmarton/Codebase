@@ -61,6 +61,7 @@
         [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
     } failBlock:^(id data) {
+        [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
     }];
 }
@@ -74,6 +75,7 @@
         [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
     } failBlock:^(id data) {
+        [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
     }];
 }
@@ -87,6 +89,7 @@
         [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
     } failBlock:^(id data) {
+        [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
     }];
 }
@@ -100,6 +103,7 @@
         [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
     } failBlock:^(id data) {
+        [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
     }];
 }

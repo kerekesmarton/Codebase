@@ -103,7 +103,7 @@
 
 -(void)saveItemAtIndex:(int)index {
     SettingOption *workshopOption = [SettingsManager sharedInstance].workshopsFilter;
-    if (workshopOption.possibleValues.count >= index) {
+    if (workshopOption.possibleValues.count && workshopOption.possibleValues.count >= index) {
         id obj = [workshopOption.possibleValues objectAtIndex:index];
         workshopOption.selectedValues = @[obj];
         [workshopOption save];
@@ -152,6 +152,13 @@
         navController.toolbar.barStyle = UIBarStyleBlackOpaque;
         navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
         navController.viewControllers = @[next];
+        
+        if ([navController.navigationBar respondsToSelector:@selector(barTintColor)]) {
+            navController.navigationBar.barTintColor = [UIColor blackColor];
+            navController.navigationBar.tintColor = [UIColor whiteColor];
+            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            navController.navigationBar.translucent = NO;
+        }
         
         [self.navigationController presentViewController:navController animated:YES completion:^{
             

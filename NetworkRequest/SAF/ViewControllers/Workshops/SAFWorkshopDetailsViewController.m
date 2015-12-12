@@ -53,6 +53,13 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    UIToolbar *toolbar = self.navigationController.toolbar;
+    if ([toolbar respondsToSelector:@selector(barTintColor)]) {
+        toolbar.barTintColor = [UIColor blackColor];
+        toolbar.tintColor = [UIColor whiteColor];
+        toolbar.translucent = NO;
+    }
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Feedback" style:UIBarButtonItemStyleBordered target:self action:@selector(pushFeedback)];
     
     NSString *btnTitle = nil;

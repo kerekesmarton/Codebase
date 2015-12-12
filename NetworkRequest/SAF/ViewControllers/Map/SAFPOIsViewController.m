@@ -38,15 +38,22 @@ typedef enum SAFVenues{
     
     SAFPOIsViewController *pois = [[SAFPOIsViewController alloc] initWithStyle:UITableViewStylePlain];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithNavigationBarClass:[SAFNavigationBar class] toolbarClass:[UIToolbar class]];
-    nav.navigationBarHidden = NO;
-    nav.toolbarHidden = YES;
-    nav.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    nav.toolbar.barStyle = UIBarStyleBlackOpaque;
-    nav.navigationBar.translucent = NO;
-    nav.viewControllers = @[pois];
+    UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[SAFNavigationBar class] toolbarClass:[UIToolbar class]];
+    navController.navigationBarHidden = NO;
+    navController.toolbarHidden = YES;
+    navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    navController.toolbar.barStyle = UIBarStyleBlackOpaque;
+    navController.navigationBar.translucent = NO;
+    navController.viewControllers = @[pois];
     
-    return nav;
+    if ([navController.navigationBar respondsToSelector:@selector(barTintColor)]) {
+        navController.navigationBar.barTintColor = [UIColor blackColor];
+        navController.navigationBar.tintColor = [UIColor whiteColor];
+        [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+        navController.navigationBar.translucent = NO;
+    }
+    
+    return navController;
 }
 
 

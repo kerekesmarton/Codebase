@@ -1,0 +1,23 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "49AF01E2A017DEA0D3BCF26503A29482C0AAE7E4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "49AF01E2A017DEA0D3BCF26503A29482C0AAE7E4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DA009B97-B9E0-47DD-9276-C26DB500B452",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "49AF01E2A017DEA0D3BCF26503A29482C0AAE7E4" : "CodeBase"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NetworkRequest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NetworkRequest.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/silviancretu.ro\/SAFapp",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "49AF01E2A017DEA0D3BCF26503A29482C0AAE7E4"
+    }
+  ]
+}

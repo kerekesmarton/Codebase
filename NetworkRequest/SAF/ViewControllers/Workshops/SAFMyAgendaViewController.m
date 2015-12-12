@@ -162,6 +162,13 @@
         navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
         navController.viewControllers = @[next];
         
+        if ([navController.navigationBar respondsToSelector:@selector(barTintColor)]) {
+            navController.navigationBar.barTintColor = [UIColor blackColor];
+            navController.navigationBar.tintColor = [UIColor whiteColor];
+            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            navController.navigationBar.translucent = NO;
+        }
+        
         [self.navigationController presentViewController:navController animated:YES completion:^{
             
         }];

@@ -41,6 +41,12 @@
     navController.toolbar.barStyle = UIBarStyleBlackOpaque;
     navController.viewControllers = @[viewcontroller];
     
+    if ([navController.navigationBar respondsToSelector:@selector(barTintColor)]) {
+        navController.navigationBar.barTintColor = [UIColor blackColor];
+        navController.navigationBar.tintColor = [UIColor whiteColor];
+        [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+        navController.navigationBar.translucent = NO;
+    }    
     return navController;
 }
 

@@ -31,9 +31,9 @@
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
     //    tabbar covers uitableview
-    self.edgesForExtendedLayout = UIRectEdgeAll;
-    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
-
+    if ([self.tabBarController respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        self.tabBarController.edgesForExtendedLayout = UIRectEdgeNone;
+    }
 }
 
 - (void)refresh {
