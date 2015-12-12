@@ -24,6 +24,7 @@
 @dynamic link;
 @dynamic instructor;
 @dynamic uID;
+@dynamic weekday;
 
 + (id)addWithParams:(NSDictionary *)params forManagedObjectContext:(NSManagedObjectContext *)context
 {

@@ -119,11 +119,15 @@
     }
 
     
+    NSDictionary *attr = @{NSFontAttributeName:[UIFont fontWithName:myriadFontR size:16]};
     
-    CGSize size = [desc1.text sizeWithFont:[UIFont fontWithName:myriadFontR size:16]
-                   constrainedToSize:CGSizeMake(self.view.frame.size.width, 999)
-                       lineBreakMode:NSLineBreakByWordWrapping];
+    CGRect boundingRect = [desc1.text boundingRectWithSize:CGSizeMake(self.view.frame.size.width, 999) options:0 attributes:attr context:nil];
+    CGSize size = boundingRect.size;
     
+//    CGSize size = [desc1.text sizeWithFont:[UIFont fontWithName:myriadFontR size:16]
+//                         constrainedToSize:CGSizeMake(self.view.frame.size.width, 999)
+//                             lineBreakMode:NSLineBreakByWordWrapping];
+
     desc1.frame = CGRectMake(desc1.frame.origin.x, desc1.frame.origin.y, desc1.frame.size.width, size.height*1.5);
     grayBG.frame = desc1.frame;
     

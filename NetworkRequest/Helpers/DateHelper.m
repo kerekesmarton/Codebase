@@ -41,7 +41,7 @@
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDateComponents *components = [cal components:( NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal ) fromDate:date];
     
-    int result = [components weekday]-1;
+    int result = [components weekday] - 1;
     if (result == 0) {
         result = 7;
     }

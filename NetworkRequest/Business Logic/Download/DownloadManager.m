@@ -78,7 +78,7 @@
 }
 
 -(NSString *)baseURL {
-    return @"http://saf8.airedancecompany.ro/";
+    return @"http://saf9.airedancecompany.ro/";
 }
 
 -(NSString *)defaultHeaderTitle {

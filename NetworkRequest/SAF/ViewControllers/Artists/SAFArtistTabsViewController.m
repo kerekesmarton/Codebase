@@ -59,14 +59,14 @@
     
     [[UITabBarItem appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor whiteColor], UITextAttributeTextColor,
-      [UIFont fontWithName:@"edo" size:12], UITextAttributeFont,
+      [UIColor whiteColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"edo" size:12], NSFontAttributeName,
       nil] forState:UIControlStateHighlighted];
     
     [[UITabBarItem appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor orangeColor], UITextAttributeTextColor,
-      [UIFont fontWithName:@"edo" size:12], UITextAttributeFont,
+      [UIColor orangeColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"edo" size:12], NSFontAttributeName,
       nil] forState:UIControlStateNormal];
 
 }
@@ -74,7 +74,7 @@
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     
     
-    int index = [tabBar.items indexOfObject:item];
+    NSUInteger index = [tabBar.items indexOfObject:item];
     
     [self saveItemAtIndex:index];
 }
@@ -85,7 +85,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)saveItemAtIndex:(int)index {
+-(void)saveItemAtIndex:(NSUInteger)index {
     SettingOption *artistOption = [SettingsManager sharedInstance].artistsFilter;
     if (artistOption.possibleValues.count >= index) {
         id obj = [artistOption.possibleValues objectAtIndex:index];

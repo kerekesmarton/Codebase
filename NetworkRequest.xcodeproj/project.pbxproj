@@ -2002,7 +2002,7 @@
 		3BA6B7BE1750E35A006EB824 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Jozsef-Marton Kerekes";
 				TargetAttributes = {
 					3B86FFBE17999E14009624CA = {
@@ -2533,6 +2533,7 @@
 					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = SAFapp;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2560,6 +2561,7 @@
 					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = SAFapp;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2641,6 +2643,7 @@
 					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -2665,6 +2668,7 @@
 					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

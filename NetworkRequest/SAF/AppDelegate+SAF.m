@@ -49,10 +49,13 @@
 
 - (void)application:(UIApplication*)application performAppSpecificTasks:(NSDictionary *)launchOptions {
     
-    [[VICoreDataManager getInstance] setResource:@"Model" database:@"coreDataModel8.sqlite"];
+//    [NSFileManager defaultManager]
     
     
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    [[VICoreDataManager getInstance] setResource:@"Model" database:@"coreDataModel9.sqlite"];
+    
+    
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
