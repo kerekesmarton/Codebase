@@ -5,33 +5,28 @@
 //  Created by Jozsef-Marton Kerekes on 9/5/13.
 //  Copyright (c) 2013 Jozsef-Marton Kerekes. All rights reserved.
 //
+#import "MapAnnotation.h"
+
 
 #import <UIKit/UIKit.h>
-#import "MapDefines.h"
-#import "FMFloatingControlView.h"
-
-@class FloatingControlDataModel;
-
-@interface MapViewController : UIViewController {
-    
-    
-    FLoatingControlState        _floatingControlState;
-}
+#import <MapKit/MapKit.h>
 
 
-@property (nonatomic, strong)   SKMapView                   *mapView;
 
-//@property (nonatomic, assign)   SKMapFollowerMode           followerMode;
+@interface MapViewController : UIViewController
 
-@property (nonatomic, strong)   SKSearchResult              *currentPOI;
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
-@property (nonatomic, strong)   SKRouteInformation          *routeInfo;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
-@property (nonatomic, strong)   FloatingControlDataModel    *floatingControlDataModel;
+@property(nonatomic,strong) CLGeocoder *geocoder;
 
-@property (nonatomic, strong)   FMFloatingControlView       *floatingControlView;
+@property (nonatomic, strong) MKMapItem *currentPOI;
 
-- (void)addAnnotationWithSearchObject:(SKSearchResult *)searchObject;
-- (void)zoomToSearchObject:(SKSearchResult *)searchObject;
+- (void)addAnnotationWithSearchObject:(MKMapItem *)searchObject;
+- (void)zoomToSearchObject:(MKMapItem *)searchObject;
 - (void)route;
+
+///utils
+- (MKCoordinateRegion)coordinateRegionWithCenter:(CLLocationCoordinate2D)centerCoordinate approximateRadiusInMeters:(CLLocationDistance)radiusInMeters;
 @end

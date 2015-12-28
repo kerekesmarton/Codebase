@@ -25,4 +25,9 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
 }
 
+- (void)handleRemoteNotification:(NSDictionary*)userInfo
+{
+
+}
+
 @end

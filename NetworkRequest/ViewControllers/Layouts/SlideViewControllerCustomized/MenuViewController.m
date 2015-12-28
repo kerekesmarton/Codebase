@@ -9,7 +9,6 @@
 #import "MenuViewController.h"
 #import "CustomSlideMenuDataSourceFactory.h"
 #import "MenuTableViewCell.h"
-#import <SKMaps/SKMaps.h>
 
 @interface MenuViewController ()
 
@@ -30,8 +29,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self.delegate selectItem:self.delegate.dataModel.objects.firstObject];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self.tableView selector:@selector(reloadData) name:kSKMapsLibraryInitialisedNotification];
 }
 
 -(void)viewWillAppear:(BOOL)animated {

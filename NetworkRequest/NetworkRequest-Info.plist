@@ -30,7 +30,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>NetworkRequests would like to use your location</string>
 	<key>UIBackgroundModes</key>
 	<array/>
 	<key>UIRequiredDeviceCapabilities</key>

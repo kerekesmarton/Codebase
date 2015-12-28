@@ -7,8 +7,7 @@
 //
 
 #import "MapViewController.h"
-#import <SKMaps/SKMaps.h>
 
-@interface MapViewController (MapDelegate) <SKMapViewDelegate>
+@interface MapViewController (MapDelegate) <MKMapViewDelegate,CLLocationManagerDelegate>
 
 @end

@@ -15,7 +15,6 @@
 #import "MapViewController.h"
 #import "RadioViewController.h"
 
-#import <SKMaps/SKMaps.h>
 
 @implementation CustomSlideMenuDataModel
 
@@ -92,11 +91,9 @@
     object.iconName = @"world";
     object.functionsViewControllerClass = NSClassFromString(@"MapViewController");
     object.nibName = NSStringFromClass(object.functionsViewControllerClass);
-    object.requiresTransparentNavigationBar = YES;
-    object.enabled = NO;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:object selector:@selector(enableOnNotification:) name:kSKMapsLibraryInitialisedNotification];
-    
+    object.requiresTransparentNavigationBar = NO;
+    object.enabled = YES;
+        
     return object;
 }
 
@@ -111,12 +108,11 @@
     return object;
 }
 
-
 -(void)enableOnNotification:(NSNotification *)notification {
     
-    if ([self.title isEqualToString: @"Map"] && [notification.name isEqualToString:kSKMapsLibraryInitialisedNotification]) {
-        self.enabled = YES;
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
-    }
+//    if ([self.title isEqualToString: @"Map"] && [notification.name isEqualToString:kSKMapsLibraryInitialisedNotification]) {
+//        self.enabled = YES;
+//        [[NSNotificationCenter defaultCenter] removeObserver:self];
+//    }
 }
 @end

@@ -11,7 +11,11 @@
 		100377A61A769E59008A93E4 /* ParsedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 100377A41A769E59008A93E4 /* ParsedObject.m */; };
 		100377A91A769EB1008A93E4 /* ParsedWorkshop.m in Sources */ = {isa = PBXBuildFile; fileRef = 100377A81A769EB1008A93E4 /* ParsedWorkshop.m */; };
 		100377AA1A769EB1008A93E4 /* ParsedWorkshop.m in Sources */ = {isa = PBXBuildFile; fileRef = 100377A81A769EB1008A93E4 /* ParsedWorkshop.m */; };
+		1025D8911C30622F008D3D87 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025D8901C30622F008D3D87 /* MapAnnotation.m */; };
+		1025D8921C30622F008D3D87 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025D8901C30622F008D3D87 /* MapAnnotation.m */; };
 		1030A4451A836A3200FF9D03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1030A4441A836A3200FF9D03 /* Images.xcassets */; };
+		1050D23B1C2EFB400025F23A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FDC12A1A77BA50001402E0 /* MapKit.framework */; };
+		1050D23C1C2EFB480025F23A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FDC12A1A77BA50001402E0 /* MapKit.framework */; };
 		10721DD71A82771E008B4E13 /* afro-latin-connection.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10721DA51A82771D008B4E13 /* afro-latin-connection.jpg */; };
 		10721DD81A82771E008B4E13 /* aire-artisti-wpcf_251x164.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10721DA61A82771D008B4E13 /* aire-artisti-wpcf_251x164.jpg */; };
 		10721DD91A82771E008B4E13 /* alafia-wpcf_251x164.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10721DA71A82771D008B4E13 /* alafia-wpcf_251x164.jpg */; };
@@ -80,14 +84,8 @@
 		10FDC1271A77A531001402E0 /* ParsedAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC1261A77A531001402E0 /* ParsedAgenda.m */; };
 		10FDC1281A77A531001402E0 /* ParsedAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC1261A77A531001402E0 /* ParsedAgenda.m */; };
 		10FDC1291A77B738001402E0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB61991183B4C8400111CFC /* Security.framework */; };
-		10FDC12F1A77C080001402E0 /* SKMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FDC12E1A77C080001402E0 /* SKMaps.framework */; };
-		10FDC1301A77C080001402E0 /* SKMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FDC12E1A77C080001402E0 /* SKMaps.framework */; };
-		10FDC1321A77C0D0001402E0 /* SKMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10FDC1311A77C0D0001402E0 /* SKMaps.bundle */; };
-		10FDC1331A77C0D0001402E0 /* SKMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10FDC1311A77C0D0001402E0 /* SKMaps.bundle */; };
 		10FDC1351A77C0F6001402E0 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FDC1341A77C0F6001402E0 /* libstdc++.6.dylib */; };
 		10FDC1361A77C101001402E0 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FDC1341A77C0F6001402E0 /* libstdc++.6.dylib */; };
-		10FDC1391A77C5B8001402E0 /* MapViewController+RoutingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC1381A77C5B8001402E0 /* MapViewController+RoutingDelegate.m */; };
-		10FDC13A1A77C5B8001402E0 /* MapViewController+RoutingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC1381A77C5B8001402E0 /* MapViewController+RoutingDelegate.m */; };
 		3B0EB3B51834D4DA005C214F /* SAFPOIsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EB3B41834D4DA005C214F /* SAFPOIsListCell.m */; };
 		3B11147E17DE5504002A2AFC /* SlideViewControllerPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B11147C17DE5504002A2AFC /* SlideViewControllerPhone.m */; };
 		3B11147F17DE5504002A2AFC /* SlideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B11147D17DE5504002A2AFC /* SlideViewController.xib */; };
@@ -262,13 +260,9 @@
 		3B622E8517DCBA6D00D24F0E /* CustomSlideViewControllerPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B622E8417DCBA6D00D24F0E /* CustomSlideViewControllerPhone.m */; };
 		3B622E9117DCC88400D24F0E /* CustomSlideMenuDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B622E8E17DCC88400D24F0E /* CustomSlideMenuDataModel.m */; };
 		3B622E9217DCC88400D24F0E /* CustomSlideMenuDataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B622E9017DCC88400D24F0E /* CustomSlideMenuDataSourceFactory.m */; };
-		3B649A1817E5DAC1005A2497 /* FMFloatingControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1117E5DAC1005A2497 /* FMFloatingControlView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B649A1917E5DAC1005A2497 /* FMToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1317E5DAC1005A2497 /* FMToolbarButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B649A1A17E5DAC1005A2497 /* FMToolbarSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1517E5DAC1005A2497 /* FMToolbarSegmentedControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B649A1B17E5DAC1005A2497 /* FMToolbarStatisticsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1717E5DAC1005A2497 /* FMToolbarStatisticsButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B649A1C17E5DB20005A2497 /* MapViewController+FloatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA6117E0F477008447AC /* MapViewController+FloatingControl.m */; };
-		3B649A1D17E5DB20005A2497 /* FloatingControlStateFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA6517E0FB5D008447AC /* FloatingControlStateFactory.m */; };
-		3B649A1E17E5DB36005A2497 /* FMFloatingControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1117E5DAC1005A2497 /* FMFloatingControlView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B649A1F17E5DB36005A2497 /* FMToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1317E5DAC1005A2497 /* FMToolbarButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B649A2017E5DB36005A2497 /* FMToolbarSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1517E5DAC1005A2497 /* FMToolbarSegmentedControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B649A2117E5DB36005A2497 /* FMToolbarStatisticsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1717E5DAC1005A2497 /* FMToolbarStatisticsButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -298,12 +292,6 @@
 		3B86FFCA17999E14009624CA /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7FC1750E39B006EB824 /* AFURLConnectionOperation.m */; };
 		3B86FFCB17999E14009624CA /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7FE1750E39B006EB824 /* AFXMLRequestOperation.m */; };
 		3B86FFCC17999E14009624CA /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8001750E39B006EB824 /* UIImageView+AFNetworking.m */; };
-		3B86FFCD17999E14009624CA /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8041750E39B006EB824 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B86FFCE17999E14009624CA /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8061750E39B006EB824 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B86FFCF17999E14009624CA /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8081750E39B006EB824 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B86FFD017999E14009624CA /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B80A1750E39B006EB824 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B86FFD117999E14009624CA /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B80C1750E39B006EB824 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B86FFD217999E14009624CA /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B80E1750E39B006EB824 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B86FFD317999E14009624CA /* VICoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8111750E39B006EB824 /* VICoreDataManager.m */; };
 		3B86FFD417999E14009624CA /* VIFetchResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8131750E39B006EB824 /* VIFetchResultsDataSource.m */; };
 		3B86FFD517999E14009624CA /* VIManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8151750E39B006EB824 /* VIManagedObject.m */; };
@@ -397,12 +385,6 @@
 		3BA6B81C1750E39B006EB824 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7FC1750E39B006EB824 /* AFURLConnectionOperation.m */; };
 		3BA6B81D1750E39B006EB824 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7FE1750E39B006EB824 /* AFXMLRequestOperation.m */; };
 		3BA6B81E1750E39B006EB824 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8001750E39B006EB824 /* UIImageView+AFNetworking.m */; };
-		3BA6B81F1750E39B006EB824 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8041750E39B006EB824 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3BA6B8201750E39B006EB824 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8061750E39B006EB824 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3BA6B8211750E39B006EB824 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8081750E39B006EB824 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3BA6B8221750E39B006EB824 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B80A1750E39B006EB824 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3BA6B8231750E39B006EB824 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B80C1750E39B006EB824 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3BA6B8241750E39B006EB824 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B80E1750E39B006EB824 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3BA6B8251750E39B006EB824 /* VICoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8111750E39B006EB824 /* VICoreDataManager.m */; };
 		3BA6B8261750E39B006EB824 /* VIFetchResultsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8131750E39B006EB824 /* VIFetchResultsDataSource.m */; };
 		3BA6B8271750E39B006EB824 /* VIManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8151750E39B006EB824 /* VIManagedObject.m */; };
@@ -461,10 +443,6 @@
 		3BDFFA2917E0DFA5008447AC /* SAFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA2817E0DFA5008447AC /* SAFMapViewController.m */; };
 		3BDFFA2C17E0E0AC008447AC /* MapViewController+MapDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA2B17E0E0AC008447AC /* MapViewController+MapDelegate.m */; };
 		3BDFFA2D17E0E2CB008447AC /* MapViewController+MapDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA2B17E0E0AC008447AC /* MapViewController+MapDelegate.m */; };
-		3BDFFA3017E0E4C9008447AC /* MapDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA2F17E0E4C9008447AC /* MapDefines.m */; };
-		3BDFFA3117E0E4C9008447AC /* MapDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA2F17E0E4C9008447AC /* MapDefines.m */; };
-		3BDFFA3817E0E773008447AC /* MapViewController+UICreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA3717E0E773008447AC /* MapViewController+UICreation.m */; };
-		3BDFFA3917E0E773008447AC /* MapViewController+UICreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA3717E0E773008447AC /* MapViewController+UICreation.m */; };
 		3BDFFA3B17E0EC07008447AC /* target@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA3A17E0EC07008447AC /* target@2x.png */; };
 		3BDFFA3D17E0EC3D008447AC /* upload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA3C17E0EC3D008447AC /* upload@2x.png */; };
 		3BDFFA4017E0EC52008447AC /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA3E17E0EC52008447AC /* target.png */; };
@@ -473,8 +451,6 @@
 		3BDFFA4517E0F2B1008447AC /* favourite_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4417E0F2B1008447AC /* favourite_place.png */; };
 		3BDFFA4717E0F2E6008447AC /* map_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4617E0F2E6008447AC /* map_pin@2x.png */; };
 		3BDFFA4917E0F2F6008447AC /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4817E0F2F6008447AC /* map_pin.png */; };
-		3BDFFA6217E0F478008447AC /* MapViewController+FloatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA6117E0F477008447AC /* MapViewController+FloatingControl.m */; };
-		3BDFFA6617E0FB5D008447AC /* FloatingControlStateFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFFA6517E0FB5D008447AC /* FloatingControlStateFactory.m */; };
 		3BF0B7BB17F5B22900C8D719 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4817E0F2F6008447AC /* map_pin.png */; };
 		3BF0B7BC17F5B22900C8D719 /* map_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4617E0F2E6008447AC /* map_pin@2x.png */; };
 		3BF0B7BD17F5B22900C8D719 /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA3E17E0EC52008447AC /* target.png */; };
@@ -490,6 +466,8 @@
 		100377A41A769E59008A93E4 /* ParsedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedObject.m; sourceTree = "<group>"; };
 		100377A71A769EB1008A93E4 /* ParsedWorkshop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedWorkshop.h; sourceTree = "<group>"; };
 		100377A81A769EB1008A93E4 /* ParsedWorkshop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedWorkshop.m; sourceTree = "<group>"; };
+		1025D88F1C30622F008D3D87 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = DataModel/MapAnnotation.h; sourceTree = "<group>"; };
+		1025D8901C30622F008D3D87 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = DataModel/MapAnnotation.m; sourceTree = "<group>"; };
 		1030A4441A836A3200FF9D03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "SAF App/Images.xcassets"; sourceTree = "<group>"; };
 		10721DA51A82771D008B4E13 /* afro-latin-connection.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "afro-latin-connection.jpg"; sourceTree = "<group>"; };
 		10721DA61A82771D008B4E13 /* aire-artisti-wpcf_251x164.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aire-artisti-wpcf_251x164.jpg"; sourceTree = "<group>"; };
@@ -551,7 +529,6 @@
 		10826EBE1A79303000EFB63C /* RootViewController+UICreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RootViewController+UICreation.m"; sourceTree = "<group>"; };
 		10826EC11A79331900EFB63C /* SAFStartupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFStartupManager.h; path = ViewControllers/RootViewController/SAFStartupManager.h; sourceTree = "<group>"; };
 		10826EC21A79331900EFB63C /* SAFStartupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFStartupManager.m; path = ViewControllers/RootViewController/SAFStartupManager.m; sourceTree = "<group>"; };
-		1092788F1A7F9BAE00F9AD7F /* SKSearchResult+SAF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKSearchResult+SAF.h"; sourceTree = "<group>"; };
 		109278901A7F9BAE00F9AD7F /* SKSearchResult+SAF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKSearchResult+SAF.m"; sourceTree = "<group>"; };
 		109A12B51A84EE6500AB105C /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		10C934211A8CC00300EB9126 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -564,11 +541,7 @@
 		10FDC1251A77A531001402E0 /* ParsedAgenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedAgenda.h; sourceTree = "<group>"; };
 		10FDC1261A77A531001402E0 /* ParsedAgenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedAgenda.m; sourceTree = "<group>"; };
 		10FDC12A1A77BA50001402E0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		10FDC12E1A77C080001402E0 /* SKMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SKMaps.framework; sourceTree = "<group>"; };
-		10FDC1311A77C0D0001402E0 /* SKMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKMaps.bundle; sourceTree = "<group>"; };
 		10FDC1341A77C0F6001402E0 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
-		10FDC1371A77C5B8001402E0 /* MapViewController+RoutingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapViewController+RoutingDelegate.h"; sourceTree = "<group>"; };
-		10FDC1381A77C5B8001402E0 /* MapViewController+RoutingDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapViewController+RoutingDelegate.m"; sourceTree = "<group>"; };
 		3B066585179AD2FB00C345A7 /* SAFDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFDefines.h; sourceTree = "<group>"; };
 		3B0EB3B31834D4DA005C214F /* SAFPOIsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFPOIsListCell.h; sourceTree = "<group>"; };
 		3B0EB3B41834D4DA005C214F /* SAFPOIsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFPOIsListCell.m; sourceTree = "<group>"; };
@@ -772,8 +745,6 @@
 		3B622E8E17DCC88400D24F0E /* CustomSlideMenuDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlideMenuDataModel.m; sourceTree = "<group>"; };
 		3B622E8F17DCC88400D24F0E /* CustomSlideMenuDataSourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlideMenuDataSourceFactory.h; sourceTree = "<group>"; };
 		3B622E9017DCC88400D24F0E /* CustomSlideMenuDataSourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlideMenuDataSourceFactory.m; sourceTree = "<group>"; };
-		3B649A1017E5DAC1005A2497 /* FMFloatingControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMFloatingControlView.h; sourceTree = "<group>"; };
-		3B649A1117E5DAC1005A2497 /* FMFloatingControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMFloatingControlView.m; sourceTree = "<group>"; };
 		3B649A1217E5DAC1005A2497 /* FMToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMToolbarButton.h; sourceTree = "<group>"; };
 		3B649A1317E5DAC1005A2497 /* FMToolbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMToolbarButton.m; sourceTree = "<group>"; };
 		3B649A1417E5DAC1005A2497 /* FMToolbarSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMToolbarSegmentedControl.h; sourceTree = "<group>"; };
@@ -903,7 +874,6 @@
 		3BA909EE179A9C42001765C8 /* SAFNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFNewsViewController.m; sourceTree = "<group>"; };
 		3BA909F3179A9D6A001765C8 /* SAFNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFNewsTableViewCell.h; sourceTree = "<group>"; };
 		3BA909F4179A9D6A001765C8 /* SAFNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFNewsTableViewCell.m; sourceTree = "<group>"; };
-		3BAA907317E0BB67006DD813 /* SKMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SKMaps.framework; sourceTree = "<group>"; };
 		3BABAF59180BE05900C28D0B /* RadioLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioLoginViewController.h; sourceTree = "<group>"; };
 		3BABAF5A180BE05900C28D0B /* RadioLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioLoginViewController.m; sourceTree = "<group>"; };
 		3BABAF5B180BE05900C28D0B /* RadioLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioLoginViewController.xib; sourceTree = "<group>"; };
@@ -955,10 +925,6 @@
 		3BDFFA2817E0DFA5008447AC /* SAFMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFMapViewController.m; sourceTree = "<group>"; };
 		3BDFFA2A17E0E0AC008447AC /* MapViewController+MapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapViewController+MapDelegate.h"; sourceTree = "<group>"; };
 		3BDFFA2B17E0E0AC008447AC /* MapViewController+MapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapViewController+MapDelegate.m"; sourceTree = "<group>"; };
-		3BDFFA2E17E0E4C9008447AC /* MapDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDefines.h; sourceTree = "<group>"; };
-		3BDFFA2F17E0E4C9008447AC /* MapDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDefines.m; sourceTree = "<group>"; };
-		3BDFFA3617E0E773008447AC /* MapViewController+UICreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapViewController+UICreation.h"; sourceTree = "<group>"; };
-		3BDFFA3717E0E773008447AC /* MapViewController+UICreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapViewController+UICreation.m"; sourceTree = "<group>"; };
 		3BDFFA3A17E0EC07008447AC /* target@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target@2x.png"; sourceTree = "<group>"; };
 		3BDFFA3C17E0EC3D008447AC /* upload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload@2x.png"; sourceTree = "<group>"; };
 		3BDFFA3E17E0EC52008447AC /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
@@ -967,10 +933,6 @@
 		3BDFFA4417E0F2B1008447AC /* favourite_place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favourite_place.png; sourceTree = "<group>"; };
 		3BDFFA4617E0F2E6008447AC /* map_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin@2x.png"; sourceTree = "<group>"; };
 		3BDFFA4817E0F2F6008447AC /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
-		3BDFFA6017E0F477008447AC /* MapViewController+FloatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapViewController+FloatingControl.h"; sourceTree = "<group>"; };
-		3BDFFA6117E0F477008447AC /* MapViewController+FloatingControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapViewController+FloatingControl.m"; sourceTree = "<group>"; };
-		3BDFFA6417E0FB5D008447AC /* FloatingControlStateFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingControlStateFactory.h; sourceTree = "<group>"; };
-		3BDFFA6517E0FB5D008447AC /* FloatingControlStateFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatingControlStateFactory.m; sourceTree = "<group>"; };
 		3BFEDE79175125790078AA58 /* AgendaObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaObject.h; sourceTree = "<group>"; };
 		3BFEDE7A175125790078AA58 /* AgendaObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaObject.m; sourceTree = "<group>"; };
 		3BFEDE7B175125790078AA58 /* ArtistObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistObject.h; sourceTree = "<group>"; };
@@ -986,6 +948,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1050D23C1C2EFB480025F23A /* MapKit.framework in Frameworks */,
 				3BB61992183B4C8400111CFC /* Security.framework in Frameworks */,
 				3B622E7A17DCB7E200D24F0E /* CoreLocation.framework in Frameworks */,
 				3B8D992E179D004600939944 /* CoreText.framework in Frameworks */,
@@ -1003,7 +966,6 @@
 				10FDC1351A77C0F6001402E0 /* libstdc++.6.dylib in Frameworks */,
 				3B622E7D17DCB7F200D24F0E /* libz.dylib in Frameworks */,
 				3B622E7E17DCB7F700D24F0E /* OpenGLES.framework in Frameworks */,
-				10FDC1301A77C080001402E0 /* SKMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1011,6 +973,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1050D23B1C2EFB400025F23A /* MapKit.framework in Frameworks */,
 				10FDC1291A77B738001402E0 /* Security.framework in Frameworks */,
 				3B8A626917D8DA5E003826CC /* CoreLocation.framework in Frameworks */,
 				3B8D992D179D003C00939944 /* CoreText.framework in Frameworks */,
@@ -1029,7 +992,6 @@
 				3B8A626517D8D4B7003826CC /* libz.dylib in Frameworks */,
 				3B4726691812871500903077 /* AVFoundation.framework in Frameworks */,
 				3B8A626317D8D4A8003826CC /* OpenGLES.framework in Frameworks */,
-				10FDC12F1A77C080001402E0 /* SKMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,6 +1013,15 @@
 				10FDC1221A779F58001402E0 /* ParsedNews.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1025D8931C306234008D3D87 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				1025D88F1C30622F008D3D87 /* MapAnnotation.h */,
+				1025D8901C30622F008D3D87 /* MapAnnotation.m */,
+			);
+			name = DataModel;
 			sourceTree = "<group>";
 		};
 		10721DA41A82771D008B4E13 /* artists */ = {
@@ -1451,6 +1422,7 @@
 				3B6F778E1799A573005AC0E7 /* AppDelegate+SAF.h */,
 				3B6F778F1799A573005AC0E7 /* AppDelegate+SAF.m */,
 				3B066585179AD2FB00C345A7 /* SAFDefines.h */,
+				3BB9F8E1179BEF2100C91ABC /* Workshops */,
 				3B6F77921799A73C005AC0E7 /* Custom Views */,
 				3B6F77931799A747005AC0E7 /* ViewControllers */,
 				3BA909F2179A9CD3001765C8 /* Custom Cells */,
@@ -1497,8 +1469,6 @@
 		3B649A0F17E5DAC0005A2497 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				3B649A1017E5DAC1005A2497 /* FMFloatingControlView.h */,
-				3B649A1117E5DAC1005A2497 /* FMFloatingControlView.m */,
 				3B649A1217E5DAC1005A2497 /* FMToolbarButton.h */,
 				3B649A1317E5DAC1005A2497 /* FMToolbarButton.m */,
 				3B649A1417E5DAC1005A2497 /* FMToolbarSegmentedControl.h */,
@@ -1525,7 +1495,6 @@
 				3B5872BD179ABA0800813129 /* Settings */,
 				3BA909EC179A9C29001765C8 /* News */,
 				3B87C299179D1B400095362E /* Artists */,
-				3BB9F8E1179BEF2100C91ABC /* Workshops */,
 				3B17432817A6D41D009DABE8 /* Agenda */,
 				3BDFFA2517E0DF94008447AC /* Map */,
 				3B61A1BB1799E63200F4EB2F /* Credits */,
@@ -1561,20 +1530,12 @@
 		3B8A625A17D8D264003826CC /* Map Components */ = {
 			isa = PBXGroup;
 			children = (
-				3BDFFA2E17E0E4C9008447AC /* MapDefines.h */,
-				3BDFFA2F17E0E4C9008447AC /* MapDefines.m */,
 				3B8A625B17D8D276003826CC /* MapViewController.h */,
 				3B8A625C17D8D276003826CC /* MapViewController.m */,
 				3B8A625D17D8D276003826CC /* MapViewController.xib */,
-				3BDFFA3617E0E773008447AC /* MapViewController+UICreation.h */,
-				3BDFFA3717E0E773008447AC /* MapViewController+UICreation.m */,
 				3BDFFA2A17E0E0AC008447AC /* MapViewController+MapDelegate.h */,
 				3BDFFA2B17E0E0AC008447AC /* MapViewController+MapDelegate.m */,
-				10FDC1371A77C5B8001402E0 /* MapViewController+RoutingDelegate.h */,
-				10FDC1381A77C5B8001402E0 /* MapViewController+RoutingDelegate.m */,
-				3BDFFA6017E0F477008447AC /* MapViewController+FloatingControl.h */,
-				3BDFFA6117E0F477008447AC /* MapViewController+FloatingControl.m */,
-				3BDFFA6317E0FB3E008447AC /* DataModel */,
+				1025D8931C306234008D3D87 /* DataModel */,
 				3B649A0F17E5DAC0005A2497 /* Custom Views */,
 			);
 			path = "Map Components";
@@ -1661,12 +1622,9 @@
 			children = (
 				10C934211A8CC00300EB9126 /* libsqlite3.dylib */,
 				10FDC1341A77C0F6001402E0 /* libstdc++.6.dylib */,
-				10FDC12E1A77C080001402E0 /* SKMaps.framework */,
 				10FDC12A1A77BA50001402E0 /* MapKit.framework */,
 				3BB61991183B4C8400111CFC /* Security.framework */,
 				3B4726681812871500903077 /* AVFoundation.framework */,
-				3BAA907317E0BB67006DD813 /* SKMaps.framework */,
-				10FDC1311A77C0D0001402E0 /* SKMaps.bundle */,
 				3B8A626617D8D4C4003826CC /* libstdc++.dylib */,
 				3B8A626417D8D4B7003826CC /* libz.dylib */,
 				3B8A626817D8DA5E003826CC /* CoreLocation.framework */,
@@ -1920,7 +1878,8 @@
 				3B5E416817BBF3B600915772 /* SAFMyAgendaViewController.m */,
 				107B1A7E1A7FB6CC0089E57E /* Feedback */,
 			);
-			path = Workshops;
+			name = Workshops;
+			path = ViewControllers/Workshops;
 			sourceTree = "<group>";
 		};
 		3BDFFA2517E0DF94008447AC /* Map */ = {
@@ -1930,20 +1889,10 @@
 				3BDFFA2817E0DFA5008447AC /* SAFMapViewController.m */,
 				3B2AA9731834D8670002B325 /* SAFPOIsViewController.h */,
 				3B2AA9741834D8670002B325 /* SAFPOIsViewController.m */,
-				1092788F1A7F9BAE00F9AD7F /* SKSearchResult+SAF.h */,
-				109278901A7F9BAE00F9AD7F /* SKSearchResult+SAF.m */,
 				3B2AA9751834D8670002B325 /* SAFPOIsViewController.xib */,
+				109278901A7F9BAE00F9AD7F /* SKSearchResult+SAF.m */,
 			);
 			path = Map;
-			sourceTree = "<group>";
-		};
-		3BDFFA6317E0FB3E008447AC /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				3BDFFA6417E0FB5D008447AC /* FloatingControlStateFactory.h */,
-				3BDFFA6517E0FB5D008447AC /* FloatingControlStateFactory.m */,
-			);
-			path = DataModel;
 			sourceTree = "<group>";
 		};
 		3BFEDE8B1757B23E0078AA58 /* Helpers */ = {
@@ -2093,7 +2042,6 @@
 				3B4EF87217DE453D00D345E2 /* [schedule]@2x~ipad.png in Resources */,
 				10721DE61A82771E008B4E13 /* dj_frankaly_lavoe.jpg in Resources */,
 				10721DE31A82771E008B4E13 /* cristian_mitran_photo-wpcf_201x131.jpg in Resources */,
-				10FDC1331A77C0D0001402E0 /* SKMaps.bundle in Resources */,
 				3B4EF87317DE453D00D345E2 /* [schedule]~ipad.png in Resources */,
 				10721DF01A82771E008B4E13 /* impro-wpcf_201x131.jpg in Resources */,
 				10721DEE1A82771E008B4E13 /* gulden__mustafa.jpg in Resources */,
@@ -2229,7 +2177,6 @@
 				3B1114DD17DF9163002A2AFC /* back@2x.png in Resources */,
 				3B1114DE17DF9163002A2AFC /* calendar@2x.png in Resources */,
 				3B1114DF17DF9163002A2AFC /* clock@2x.png in Resources */,
-				10FDC1321A77C0D0001402E0 /* SKMaps.bundle in Resources */,
 				3B1114E017DF9163002A2AFC /* comments@2x.png in Resources */,
 				3B1114E117DF9163002A2AFC /* page_full@2x.png in Resources */,
 				3B1114E217DF9163002A2AFC /* star@2x.png in Resources */,
@@ -2295,13 +2242,7 @@
 				3B86FFCA17999E14009624CA /* AFURLConnectionOperation.m in Sources */,
 				3B86FFCB17999E14009624CA /* AFXMLRequestOperation.m in Sources */,
 				3B86FFCC17999E14009624CA /* UIImageView+AFNetworking.m in Sources */,
-				3B86FFCD17999E14009624CA /* NSObject+SBJSON.m in Sources */,
-				3B86FFCE17999E14009624CA /* NSString+SBJSON.m in Sources */,
-				3B86FFCF17999E14009624CA /* SBJSON.m in Sources */,
-				3B86FFD017999E14009624CA /* SBJsonBase.m in Sources */,
 				107B1A811A7FB7190089E57E /* FeedbackClient.m in Sources */,
-				3B86FFD117999E14009624CA /* SBJsonParser.m in Sources */,
-				3B86FFD217999E14009624CA /* SBJsonWriter.m in Sources */,
 				3B86FFD317999E14009624CA /* VICoreDataManager.m in Sources */,
 				3B86FFD417999E14009624CA /* VIFetchResultsDataSource.m in Sources */,
 				3B86FFD517999E14009624CA /* VIManagedObject.m in Sources */,
@@ -2369,20 +2310,15 @@
 				3B622E8017DCB85200D24F0E /* MapViewController.m in Sources */,
 				3B11150017DFA11B002A2AFC /* CustomNavigationBar.m in Sources */,
 				107B1A7A1A7FB6870089E57E /* WSFeedbackViewController.m in Sources */,
+				1025D8921C30622F008D3D87 /* MapAnnotation.m in Sources */,
 				3BDFFA2917E0DFA5008447AC /* SAFMapViewController.m in Sources */,
 				3BDFFA2D17E0E2CB008447AC /* MapViewController+MapDelegate.m in Sources */,
-				3BDFFA3117E0E4C9008447AC /* MapDefines.m in Sources */,
-				3BDFFA3917E0E773008447AC /* MapViewController+UICreation.m in Sources */,
-				3B649A1C17E5DB20005A2497 /* MapViewController+FloatingControl.m in Sources */,
-				3B649A1D17E5DB20005A2497 /* FloatingControlStateFactory.m in Sources */,
-				3B649A1E17E5DB36005A2497 /* FMFloatingControlView.m in Sources */,
 				3B649A1F17E5DB36005A2497 /* FMToolbarButton.m in Sources */,
 				107B1A7D1A7FB6C50089E57E /* PageControl.m in Sources */,
 				3B649A2017E5DB36005A2497 /* FMToolbarSegmentedControl.m in Sources */,
 				3B649A2117E5DB36005A2497 /* FMToolbarStatisticsButton.m in Sources */,
 				10FDC1201A779C5B001402E0 /* ParsedArtist.m in Sources */,
 				3BACAA70180E854800612BE7 /* DownloadManager.m in Sources */,
-				10FDC13A1A77C5B8001402E0 /* MapViewController+RoutingDelegate.m in Sources */,
 				3BACAA74180E854800612BE7 /* AgendaParserDelegate.m in Sources */,
 				3BACAA76180E854800612BE7 /* ArtistParserDelegate.m in Sources */,
 				3BACAA78180E854800612BE7 /* NewsParserDelegate.m in Sources */,
@@ -2408,12 +2344,6 @@
 				3BA6B81C1750E39B006EB824 /* AFURLConnectionOperation.m in Sources */,
 				3BA6B81D1750E39B006EB824 /* AFXMLRequestOperation.m in Sources */,
 				3BA6B81E1750E39B006EB824 /* UIImageView+AFNetworking.m in Sources */,
-				3BA6B81F1750E39B006EB824 /* NSObject+SBJSON.m in Sources */,
-				3BA6B8201750E39B006EB824 /* NSString+SBJSON.m in Sources */,
-				3BA6B8211750E39B006EB824 /* SBJSON.m in Sources */,
-				3BA6B8221750E39B006EB824 /* SBJsonBase.m in Sources */,
-				3BA6B8231750E39B006EB824 /* SBJsonParser.m in Sources */,
-				3BA6B8241750E39B006EB824 /* SBJsonWriter.m in Sources */,
 				3B31556A1807D6C6000F3941 /* StreamingDataManager.m in Sources */,
 				3BA6B8251750E39B006EB824 /* VICoreDataManager.m in Sources */,
 				3BA6B8261750E39B006EB824 /* VIFetchResultsDataSource.m in Sources */,
@@ -2445,6 +2375,7 @@
 				3B350E2C176CB2C00018D336 /* SettingsEnumControllerViewController.m in Sources */,
 				3BD4F1021796F73000A33946 /* SettingOptionGroup.m in Sources */,
 				3B6F778A1799A54E005AC0E7 /* AppDelegate+BaseApp.m in Sources */,
+				1025D8911C30622F008D3D87 /* MapAnnotation.m in Sources */,
 				3B8D9914179CFEF700939944 /* NSArray+Additions.m in Sources */,
 				3B8D9916179CFEF700939944 /* NSDate+Additions.m in Sources */,
 				10FDC1271A77A531001402E0 /* ParsedAgenda.m in Sources */,
@@ -2471,12 +2402,7 @@
 				3B11148217DE57AC002A2AFC /* CustomNavigationBar.m in Sources */,
 				3B1114FF17DF97DF002A2AFC /* MenuTableViewCell.m in Sources */,
 				3BDFFA2C17E0E0AC008447AC /* MapViewController+MapDelegate.m in Sources */,
-				3BDFFA3017E0E4C9008447AC /* MapDefines.m in Sources */,
-				3BDFFA3817E0E773008447AC /* MapViewController+UICreation.m in Sources */,
-				3BDFFA6217E0F478008447AC /* MapViewController+FloatingControl.m in Sources */,
-				3BDFFA6617E0FB5D008447AC /* FloatingControlStateFactory.m in Sources */,
 				10E84A831A664AF700FEF0C1 /* UIColor+Additions.m in Sources */,
-				3B649A1817E5DAC1005A2497 /* FMFloatingControlView.m in Sources */,
 				3B649A1917E5DAC1005A2497 /* FMToolbarButton.m in Sources */,
 				3B649A1A17E5DAC1005A2497 /* FMToolbarSegmentedControl.m in Sources */,
 				3B649A1B17E5DAC1005A2497 /* FMToolbarStatisticsButton.m in Sources */,
@@ -2494,7 +2420,6 @@
 				3BACAA80180E876600612BE7 /* StreamingUser.m in Sources */,
 				3BACAA83180E93E100612BE7 /* StreamingMix.m in Sources */,
 				3BACAA8B180EBE4F00612BE7 /* RadioListenViewController.m in Sources */,
-				10FDC1391A77C5B8001402E0 /* MapViewController+RoutingDelegate.m in Sources */,
 				3BACAA8F180ECFCF00612BE7 /* StreamingTrack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,6 @@
 
 #import "SAFMapViewController.h"
 #import "SAFPOIsViewController.h"
-#import "MapViewController+FloatingControl.h"
 
 @interface SAFMapViewController ()
 
@@ -40,30 +39,30 @@
     
     if ([CLLocationManager locationServicesEnabled]) {
         
-        SKPosition position = [[SKPositionerService sharedInstance] currentPosition];
-        SKCoordinateRegion region;
-        region.zoomLevel = 14;
-        
-        if (position.latY == 0.0000 && position.lonX == 0.0000) {
-            
-            //present Timisoara 45.759722, 21.23
-            region.center = CLLocationCoordinate2DMake(45.758722f, 21.23f);
-        } else {
-            
-            // present current pos
-            region.center = CLLocationCoordinate2DMake(position.latY, position.lonX);
-        }
-        
-        self.mapView.visibleRegion
-        = region;
-        
-    } else {
-        //present Timisoara
-        
-        SKCoordinateRegion region;
-        region.zoomLevel = 14;
-        region.center = CLLocationCoordinate2DMake(45.758722f, 21.23f);
-        self.mapView.visibleRegion = region;
+//        SKPosition position = [[SKPositionerService sharedInstance] currentPosition];
+//        SKCoordinateRegion region;
+//        region.zoomLevel = 14;
+//        
+//        if (position.latY == 0.0000 && position.lonX == 0.0000) {
+//            
+//            //present Timisoara 45.759722, 21.23
+//            region.center = CLLocationCoordinate2DMake(45.758722f, 21.23f);
+//        } else {
+//            
+//            // present current pos
+//            region.center = CLLocationCoordinate2DMake(position.latY, position.lonX);
+//        }
+//        
+//        self.mapView.visibleRegion
+//        = region;
+//        
+//    } else {
+//        //present Timisoara
+//        
+//        SKCoordinateRegion region;
+//        region.zoomLevel = 14;
+//        region.center = CLLocationCoordinate2DMake(45.758722f, 21.23f);
+//        self.mapView.visibleRegion = region;
     }
 }
 

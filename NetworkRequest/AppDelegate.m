@@ -11,7 +11,6 @@
 #import "AFNetworkActivityIndicatorManager.h"
 //#import "AppDelegate+BaseApp.h"
 #import "AppDelegate+SAF.h"
-#import <SKMaps/SKMaps.h>
 
 @implementation AppDelegate
 
@@ -20,9 +19,6 @@
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self application:application performAppSpecificTasks:launchOptions];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[SKMapsService sharedInstance] initializeSKMapsWithAPIKey:@"1adc928dc89358ebfe590c4785a06fd7f6af817de6ef7c994941125eb31cfccc" settings:nil];
-    });
     return YES;
     
 }

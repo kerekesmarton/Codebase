@@ -17,7 +17,6 @@
 
 #import "DownloadManager.h"
 
-#import <SKMaps/SKMaps.h>
 #import <objc/runtime.h>
 
 @implementation AppDelegate (SAF)
