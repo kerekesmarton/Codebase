@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "POIAnnotation.h"
+
+typedef void (^DidPickAnnotation)(POIAnnotation *);
+
 
 @interface SAFPOIsViewController : UITableViewController
 
-+(UINavigationController *)modalNavigationController;
++(UINavigationController *)modalNavigationControllerWithCompletion:(DidPickAnnotation)completion;
+
+@property(nonatomic,copy) DidPickAnnotation completion;
 
 @end

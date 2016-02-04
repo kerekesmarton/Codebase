@@ -60,5 +60,8 @@ typedef void (^viewDidLoadBlock)(id param);
 @property (nonatomic, weak) UIActivityIndicatorView *artistsAI;
 @property (nonatomic, weak) UIActivityIndicatorView *scheduleAI;
 
-+(UINavigationController *)navWithSuccess:(viewDidLoadBlock)viewDidLoadBlock;
++ (UINavigationController *)navWithSuccess:(viewDidLoadBlock)viewDidLoadBlock;
+
+- (void)openFunction:(NSInteger)functionNumber sender:(id)sender;
+
 @end

@@ -115,11 +115,11 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(kMenuElementBorder, kMenuElementBorder
                               , rect.size.width-2*kMenuElementBorder, rect.size.height-2*kMenuElementBorder);
-    button.titleLabel.font = [UIFont fontWithName:@"edo" size:btnFontSize];
+    button.titleLabel.font = [UIFont fontWithName:futuraCondendsedBold size:btnFontSize];
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     button.titleEdgeInsets = UIEdgeInsetsMake(0, kMenuElementBorder, 0, 0);
     [button setBackgroundImage:image forState:UIControlStateNormal];
     

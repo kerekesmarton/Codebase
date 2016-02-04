@@ -46,8 +46,8 @@
     [self.gradient bringSubviewToFront:detailsLbl];
     
     titleLbl.backgroundColor = [UIColor clearColor];
-    titleLbl.font = [UIFont fontWithName:@"edo" size:20];
-    titleLbl.textColor = [UIColor orangeColor];
+    titleLbl.font = [UIFont fontWithName:futuraCondendsedBold size:20];
+    titleLbl.textColor = [UIColor redColor];
     titleLbl.numberOfLines = 0;
     titleLbl.text = self.item.title;
     
@@ -76,7 +76,7 @@
     [share setBackgroundImage:img forState:UIControlStateNormal];
     [share addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
     [share setTitle:@"Share" forState:UIControlStateNormal];
-    [share.titleLabel setFont:[UIFont fontWithName:@"edo" size:20]];
+    [share.titleLabel setFont:[UIFont fontWithName:futuraCondendsedBold size:20]];
     [share setBackgroundColor:[UIColor colorWithHex:0x3c3c3c]];
     [share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 

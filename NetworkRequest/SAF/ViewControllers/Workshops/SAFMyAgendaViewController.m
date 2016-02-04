@@ -92,8 +92,9 @@
     //add details
     [array enumerateObjectsUsingBlock:^(WorkshopObject *obj, NSUInteger idx, BOOL *stop) {
         ArtistObject *artist = [ArtistObject artistForId:obj.instructor];
+        NSString *location = [obj location];
         NSString *difficulty = [WorkshopObject stringForDifficulty:[obj.difficulty intValue]];
-        UIButton *btn =[cell configureRows:idx artist:artist.name workshop:obj.name level:difficulty];
+        UIButton *btn =[cell configureRows:idx artist:artist.name workshop:obj.name level:difficulty room:location];
         btn.tag = [obj.uID intValue];
         [btn addTarget:self action:@selector(didPushButton:) forControlEvents:UIControlEventTouchUpInside];
     }];

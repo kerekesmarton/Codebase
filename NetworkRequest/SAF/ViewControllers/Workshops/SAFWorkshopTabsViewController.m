@@ -49,13 +49,13 @@
         [[UITabBarItem appearance] setTitleTextAttributes:
          [NSDictionary dictionaryWithObjectsAndKeys:
           [UIColor whiteColor], NSForegroundColorAttributeName,
-          [UIFont fontWithName:@"edo" size:12], NSFontAttributeName,
+          [UIFont fontWithName:futuraCondendsedBold size:12], NSFontAttributeName,
           nil] forState:UIControlStateHighlighted];
         
         [[UITabBarItem appearance] setTitleTextAttributes:
          [NSDictionary dictionaryWithObjectsAndKeys:
-          [UIColor orangeColor], NSForegroundColorAttributeName,
-          [UIFont fontWithName:@"edo" size:12], NSFontAttributeName,
+          [UIColor redColor], NSForegroundColorAttributeName,
+          [UIFont fontWithName:futuraCondendsedBold size:12], NSFontAttributeName,
           nil] forState:UIControlStateNormal];
     }
     return self;

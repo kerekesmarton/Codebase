@@ -9,8 +9,8 @@
 #import "SAFPOIsViewController.h"
 #import "SAFDefines.h"
 #import "SAFPOIsListCell.h"
-#import "MapViewController+FloatingControl.h"
 #import "SAFNavigationBar.h"
+#import "POIAnnotation.h"
 
 typedef enum SAFVenues{
     
@@ -22,18 +22,19 @@ typedef enum SAFVenues{
     
 }SAFVenues;
 
-@interface SAFPOIsViewController () {
-    
-    NSMutableArray *dataSource;
-}
+@interface SAFPOIsViewController ()
 
+@property(nonatomic,strong) NSMutableArray *dataSource; ///<
+@property(nonatomic,strong) CLGeocoder *geocoder;       ///<
 @end
 
 @implementation SAFPOIsViewController
 
-+(UINavigationController *)modalNavigationController {
++(UINavigationController *)modalNavigationControllerWithCompletion:(DidPickAnnotation) completion
+{
     
     SAFPOIsViewController *pois = [[SAFPOIsViewController alloc] initWithStyle:UITableViewStylePlain];
+    pois.completion = completion;
     
     UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[SAFNavigationBar class] toolbarClass:[UIToolbar class]];
     navController.navigationBarHidden = NO;
@@ -59,8 +60,10 @@ typedef enum SAFVenues{
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.geocoder = [[CLGeocoder alloc] init];
         [self populateData];
     }
+    
     return self;
 }
 
@@ -86,45 +89,52 @@ typedef enum SAFVenues{
     // Dispose of any resources that can be recreated.
 }
 
--(void)populateData {
+- (void)populateData {
     
-    dataSource = [[NSMutableArray alloc] init];
+    self.dataSource = [[NSMutableArray alloc] init];
     
-//    for (int i = 0; i < SAFVenuesCount; i++) {
-//        SKSearchResult *object = nil;
-//        switch (i) {
-//            case SAFVenueMain:
-//                object = [[SKReverseGeocoderService sharedInstance] reverseGeocodeLocation:CLLocationCoordinate2DMake(45.748441, 21.239689)];
-//                object.name = @"SAF Main Venue: Restaurant Universitar Politehnica";
-//                object.oneLineAddress = @"Address:1 Alexandru Vaida – Voievod str\nZip:300553 Code\nPhone:0040732672572";
-//                break;
-//            case SAFVenueNH:
-//                object = [[SKReverseGeocoderService sharedInstance] reverseGeocodeLocation:CLLocationCoordinate2DMake(45.74827981813517, 21.226914967795217)];
-//                object.name = @"Hotel NH";
-//                object.oneLineAddress = @"Address:1A, Pestalozzi str.\nZip Code:300115\nPhone:0040732672572, ";
-//                break;
-//            case SAFVenueBoavista:
-//                object = [[SKReverseGeocoderService sharedInstance] reverseGeocodeLocation:CLLocationCoordinate2DMake(45.746337, 21.240598)];
-//                object.name = @"Hotel Boavista" ;
-//                object.oneLineAddress = @"Address:Adress: 7A, Ripensia str.\nZip Code:300575\nPhone:0040732672572";
-//                break;
-//            case SAFVenueCheckInn:
-//                object = [[SKReverseGeocoderService sharedInstance] reverseGeocodeLocation:CLLocationCoordinate2DMake(45.75053328186938, 21.24548258042603)];
-//                object.name = @"Hotel Check Inn";
-//                object.oneLineAddress = @"Address:11 - 13, Miorita str.\nZip:300553 Code\nPhone:0040732672572";
-//                break;
-//            default:
-//                break;                
-//        }
-//        if (object) {
-//            [dataSource addObject:object];
-//        }
-//        
-//    }
+    for (SAFVenues i = 0; i < SAFVenuesCount; i++) {
+        switch (i) {
+            case SAFVenueMain:
+            {
+                POIAnnotation *annotation = [POIAnnotation annotationWithLocation:CLLocationCoordinate2DMake(45.748441, 21.239689)];
+                annotation.primaryDetails = @"SAF Main Venue: Restaurant Universitar Politehnica";
+                annotation.secondaryDetails = @"Address:1 Alexandru Vaida – Voievod str\nZip:300553 Code\nPhone:0040732672572";
+                [_dataSource addObject:annotation];
+            }
+                break;
+            case SAFVenueNH:
+            {
+                POIAnnotation *annotation = [POIAnnotation annotationWithLocation:CLLocationCoordinate2DMake(45.74827981813517, 21.226914967795217)];
+                annotation.primaryDetails = @"Hotel NH";
+                annotation.secondaryDetails = @"Address:1A, Pestalozzi str.\nZip Code:300115\nPhone:0040732672572, ";
+                [_dataSource addObject:annotation];
+            }
+                break;
+            case SAFVenueBoavista:
+            {
+                POIAnnotation *annotation = [POIAnnotation annotationWithLocation:CLLocationCoordinate2DMake(45.746337, 21.240598)];
+                annotation.primaryDetails = @"Hotel Boavista" ;
+                annotation.secondaryDetails = @"Address:Adress: 7A, Ripensia str.\nZip Code:300575\nPhone:0040732672572";
+                [_dataSource addObject:annotation];
+            }
+                break;
+            case SAFVenueCheckInn:
+            {
+                POIAnnotation *annotation = [POIAnnotation annotationWithLocation:CLLocationCoordinate2DMake(45.75053328186938, 21.24548258042603)];
+                annotation.primaryDetails = @"Hotel Check Inn";
+                annotation.secondaryDetails = @"Address:11 - 13, Miorita str.\nZip:300553 Code\nPhone:0040732672572";
+                [_dataSource addObject:annotation];
+            }
+                break;
+            default:
+                break;                
+        }
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return dataSource.count;
+    return _dataSource.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -142,20 +152,20 @@ typedef enum SAFVenues{
         cell = [[SAFPOIsListCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-//    SKSearchResult *object = [dataSource objectAtIndex:indexPath.row];
-//    cell.textLabel.text = object.name;
-//    cell.detailTextLabel.text = object.oneLineAddress;
+    POIAnnotation *object = [_dataSource objectAtIndex:indexPath.row];
+    cell.textLabel.text = object.primaryDetails;
+    cell.detailTextLabel.text = object.secondaryDetails;
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    SKSearchResult *blockSearchObject = [dataSource objectAtIndex:indexPath.row];
+    POIAnnotation *blockSearchObject = [_dataSource objectAtIndex:indexPath.row];
     
     [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
     
-//        [NSNotificationCenterInstance postNotification:[NSNotification notificationWithName:GoToPoiNotification object:blockSearchObject]];
+        self.completion(blockSearchObject);
     }];
 }
 

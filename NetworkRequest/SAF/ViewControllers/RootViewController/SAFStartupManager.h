@@ -13,7 +13,7 @@
 + (instancetype)sharedInstance;
 
 -(void)startNewsRequestWithButtons:(NSArray *)buttons activityIndicators:(NSArray *)activityIndicators;
--(void)startWorshopssRequestWithButtons:(NSArray *)buttons activityIndicators:(NSArray *)activityIndicators;
+-(void)startWorshopssRequestWithButtons:(NSArray *)buttons activityIndicators:(NSArray *)activityIndicators completion:(void (^)(void))completion;
 -(void)startArtistsWithButtons:(NSArray *)buttons activityIndicators:(NSArray *)activityIndicators;
 -(void)startAgendaRequestWithButtons:(NSArray *)buttons activityIndicators:(NSArray *)activityIndicators;
 

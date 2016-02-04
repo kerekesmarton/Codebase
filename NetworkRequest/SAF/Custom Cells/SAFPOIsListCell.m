@@ -16,8 +16,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        self.textLabel.textColor = [UIColor orangeColor];
-        self.textLabel.font = [UIFont fontWithName:@"edo" size:20];
+        self.textLabel.textColor = [UIColor redColor];
+        self.textLabel.font = [UIFont fontWithName:futuraCondendsedBold size:20];
         self.detailTextLabel.textColor = [UIColor lightGrayColor];
         self.detailTextLabel.font = [UIFont fontWithName:myriadFontR size:18];
         self.textLabel.backgroundColor = [UIColor clearColor];

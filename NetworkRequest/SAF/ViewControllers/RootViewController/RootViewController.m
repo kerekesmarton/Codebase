@@ -32,7 +32,8 @@
 
 @implementation RootViewController
 
-+(UINavigationController *)navWithSuccess:(viewDidLoadBlock)viewDidLoadBlock{
++(UINavigationController *)navWithSuccess:(viewDidLoadBlock)viewDidLoadBlock
+{
     
     RootViewController *viewcontroller = [[RootViewController alloc] init];
     viewcontroller.block = viewDidLoadBlock;
@@ -50,7 +51,8 @@
     return navController;
 }
 
--(void)viewDidLoad {
+-(void)viewDidLoad
+{
     
     [super viewDidLoad];
     
@@ -59,7 +61,8 @@
     self.block(self);
 }
 
--(void)viewWillAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     
     [self.navigationController setToolbarHidden:YES animated:animated];
@@ -71,42 +74,39 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)buttonPressed:(id)sender{
-    
-    UIButton *buttonPressed = (UIButton*)sender;
-    int tag = (int)buttonPressed.tag;
-    
+- (void)openFunction:(NSInteger)functionNumber sender:(id)sender
+{
     NSArray *viewcontrollers = nil;
     UIViewController *viewController = nil;
     
-    switch (tag) {
+    switch (functionNumber) {
         case RootFunctionNews:
             //news
             viewController = [[SAFNewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
             break;
         case RootFunctionWorkshops: {
             //workshops
-                viewController = [[SAFWorkshopTabsViewController alloc] init];
-                NSArray *days = [WorkshopObject distinctWorkshopDays];
-                if (days.count) {
-                    [[SettingsManager sharedInstance].selectedDay addPossibleValues:days];
-                    NSDate *day = [days objectAtIndex:0];
-                    [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
-                    [(SAFWorkshopTabsViewController *)viewController setDay:day];
-                }
+            viewController = [[SAFWorkshopTabsViewController alloc] init];
+            NSArray *days = [WorkshopObject distinctWorkshopDays];
+            if (days.count) {
+                [[SettingsManager sharedInstance].selectedDay addPossibleValues:days];
+                NSDate *day = [days objectAtIndex:0];
+                [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
+                [(SAFWorkshopTabsViewController *)viewController setDay:day];
             }
+        }
             break;
         case RootFunctionMyAgenda: {
             //my agenda
-                viewController = [[SAFMyAgendaViewController alloc] init];
-                NSArray *days = [WorkshopObject distinctWorkshopDays];
-                if (days.count) {
-                    [[SettingsManager sharedInstance].selectedDay addPossibleValues:days];
-                    NSDate *day = [days objectAtIndex:0];
-                    [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
-                    [(SAFMyAgendaViewController *)viewController setDay:day];
-                }
+            viewController = [[SAFMyAgendaViewController alloc] init];
+            NSArray *days = [WorkshopObject distinctWorkshopDays];
+            if (days.count) {
+                [[SettingsManager sharedInstance].selectedDay addPossibleValues:days];
+                NSDate *day = [days objectAtIndex:0];
+                [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
+                [(SAFMyAgendaViewController *)viewController setDay:day];
             }
+        }
             break;
         case RootFunctionArtists:
             //artists
@@ -139,23 +139,35 @@
             return;//sharing is treated by an action sheet
             break;
     }
-
-    if (viewcontrollers) {
+    
+    if (viewcontrollers)
+    {
         [self.navigationController setViewControllers:viewcontrollers animated:YES];
     } else {
         [self.navigationController pushViewController:viewController animated:YES];
     }
 }
 
--(void)credits: (id)sender {
+-(void)buttonPressed:(id)sender
+{
     
-    UIActionSheet *credits = [[UIActionSheet alloc] initWithTitle:@"Version 7.0, Thanks to" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"AIRE Dance Company",@"Nuvo Studio", nil];
+    UIButton *buttonPressed = (UIButton*)sender;
+    NSInteger tag = (NSInteger)buttonPressed.tag;
+    
+    [self openFunction:tag sender:sender];
+}
+
+- (void)credits:(id)sender
+{
+    
+    UIActionSheet *credits = [[UIActionSheet alloc] initWithTitle:@"Version 7.0, Thanks to" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"AIRE Dance Company",@"Nuvo Studio",@"Advents", nil];
     credits.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     credits.tag = 2;
     [credits showInView:self.navigationController.view];
 }
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
     
     if ([self shareActionSheet:actionSheet acionForIndex:buttonIndex]) {
         return;
@@ -163,13 +175,25 @@
     if (actionSheet.tag == 2) {
         
         CreditsViewController *credits = nil;
-        if (buttonIndex == 1) {
-            credits = [[CreditsViewController alloc] initWithName:@"Nuvo"];
-        } else
-            if (buttonIndex == 0) {
-                
+        switch (buttonIndex) {
+            case 0:
+            {
                 credits = [[CreditsViewController alloc] initWithName:@"AIRE"];
             }
+                break;
+            case 1:
+            {
+                credits = [[CreditsViewController alloc] initWithName:@"Nuvo"];
+            }
+                break;
+            case 2:
+            {
+                credits = [[CreditsViewController alloc] initWithName:@"Advents"];
+            }
+                
+            default:
+                break;
+        }
         
         if (credits) {
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:credits];
@@ -185,7 +209,8 @@
     }
 }
 
-- (void)preConfigureSharing {
+- (void)preConfigureSharing
+{
     self.useMedia = YES;
     self.postImage = nil;
     self.postText = @"I'm attending the 7th Salsa Addicted Festival! We know how to party!";

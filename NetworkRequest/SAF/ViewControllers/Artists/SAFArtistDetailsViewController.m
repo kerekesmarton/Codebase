@@ -65,9 +65,9 @@
     
     UILabel *name = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(image.frame)+10, self.view.frame.size.width-20, 60)];
     name.backgroundColor = [UIColor clearColor];
-    name.font = [UIFont fontWithName:@"edo" size:25];
+    name.font = [UIFont fontWithName:futuraCondendsedBold size:25];
     name.numberOfLines = 2;
-    name.textColor = [UIColor orangeColor];
+    name.textColor = [UIColor redColor];
     name.text = self.artist.name;
     name.textAlignment = NSTextAlignmentCenter;
     name.autoresizingMask = UIViewAutoresizingFlexibleWidth;

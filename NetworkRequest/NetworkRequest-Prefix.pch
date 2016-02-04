@@ -54,4 +54,9 @@
 #define kAgendaParsingFinished      @"kAgendaParsingFinished"
 #define kAgendaParsingFailed        @"kAgendaParsingFailed"
 
+#define futuraCondendsedBold    @"FuturaCondBold"
+#define myriadFontI             @"MyriadPro-It"
+#define myriadFontB             @"MyriadPro-Semibold"
+#define myriadFontR             @"MyriadPro-Regular"
+
 #endif

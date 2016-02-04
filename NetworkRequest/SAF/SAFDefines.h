@@ -9,15 +9,14 @@
 #ifndef NetworkRequest_SAFDefines_h
 #define NetworkRequest_SAFDefines_h
 
-#define myriadFontI     @"MyriadPro-It"
-#define myriadFontB     @"MyriadPro-Semibold"
-#define myriadFontR     @"MyriadPro-Regular"
-
 static NSString *DIFFICULTY_LEVEL_1 = @"Inter-Advanced";
 static NSString *DIFFICULTY_LEVEL_2 = @"Intermediate";
 static NSString *DIFFICULTY_LEVEL_3 = @"Advanced";
 static NSString *DIFFICULTY_LEVEL_4 = @"All Levels";
 static NSString *DIFFICULTY_LEVEL_5 = @"Advanced, instructors & performers";
 
+
+static NSString *BACKEND    =  @"http://saf9.airedancecompany.ro";
+static NSString *IMAGE_HOST =  @"http://airedancecompany.ro/SAF/";
 
 #endif

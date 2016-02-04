@@ -54,7 +54,11 @@ static NSString * const kRequestURL = @"http://saf8.airedancecompany.ro/";
 
 -(void)sendAllFeedback {
     
-    
+    [self sendFeedbackForID:nil];
+}
+
+- (void)sendFeedbackForID:(id)identifier
+{
     if (self.sending) {
         return;
     }
@@ -64,14 +68,22 @@ static NSString * const kRequestURL = @"http://saf8.airedancecompany.ro/";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        
-        
         NSURL *url = [NSURL URLWithString:kRequestURL];
         AFHTTPClient *helper = [[AFHTTPClient alloc] initWithBaseURL:url];
         
         NSManagedObjectContext *tmp = [[VICoreDataManager getInstance] startTransaction];
         
-        NSArray *allItems = [[VICoreDataManager getInstance] arrayForModel:NSStringFromClass([WorkshopObject class]) forContext:tmp];
+        NSArray *allItems = nil;
+        
+        if (identifier)
+        {
+            WorkshopObject *item =[WorkshopObject workshopForUID:identifier];
+            allItems = @[item];
+        }
+        else
+        {
+            allItems = [[VICoreDataManager getInstance] arrayForModel:NSStringFromClass([WorkshopObject class]) forContext:tmp];
+        }
         
         [self.parsedItems removeAllObjects];
         
@@ -81,10 +93,13 @@ static NSString * const kRequestURL = @"http://saf8.airedancecompany.ro/";
             }
         }
         
-        NSString *email = [[NSUserDefaults standardUserDefaults] valueForKey:@"feedbackEmail"];
-        if ([email length] == 0) {
-            return;
+        if (! [self.parsedItems count])
+        {
+            self.sending = false;
+            return ;
         }
+        
+        NSString *email = [[NSUserDefaults standardUserDefaults] valueForKey:@"feedbackEmail"];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
@@ -96,12 +111,17 @@ static NSString * const kRequestURL = @"http://saf8.airedancecompany.ro/";
             int interval = [date timeIntervalSince1970];
             NSString *stamp = [NSString stringWithFormat:@"%d",interval];
             NSString *feedback = [item.feedbackComment length]?item.feedbackComment:@" ";
-            NSDictionary *params = [NSDictionary dictionaryWithObjects:
-                                    //objects
-                                    @[item.uID,item.name,item.instructor,stamp,item.feedbackRating,item.feedbackUseful, feedback,deviceID,email]
-                                    //keys
-                                                               forKeys:
-                                    @[@"workshopID", @"workshopName", @"instructor", @"date", @"rank", @"expectation", @"comments", @"macAddress", @"emailAddress"]];
+            NSDictionary *params = @{
+                                     @"workshopID":   item.uID,
+                                     @"workshopName": item.name,
+                                     @"instructor":   item.instructor,
+                                     @"date":         stamp,
+                                     @"rank":         item.feedbackRating,
+                                     @"expectation":  item.feedbackUseful,
+                                     @"comments":     feedback,
+                                     @"macAddress":   deviceID,
+                                     @"emailAddress": email
+                                     };
             
             helper.parameterEncoding = AFJSONParameterEncoding;
             NSMutableURLRequest *urlRequest = [helper requestWithMethod:@"POST" path:@"api/saf/feedbackitem/" parameters:params];
@@ -122,8 +142,6 @@ static NSString * const kRequestURL = @"http://saf8.airedancecompany.ro/";
             [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kNotifSending object:nil]];
         });
     });
-
-    
 }
 
 -(void)requestSuccessful:(AFHTTPRequestOperation*)operation responseObject:(id)responseObject {

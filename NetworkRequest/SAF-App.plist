@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>SAF 8</string>
+	<string>SAF 9</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
@@ -15,7 +15,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
-	<string>8.0</string>
+	<string>9.0</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
@@ -25,7 +25,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>9.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -37,7 +37,7 @@
 	<string>We would like to use your location.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>edo.ttf</string>
+		<string>Futura Condensed Bold.ttf</string>
 		<string>MyriadPro-Regular.otf</string>
 		<string>MyriadPro-It.otf</string>
 		<string>MyriadPro-Semibold.otf</string>

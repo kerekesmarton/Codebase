@@ -138,7 +138,7 @@
     instructor.text = artist.name;
     instructor.backgroundColor = [UIColor clearColor];
     instructor.textColor = [UIColor whiteColor];
-    instructor.font = [UIFont fontWithName:@"edo" size:20];
+    instructor.font = [UIFont fontWithName:futuraCondendsedBold size:20];
     instructor.numberOfLines = 2;
     instructor.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:instructor];
@@ -178,9 +178,9 @@
     [_info setTitle:@"Workshop details" forState:UIControlStateNormal];
     _info.frame = CGRectMake(0, CGRectGetMaxY(titleLbl.frame), self.view.frame.size.width/2, 30);
     _info.tag = 0;
-    [_info.titleLabel setFont:[UIFont fontWithName:@"edo" size:18]];
+    [_info.titleLabel setFont:[UIFont fontWithName:futuraCondendsedBold size:18]];
     [_info addTarget:self action:@selector(pushContent:) forControlEvents:UIControlEventTouchUpInside];
-    _info.backgroundColor = [UIColor orangeColor];
+    _info.backgroundColor = [UIColor redColor];
     [_info setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     [_info setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:_info];
@@ -189,7 +189,7 @@
     [_artist setTitle:@"Artist details" forState:UIControlStateNormal];
     _artist.frame = CGRectMake(self.view.frame.size.width/2, CGRectGetMaxY(titleLbl.frame), self.view.frame.size.width/2, 30);
     _artist.tag = 1;
-    [_artist.titleLabel setFont:[UIFont fontWithName:@"edo" size:18]];
+    [_artist.titleLabel setFont:[UIFont fontWithName:futuraCondendsedBold size:18]];
     [_artist addTarget:self action:@selector(pushContent:) forControlEvents:UIControlEventTouchUpInside];
     _artist.backgroundColor = [UIColor blackColor];
     [_artist setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
@@ -301,14 +301,14 @@
         //set buttons
         CGPoint pagePoint = scrollView.contentOffset;
         if (pagePoint.x < self.view.frame.size.width) {
-            _info.backgroundColor = [UIColor orangeColor];
+            _info.backgroundColor = [UIColor redColor];
             [_info.titleLabel setTextColor:[UIColor blackColor]];
             _artist.backgroundColor = [UIColor blackColor];
             [_artist.titleLabel setTextColor:[UIColor whiteColor]];
         } else {
             _info.backgroundColor = [UIColor blackColor];
             [_info.titleLabel setTextColor:[UIColor whiteColor]];
-            _artist.backgroundColor = [UIColor orangeColor];
+            _artist.backgroundColor = [UIColor redColor];
             [_artist.titleLabel setTextColor:[UIColor blackColor]];
         }
     }
@@ -356,7 +356,7 @@ static bool scrolling = false;
         _info.backgroundColor = [UIColor blackColor];
         [_info.titleLabel setTextColor:[UIColor whiteColor]];
     }
-    [(UIButton*)sender setBackgroundColor:[UIColor orangeColor]];
+    [(UIButton*)sender setBackgroundColor:[UIColor redColor]];
     [[(UIButton*)sender titleLabel] setTextColor:[UIColor blackColor]];
     
     scrolling = true;

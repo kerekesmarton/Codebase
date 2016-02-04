@@ -17,7 +17,8 @@
 
 @interface WSFeedbackViewController () <MFMailComposeViewControllerDelegate>
 
-@property (nonatomic,retain) NSNumber* uid;
+@property(nonatomic,strong) NSNumber* uid;
+@property(nonatomic,strong) WorkshopObject *ws;
 
 @end
 
@@ -55,15 +56,7 @@
     UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(pop)];
     self.navigationItem.leftBarButtonItem = cancel;
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", self.uid];
-    id res = [WorkshopObject fetchForPredicate:predicate forManagedObjectContext:[[VICoreDataManager getInstance] managedObjectContext]];
-    
-    WorkshopObject *ws;
-    if ([res isKindOfClass:[NSArray class]]) {
-        ws = [res lastObject];
-    } else {
-        ws = res;
-    }
+    [self fetchWorkshop];
     
     _suggestTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
     _suggestTitle.text = @"Please rate this workshop";
@@ -95,8 +88,8 @@
     _rating.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_scroll addSubview:_rating];
     
-    if ([ws.feedbackRating intValue]) {
-        NSIndexPath *ipRating = [NSIndexPath indexPathForRow:5-[ws.feedbackRating integerValue] inSection:0];
+    if ([_ws.feedbackRating intValue]) {
+        NSIndexPath *ipRating = [NSIndexPath indexPathForRow:5-[_ws.feedbackRating integerValue] inSection:0];
         [_rating selectRowAtIndexPath:ipRating animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
     
@@ -108,8 +101,8 @@
     _useful.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_scroll addSubview:_useful];
     
-    if (ws.feedbackUseful) {
-        NSIndexPath *ipUseful = [NSIndexPath indexPathForRow:1-[ws.feedbackUseful boolValue] inSection:0];
+    if (_ws.feedbackUseful) {
+        NSIndexPath *ipUseful = [NSIndexPath indexPathForRow:1-[_ws.feedbackUseful boolValue] inSection:0];
         [_useful selectRowAtIndexPath:ipUseful animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
     
@@ -121,8 +114,8 @@
     _feedback.font = [UIFont fontWithName:myriadFontB size:16];
     [_scroll addSubview:_feedback];
     
-    if (![[ws.feedbackComment stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-        _feedback.text = ws.feedbackComment;
+    if (![[_ws.feedbackComment stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        _feedback.text = _ws.feedbackComment;
     }
     
 }
@@ -135,6 +128,44 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sentErr) name:kNotifSentErr object:nil];
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    [self fetchWorkshop];
+    _ws.feedbackComment = _feedback.text;
+    [[VICoreDataManager getInstance] saveMainContext];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Utils
+
+- (void)fetchWorkshop
+{
+    if (_ws)
+    {
+        return;
+    }
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", self.uid];
+    id res = [WorkshopObject fetchForPredicate:predicate forManagedObjectContext:[[VICoreDataManager getInstance] managedObjectContext]];
+    
+    if ([res isKindOfClass:[NSArray class]]) {
+        self.ws = [res lastObject];
+    } else {
+        self.ws = res;
+    }
+    NSAssert(self.ws, @"%s, Workshop not present", __PRETTY_FUNCTION__);
+}
+
+#pragma mark - Notifications
+
 -(void)sending {
     
     UIActivityIndicatorView *sending = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
@@ -145,7 +176,7 @@
 
 -(void)sentOK {
     
-    UIAlertView *sent = [[UIAlertView alloc] initWithTitle:@"Thank You!" message:@"You really made our day by sending this feedback." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *sent = [[UIAlertView alloc] initWithTitle:@"Thank You!" message:@"You really made our day by sending this feedback." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [sent show];
     
     UIBarButtonItem *send = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleBordered target:self action:@selector(sendInfo)];
@@ -159,30 +190,6 @@
     
     UIBarButtonItem *send = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleBordered target:self action:@selector(sendInfo)];
     self.navigationItem.rightBarButtonItem = send;
-    
-}
-
--(void)viewWillDisappear:(BOOL)animated {
-    
-    [super viewWillDisappear:animated];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", self.uid];
-    id res = [WorkshopObject fetchForPredicate:predicate forManagedObjectContext:[[VICoreDataManager getInstance] managedObjectContext]];
-    WorkshopObject *ws;
-    if ([res isKindOfClass:[NSArray class]]) {
-        ws = [res lastObject];
-    } else {
-        ws = res;
-    }
-    ws.feedbackComment = _feedback.text;
-    [[VICoreDataManager getInstance] saveMainContext];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark Table View Delegate
@@ -277,25 +284,14 @@ static bool scrolling = false;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", self.uid];
-    id res = [WorkshopObject fetchForPredicate:predicate forManagedObjectContext:[[VICoreDataManager getInstance] managedObjectContext]];
-    WorkshopObject *ws;
-    if ([res isKindOfClass:[NSArray class]]) {
-        ws = [res lastObject];
-    } else {
-        ws = res;
-    }
-    if (!ws) {
-        //present some error and return;
-        return;
-    }
+    [self fetchWorkshop];
     
     if (tableView == _rating) {
-        ws.feedbackRating = [NSNumber numberWithInt: 5-indexPath.row];
+        _ws.feedbackRating = [NSNumber numberWithInt: 5-indexPath.row];
     }
     
     if (tableView == _useful) {
-        ws.feedbackUseful = [NSNumber numberWithBool:1-indexPath.row];
+        _ws.feedbackUseful = [NSNumber numberWithBool:1-indexPath.row];
     }
     
     [[VICoreDataManager getInstance] saveMainContext];
@@ -316,26 +312,15 @@ static bool scrolling = false;
 
 -(void)textViewDidEndEditing:(UITextView *)textView {
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", self.uid];
-    id res = [WorkshopObject fetchForPredicate:predicate forManagedObjectContext:[[VICoreDataManager getInstance] managedObjectContext]];
-    WorkshopObject *ws;
-    if ([res isKindOfClass:[NSArray class]]) {
-        ws = [res lastObject];
-    } else {
-        ws = res;
-    }
-    if (!ws) {
-        //present some error and return;
-        return;
-    }
+    [self fetchWorkshop];
     
     if ([textView.text isNotEmptyOrWhiteSpace]) {
-        ws.feedbackComment = textView.text;        
+        _ws.feedbackComment = textView.text;
     }
     [[VICoreDataManager getInstance] saveMainContext];
 }
 
-#pragma mark -ScrollView Delegate
+#pragma mark - ScrollView Delegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
@@ -395,7 +380,9 @@ static bool scrolling = false;
                 
                 [[NSUserDefaults standardUserDefaults] setValue:email forKey:@"feedbackEmail"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
-                [[FeedbackClient sharedClient] sendAllFeedback];
+                
+                [[FeedbackClient sharedClient] sendFeedbackForID:_ws.uID];
+                
             } else {
                 //bad email address
                 
@@ -406,41 +393,34 @@ static bool scrolling = false;
             
         } else {
             // cancelled
-            
         }
-    } else {
-        //user introduced a bad email address and this message was presented to ask to introduce a correct one. dismiss
     }
-    
+    else if ([alertView.title isEqualToString:@"Thank You!"])
+    {
+        [self pop];
+    }
+    else
+    {
+    //    user introduced a bad email address and this message was presented to ask to introduce a correct one. dismiss
+    }
 }
 
 #pragma mark - Send Feedback button
 
 -(void)sendInfo {
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", self.uid];
-    id res = [WorkshopObject fetchForPredicate:predicate forManagedObjectContext:[[VICoreDataManager getInstance] managedObjectContext]];
-    WorkshopObject *ws;
-    if ([res isKindOfClass:[NSArray class]]) {
-        ws = [res lastObject];
-    } else {
-        ws = res;
-    }
-    ws.feedbackSent = @NO;
-    [[VICoreDataManager getInstance] saveMainContext];
-    if (!ws) {
-        //present some error and return;
-        return;
-    }
+    [self fetchWorkshop];
     
-    ws.feedbackComment = _feedback.text;
+    _ws.feedbackSent = @NO;
+    _ws.feedbackComment = _feedback.text;
     [[VICoreDataManager getInstance] saveMainContext];
+    
     [_feedback resignFirstResponder];
     
-    if (!ws.feedbackRating || !ws.feedbackUseful) {
+    if (!_ws.feedbackRating || !_ws.feedbackUseful) {
         
         //minimum feedback info not met
-        UIAlertView *missing = [[UIAlertView alloc] initWithTitle:@"Please give this workshop ratings" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *missing = [[UIAlertView alloc] initWithTitle:@"Please rate this workshop" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [missing show];
         
     } else {

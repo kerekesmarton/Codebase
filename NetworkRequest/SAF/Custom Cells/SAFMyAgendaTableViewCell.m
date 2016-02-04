@@ -28,7 +28,7 @@
         date.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         date.backgroundColor = [UIColor clearColor];
         date.textAlignment = NSTextAlignmentCenter;
-        [date setTextColor:[UIColor orangeColor]];
+        [date setTextColor:[UIColor redColor]];
         date.numberOfLines = 0;
         [self.contentView addSubview:date];
         
@@ -58,9 +58,9 @@
     [rows removeAllObjects];
 }
 
--(UIButton *)configureRows:(int)counter artist:(NSString*)artist workshop:(NSString*)workshop level:(NSString*)level{
+-(UIButton *)configureRows:(int)counter artist:(NSString*)artist workshop:(NSString*)workshop level:(NSString*)level room:(NSString *)room{
     
-    UIButton *wsButton = [self createButtonForDetails:artist workshop:workshop level:level];
+    UIButton *wsButton = [self createButtonForDetails:artist workshop:workshop level:level room:room];
     CGSize size = [UIScreen mainScreen].bounds.size;
     wsButton.frame = CGRectMake(kTableViewCellOffset, 10 + counter*(kTableViewCellHeight), size.width-kTableViewCellOffset, kTableViewCellHeight);
     [self.contentView addSubview:wsButton];
@@ -69,7 +69,7 @@
     return wsButton;
 }
 
--(UIButton*)createButtonForDetails:(NSString*)artist workshop:(NSString*)workshop level:(NSString*)level{
+-(UIButton*)createButtonForDetails:(NSString*)artist workshop:(NSString*)workshop level:(NSString*)level room:(NSString *)room{
     
     UIImage *img = [[UIImage imageNamed:@"agendaBtnBG"] resizableImageWithCapInsets:UIEdgeInsetsMake(8, 8, 8, 8)];
     
@@ -83,7 +83,7 @@
     
     UILabel *instructor = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, size.width-kTableViewCellOffset, 24)];
     instructor.numberOfLines = 1;
-    instructor.font = [UIFont fontWithName:@"edo" size:18];
+    instructor.font = [UIFont fontWithName:futuraCondendsedBold size:18];
     instructor.textColor = [UIColor whiteColor];
     instructor.backgroundColor = [UIColor clearColor];
     instructor.text = artist;
@@ -106,7 +106,7 @@
     diff.backgroundColor = [UIColor clearColor];
     diff.textAlignment = NSTextAlignmentCenter;
     [wsButton addSubview:diff];
-    diff.text = level;
+    diff.text = [NSString stringWithFormat:@"%@, %@", level, room];
     
     return wsButton;
 }

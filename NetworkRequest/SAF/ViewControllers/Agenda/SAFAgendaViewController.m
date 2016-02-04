@@ -62,8 +62,8 @@
     [formatter setDateFormat:@"EEEE"];
     
     UILabel *day = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-    [day setTextColor:[UIColor orangeColor]];
-    [day setFont:[UIFont fontWithName:@"edo" size:25]];
+    [day setTextColor:[UIColor redColor]];
+    [day setFont:[UIFont fontWithName:futuraCondendsedBold size:25]];
     [day setText:[formatter stringFromDate:time]];
     day.textAlignment = NSTextAlignmentCenter;
     day.backgroundColor = [UIColor clearColor];
@@ -71,7 +71,7 @@
     [formatter setDateFormat:@"d MMMM"];
     UILabel *date = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 30)];
     [date setTextColor:[UIColor whiteColor]];
-    [date setFont:[UIFont fontWithName:@"edo" size:20]];
+    [date setFont:[UIFont fontWithName:futuraCondendsedBold size:20]];
     date.backgroundColor = [UIColor clearColor];
     date.textAlignment = NSTextAlignmentCenter;
     [date setText:[formatter stringFromDate:time]];

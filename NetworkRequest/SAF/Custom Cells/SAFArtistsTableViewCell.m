@@ -18,10 +18,10 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.textLabel.textColor = [UIColor whiteColor];
-        self.textLabel.font = [UIFont fontWithName:@"edo" size:20];
+        self.textLabel.font = [UIFont fontWithName:futuraCondendsedBold size:20];
         self.textLabel.numberOfLines = 2;
         self.detailTextLabel.textColor = [UIColor lightGrayColor];
-        self.detailTextLabel.font = [UIFont fontWithName:@"edo" size:15];
+        self.detailTextLabel.font = [UIFont fontWithName:futuraCondendsedBold size:15];
         self.textLabel.backgroundColor = [UIColor clearColor];
         self.detailTextLabel.backgroundColor = [UIColor clearColor];
         self.textLabel.textAlignment = NSTextAlignmentCenter;

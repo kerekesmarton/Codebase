@@ -60,9 +60,6 @@
     MKUserTrackingBarButtonItem *userTrackingButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
     self.navigationItem.rightBarButtonItem = userTrackingButton;
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
-    [self.mapView addGestureRecognizer:tap];
-    
     UILongPressGestureRecognizer *longTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longTapGesture:)];
     [self.mapView addGestureRecognizer:longTap];
 }
@@ -79,104 +76,102 @@
 }
 
 
--(void)gotoPOI:(NSNotification *)notification {
-    
-    self.currentPOI = notification.object;
-    
-//    [self openFloatingControlWithSearchObject:self.currentPOI];
-    
-    [self addAnnotationWithSearchObject:self.currentPOI];
-    
-    [self zoomToSearchObject:self.currentPOI];
+-(CLLocationCoordinate2D)defaultLocation
+{
+    return CLLocationCoordinate2DMake(45.758722f, 21.23f);
 }
 
-//- (void)addAnnotationWithSearchObject:(SKSearchResult *)searchObject {
-//    
-//    SKAnnotation *annotation = [SKAnnotation annotation];
-//    annotation.identifier = 100;
-//    annotation.annotationType = SKAnnotationTypeBlue;
-//    annotation.location = CLLocationCoordinate2DMake(searchObject.coordinate.latitude, searchObject.coordinate.longitude);
-//    
-//    [self.mapView addAnnotation:annotation withAnimationSettings:[SKAnimationSettings defaultAnimationSettings]];
-//}
-//
-//- (void)zoomToSearchObject:(SKSearchResult *)searchObject {
-//    
-//    SKCoordinateRegion region;
-//    region.zoomLevel = self.mapView.visibleRegion.zoomLevel;
-//    region.center = CLLocationCoordinate2DMake(searchObject.coordinate.latitude, searchObject.coordinate.longitude);
-//    [self.mapView setVisibleRegion:region];
-//}
-
--(void)route {
+-(void)gotoPOI:(id <MKAnnotation>)annotation {
+            
+    [self addAnnotation:annotation];
     
+    MKCoordinateRegion region = [self coordinateRegionWithCenter:annotation.coordinate approximateRadiusInMeters:500];
+    [self.mapView setRegion:region];
 }
 
-#pragma mark - UIActionSheet delegate
+- (void)addAnnotation:(id <MKAnnotation>)annotation
+{
+    [self.mapView removeAnnotations:_mapView.annotations];
+    [self.mapView addAnnotation:annotation];
+}
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
- 
- 
-    if (actionSheet.cancelButtonIndex == buttonIndex) {
-        return;
+- (void)convert:(id)annotation completionHandler:(ConversionCompletionHandler)completionHandler
+{
+    __block CLPlacemark *placemark = nil;
+    if ([annotation isKindOfClass:[MapAnnotation class]])
+    {
+        placemark = [(MapAnnotation *)annotation placemark];
+        completionHandler(placemark,nil);
     }
-    
-//    SKRouteSettings *route = [SKRouteSettings routeSettings];
-//    route.startCoordinate = [[SKPositionerService sharedInstance] currentCoordinate];
-//    route.destinationCoordinate = self.currentPOI.coordinate;
-//    route.shouldBeRendered = YES;
-//    route.numberOfRoutes = 1;
-//    
-//    switch (buttonIndex) {
-//        case 0:
-//            route.routeMode = SKRouteCarFastest;
-//            break;
-//        case 1:
-//            route.routeMode = SKRouteCarEfficient;
-//            break;
-//        case 2:
-//            route.routeMode = SKRoutePedestrian;
-//            break;
-//        default:
-//            break;
-//    }
-//    
-//    [SKRoutingService sharedInstance].mapView = self.mapView;
-//    [[SKRoutingService sharedInstance] calculateRoute:route];
+    else if ([annotation isKindOfClass:[POIAnnotation class]])
+    {
+        CLLocationCoordinate2D coord = [(POIAnnotation *)annotation coordinate];
+        [self search:coord completionHandler:^(NSArray *placemarks, NSError *error) {
+            if (error)
+            {
+                completionHandler(nil,error);
+            } else
+            {
+                placemark = [placemarks firstObject];
+                completionHandler(placemark,nil);
+            }
+        }];
+    }
 }
 
-#pragma mark - gesture recognizers
-
-- (void)tapGesture:(UITapGestureRecognizer *)gestureRecognizer
+- (void)search:(CLLocationCoordinate2D)coord completionHandler:(CLGeocodeCompletionHandler)completionHandler
 {
-    
-}
-
-- (void)longTapGesture:(UILongPressGestureRecognizer *)gestureRecognizer
-{
-    CGPoint tapPoint = [gestureRecognizer locationInView:self.mapView];
-    CLLocationCoordinate2D coord = [self.mapView convertPoint:tapPoint toCoordinateFromView:self.mapView];
     CLLocation *location = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
     
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         
-        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-        MapAnnotation *annotation = [MapAnnotation annotationWithPlacemark:placemark];
-        
-        [_mapView.annotations firstObject]
-        if ()
-        {
-            [self.mapView removeAnnotations:_mapView.annotations];
-            [self.mapView addAnnotation:annotation];
-        }
-        
-        
+        completionHandler(placemarks,error);
     }];
 }
 
-- (void)removeAnnotation:(id <MKAnnotation>)annotation
+- (void)route:(MKPlacemark *)placemark
 {
+    self.currentPlacemark = placemark;
     
+    UIActionSheet *actions = [[UIActionSheet alloc] initWithTitle:placemark.name delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Open in Maps", nil];
+    [actions showInView:self.view];
+}
+
+#pragma mark - Gesture Recognizers
+
+- (void)longTapGesture:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+    {
+        return;
+    }
+    
+    CGPoint tapPoint = [gestureRecognizer locationInView:self.mapView];
+    CLLocationCoordinate2D coord = [self.mapView convertPoint:tapPoint toCoordinateFromView:self.mapView];
+    [self search:coord completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        if (error)
+        {
+            [[[UIAlertView alloc] initWithTitle:@"There was a problem loading the address" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+        else
+        {
+            CLPlacemark *placemark = [placemarks firstObject];
+            MapAnnotation *annotation = [MapAnnotation annotationWithPlacemark:placemark];
+            [self addAnnotation:annotation];
+        }
+    }];
+}
+
+#pragma mark - UIActionSheet
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != actionSheet.cancelButtonIndex && buttonIndex != actionSheet.destructiveButtonIndex)
+    {
+        MKMapItem *mapItemDest = [[MKMapItem alloc] initWithPlacemark:self.currentPlacemark];
+        [mapItemDest openInMapsWithLaunchOptions:nil];
+    }
 }
 
 #pragma mark - Utils

@@ -66,7 +66,7 @@
     }];
 }
 
--(void)startWorshopssRequestWithButtons:(NSArray *)buttons activityIndicators:(NSArray *)activityIndicators {
+-(void)startWorshopssRequestWithButtons:(NSArray *)buttons activityIndicators:(NSArray *)activityIndicators completion:(void (^)(void)) completion {
     
     [self enableButtons:buttons value:NO];
     [self toggleSpinners:activityIndicators value:YES];
@@ -74,9 +74,11 @@
     [[WorkshopsDataManager sharedInstance] requestDataWitchSuccess:^(id data) {
         [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
+        completion();
     } failBlock:^(id data) {
         [self enableButtons:buttons value:YES];
         [self toggleSpinners:activityIndicators value:NO];
+        completion();
     }];
 }
 

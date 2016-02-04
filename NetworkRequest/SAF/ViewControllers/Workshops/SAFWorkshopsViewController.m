@@ -70,8 +70,7 @@
     ArtistObject *artistO = [ArtistObject artistForId:item.instructor];
     cell.instructor.text = artistO.name;
     cell.name.text = item.name;
-    cell.difficulty = item.difficulty.intValue;
-    
+    cell.difficulty = item.difficulty.intValue;    
     
     NSDate *wsTime = [NSDate dateWithTimeInterval:-7200 sinceDate:item.time];
     [cell.date setText:[NSString stringWithFormat:@"%@\n-\n%@",

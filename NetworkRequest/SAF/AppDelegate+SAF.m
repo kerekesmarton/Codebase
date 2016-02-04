@@ -6,13 +6,14 @@
 //  Copyright (c) 2013 Jozsef-Marton Kerekes. All rights reserved.
 //
 
+#import "SAFDefines.h"
 #import "AppDelegate+SAF.h"
 #import "RootViewController.h"
 #import "SAFNavigationBar.h"
 #import "WorkshopsDataManager.h"
 #import "ArtistsDataManager.h"
 #import "AFNetworking.h"
-
+#import "FeedbackClient.h"
 #import "SAFStartupManager.h"
 
 #import "DownloadManager.h"
@@ -48,26 +49,32 @@
 
 - (void)application:(UIApplication*)application performAppSpecificTasks:(NSDictionary *)launchOptions {
     
-//    [NSFileManager defaultManager]
-    
-    
     [[VICoreDataManager getInstance] setResource:@"Model" database:@"coreDataModel9.sqlite"];
     
+//    for (NSString *familyName in [UIFont familyNames]) {
+//        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+//            NSLog(@"%@", fontName);
+//        }
+//    }
     
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UINavigationController *nav = [RootViewController navWithSuccess:^(id param) {
-        if (param && [param isKindOfClass:[RootViewController class]]) {
+    UINavigationController *nav = [RootViewController navWithSuccess:^(id param)
+    {
+        if (param && [param isKindOfClass:[RootViewController class]])
+        {
             
             RootViewController *root = (RootViewController *)param;
             
             [[SAFStartupManager sharedInstance] startNewsRequestWithButtons:@[root.newsButton] activityIndicators:@[root.newsAI]];
-            [[SAFStartupManager sharedInstance] startWorshopssRequestWithButtons:@[root.workshopsButton,root.myAgendaButton] activityIndicators:@[root.workshopsAI,root.myAgendaAI]];
+            [[SAFStartupManager sharedInstance] startWorshopssRequestWithButtons:@[root.workshopsButton,root.myAgendaButton] activityIndicators:@[root.workshopsAI,root.myAgendaAI] completion:^{
+                [[FeedbackClient sharedClient] sendAllFeedback];
+            }];
             [[SAFStartupManager sharedInstance] startArtistsWithButtons:@[root.artistsButton] activityIndicators:@[root.artistsAI]];
-            [[SAFStartupManager sharedInstance] startAgendaRequestWithButtons:@[root.scheduleButton] activityIndicators:@[root.scheduleAI]];
+            [[SAFStartupManager sharedInstance] startAgendaRequestWithButtons:@[root.scheduleButton] activityIndicators:@[root.scheduleAI]];            
         }
     }];
     nav.navigationBar.translucent = NO;
@@ -132,14 +139,14 @@
                                                                                @"registration_id",
                                                                                ]];
 
-    AFHTTPClient *helper = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://saf8.airedancecompany.ro"]];
+    AFHTTPClient *helper = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:BACKEND]];
     helper.parameterEncoding = AFJSONParameterEncoding;
     NSMutableURLRequest *urlRequest = [helper requestWithMethod:@"POST" path:@"/api/saf/apnsdevice/" parameters:params];    
     
     [[DownloadManager sharedInstance] performRequest:urlRequest withSuccessBlock:^(id response) {
-        NSLog(@"%@",[response description]);
+        NSLog(@"Subscribed to notifications to AIRE server%@",[response description]);
     } FailureBlock:^(NSError *error) {
-        NSLog(@"%@",error.description);
+        NSLog(@"Already subscribed to AIRE Servers %@",error.userInfo);
     }];
     
 #endif
@@ -167,6 +174,15 @@
 
 - (void)handleRemoteNotification:(NSDictionary*)userInfo
 {
+    if (userInfo.count)
+    {
+        UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+        RootViewController *root = [[nav viewControllers] firstObject];
+        [root openFunction:RootFunctionNews sender:nil];
+        
+        NSLog(@"Handled remote notification%@",[userInfo description]);
+    }
+    
     [ArtistsDataManager sharedInstance];
     [WorkshopsDataManager sharedInstance];
 }

@@ -29,7 +29,7 @@ NSInteger kSAFNewsCellHeight = 100;
         self.imageView.alpha = 0.5;
         self.accessoryView.alpha = 0.5;
     } else {
-        self.textLabel.textColor = [UIColor orangeColor];
+        self.textLabel.textColor = [UIColor redColor];
         self.detailTextLabel.textColor = [UIColor colorWithHex:0x9e9e9e];
         [self.gradientLayer setColors:[NSArray arrayWithObjects:(id)[[UIColor colorWithHex:0x2d2d2d] CGColor],(id)[[UIColor colorWithHex:0x232323] CGColor], nil]];
         self.imageView.alpha = 1;
@@ -52,7 +52,7 @@ NSInteger kSAFNewsCellHeight = 100;
         [gradientLayer setColors:[NSArray arrayWithObjects:(id)[[UIColor colorWithHex:0x3c3c3c] CGColor],(id)[[UIColor colorWithHex:0x323232] CGColor], nil]];
         [self.contentView.layer insertSublayer:gradientLayer atIndex:0];
         
-        self.textLabel.font = [UIFont fontWithName:@"edo" size:20];
+        self.textLabel.font = [UIFont fontWithName:futuraCondendsedBold size:20];
         self.detailTextLabel.font = [UIFont fontWithName:@"MyriadPro-It" size:15];
         self.detailTextLabel.backgroundColor = [UIColor clearColor];
         self.textLabel.backgroundColor = [UIColor clearColor];

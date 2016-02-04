@@ -16,6 +16,7 @@
 
 +(FeedbackClient *)sharedClient;
 
--(void)sendAllFeedback;
+- (void)sendAllFeedback;
+- (void)sendFeedbackForID:(id)identifier;
 
 @end

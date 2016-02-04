@@ -57,7 +57,7 @@
         
         _instructor = [[UILabel alloc] initWithFrame:CGRectMake(90, 10, self.frameWidth-110, 24)];
         _instructor.numberOfLines = 1;
-        _instructor.font = [UIFont fontWithName:@"edo" size:18];
+        _instructor.font = [UIFont fontWithName:futuraCondendsedBold size:18];
         _instructor.textColor = [UIColor whiteColor];
         _instructor.backgroundColor = [UIColor clearColor];
         _instructor.textAlignment = NSTextAlignmentCenter;

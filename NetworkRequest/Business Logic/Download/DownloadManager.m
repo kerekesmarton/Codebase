@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Jozsef-Marton Kerekes. All rights reserved.
 //
 
+#import "SAFDefines.h"
 #import "DownloadManager.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
@@ -74,11 +75,11 @@
 }
 
 -(NSString *)imageHost {
-    return @"http://airedancecompany.ro/SAF/";
+    return IMAGE_HOST;
 }
 
 -(NSString *)baseURL {
-    return @"http://saf9.airedancecompany.ro/";
+    return BACKEND;
 }
 
 -(NSString *)defaultHeaderTitle {

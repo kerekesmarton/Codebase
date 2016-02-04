@@ -39,10 +39,10 @@
         
         date = [[UILabel alloc] initWithFrame:CGRectNull];
         [date setTextColor:[UIColor whiteColor]];
-        [date setFont:[UIFont fontWithName:@"edo" size:20]];
+        [date setFont:[UIFont fontWithName:futuraCondendsedBold size:20]];
         date.backgroundColor = [UIColor colorWithHex:0x3c3c3c];
         date.textAlignment = NSTextAlignmentCenter;
-        [date setTextColor:[UIColor orangeColor]];
+        [date setTextColor:[UIColor redColor]];
         date.numberOfLines = 0;
         [self.contentView addSubview:date];
         
