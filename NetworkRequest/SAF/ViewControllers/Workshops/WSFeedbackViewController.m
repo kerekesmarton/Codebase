@@ -287,7 +287,7 @@ static bool scrolling = false;
     [self fetchWorkshop];
     
     if (tableView == _rating) {
-        _ws.feedbackRating = [NSNumber numberWithInt: 5-indexPath.row];
+        _ws.feedbackRating = [NSNumber numberWithInteger:5-indexPath.row];
     }
     
     if (tableView == _useful) {

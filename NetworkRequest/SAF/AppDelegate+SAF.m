@@ -146,7 +146,7 @@
     [[DownloadManager sharedInstance] performRequest:urlRequest withSuccessBlock:^(id response) {
         NSLog(@"Subscribed to notifications to AIRE server%@",[response description]);
     } FailureBlock:^(NSError *error) {
-        NSLog(@"Already subscribed to AIRE Servers %@",error.userInfo);
+        NSLog(@"Already subscribed to AIRE Servers %@",error.userInfo[NSLocalizedDescriptionKey]);
     }];
     
 #endif

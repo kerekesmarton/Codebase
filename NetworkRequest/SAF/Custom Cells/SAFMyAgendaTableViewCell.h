@@ -15,7 +15,7 @@
 @interface SAFMyAgendaTableViewCell : UITableViewCell
 
 -(void)clearRows;
--(UIButton *)configureRows:(int)counter artist:(NSString*)artist workshop:(NSString*)workshop level:(NSString*)level room:(NSString *)room;
+-(UIButton *)configureRows:(NSInteger)counter artist:(NSString*)artist workshop:(NSString*)workshop level:(NSString*)level room:(NSString *)room;
 -(void)configureTimeText:(NSString *)timeText;
 
 @end

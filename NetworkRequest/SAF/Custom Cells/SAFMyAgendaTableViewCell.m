@@ -58,7 +58,7 @@
     [rows removeAllObjects];
 }
 
--(UIButton *)configureRows:(int)counter artist:(NSString*)artist workshop:(NSString*)workshop level:(NSString*)level room:(NSString *)room{
+-(UIButton *)configureRows:(NSInteger)counter artist:(NSString*)artist workshop:(NSString*)workshop level:(NSString*)level room:(NSString *)room{
     
     UIButton *wsButton = [self createButtonForDetails:artist workshop:workshop level:level room:room];
     CGSize size = [UIScreen mainScreen].bounds.size;

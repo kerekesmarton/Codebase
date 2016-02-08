@@ -42,7 +42,7 @@
 }
 
 - (void)setFrameMaxX:(CGFloat)frameMaxX {
-    CGFloat newWidth = fabsf(self.frame.origin.x - frameMaxX);
+    CGFloat newWidth = fabs(self.frame.origin.x - frameMaxX);
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, newWidth, self.frame.size.height);
 }
 
@@ -51,7 +51,7 @@
 }
 
 - (void)setFrameMaxY:(CGFloat)frameMaxY {
-    CGFloat newHeight = fabsf(self.frame.origin.x - frameMaxY);
+    CGFloat newHeight = fabs(self.frame.origin.x - frameMaxY);
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, newHeight);
 }
 

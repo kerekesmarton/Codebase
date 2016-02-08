@@ -147,7 +147,9 @@
     scroll.contentSize = CGSizeMake(self.view.frame.size.width, CGRectGetMaxY(desc1.frame));
         
     NSString *title = @"Visit us on facebook";
-    CGSize fbSize = [title sizeWithFont:[UIFont fontWithName:futuraCondendsedBold size:24]];
+    
+    
+    CGSize fbSize = [title sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:futuraCondendsedBold size:24]}];
     UIImage *img = [[UIImage imageNamed:@"buton albastru"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
     UIButton *share = [UIButton buttonWithType:UIButtonTypeCustom];
     share.frame = CGRectMake((self.view.frame.size.width-fbSize.width)/2, scroll.contentSize.height-fbSize.height-10, fbSize.width, fbSize.height);

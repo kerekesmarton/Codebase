@@ -42,7 +42,7 @@
 - (NSOperation *)requestFileForPath:(NSString*)path withSuccessBlock:(ExecutionBlock)successBlock FailureBlock:(ErrorBlock)failureBlock {
     
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[[self imageHost] stringByAppendingPathComponent:path]] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[[[self baseURL] stringByAppendingPathComponent:IMAGE_PATH] stringByAppendingPathComponent:path]] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
     
     return [self performRequest:request withSuccessBlock:successBlock FailureBlock:failureBlock];
 }
@@ -72,10 +72,6 @@
     [_client enqueueHTTPRequestOperation:operation];
     
     return operation;
-}
-
--(NSString *)imageHost {
-    return IMAGE_HOST;
 }
 
 -(NSString *)baseURL {

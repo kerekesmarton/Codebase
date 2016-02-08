@@ -56,8 +56,7 @@
 }
 
 - (CGSize)sizeWithFontName:(NSString *)fontName size:(CGFloat)fontSize constraint:(CGSize)constraint {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
+    
     id font = (id) CTFontCreateWithName((CFStringRef)fontName, fontSize, NULL);
 
     NSDictionary *attributesDict = @{(id)kCTFontAttributeName:font};
@@ -83,8 +82,6 @@
         CFRelease(framesetter);
     }
     
-    [pool release];
-    
     return size;
 }
 
@@ -97,29 +94,6 @@
     }
     
     return randomString;
-}
-
-- (CGFloat)fontSizeWithFont:(UIFont *)font constrainedToSize:(CGSize)size {
-    CGFloat fontSize = [font pointSize];
-    CGFloat height = [self sizeWithFont:font constrainedToSize:CGSizeMake(size.width,FLT_MAX) lineBreakMode:NSLineBreakByWordWrapping].height;
-    UIFont *newFont = font;
-    
-    while (height > size.height && height != 0 && fontSize > 0) {
-        fontSize--;
-        newFont = [UIFont fontWithName:font.fontName size:fontSize];
-        height = [self sizeWithFont:newFont constrainedToSize:CGSizeMake(size.width,FLT_MAX) lineBreakMode:NSLineBreakByWordWrapping].height;
-    };
-    
-    for (NSString *word in [self componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]) {
-        CGFloat width = [word sizeWithFont:newFont].width;
-        while (width > size.width && width != 0 && fontSize > 0) {
-            fontSize--;
-            newFont = [UIFont fontWithName:font.fontName size:fontSize];
-            width = [word sizeWithFont:newFont].width;
-        }
-    }
-    
-    return fontSize;
 }
 
 @end

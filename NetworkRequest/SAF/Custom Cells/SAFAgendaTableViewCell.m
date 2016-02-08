@@ -57,6 +57,10 @@
 -(void)setInfo:(NSString *)infoString andDate:(NSString *)dateString {
     
     CGSize constraint = CGSizeMake([UIDevice isiPad]?658:210, 999);
+    
+    
+    
+    
     CGSize size = [infoString sizeWithFont:[UIFont fontWithName:myriadFontB size:16] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
     info.frame = CGRectMake(90, 10, [UIDevice isiPad]?658:210, size.height*1.2);
     info.text = infoString;

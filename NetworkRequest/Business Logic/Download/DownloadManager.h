@@ -17,9 +17,9 @@ typedef void (^ ExecutionBlock)(id);
 
 +(DownloadManager*) sharedInstance;
 
-- (NSOperation *) requestFileForPath:(NSString*)path withSuccessBlock:(ExecutionBlock)successBlock FailureBlock:(ErrorBlock)failureBlock;
+- (NSOperation *)requestFileForPath:(NSString*)path withSuccessBlock:(ExecutionBlock)successBlock FailureBlock:(ErrorBlock)failureBlock;
 
-- (NSOperation *) requestPath:(NSString*)path withSuccessBlock:(ExecutionBlock)successBlock FailureBlock:(ErrorBlock)failureBlock;
+- (NSOperation *)requestPath:(NSString*)path withSuccessBlock:(ExecutionBlock)successBlock FailureBlock:(ErrorBlock)failureBlock;
 
 - (NSOperation *)performRequest:(NSURLRequest *)urlRequest withSuccessBlock:(ExecutionBlock)successBlock FailureBlock:(ErrorBlock)failureBlock;
 

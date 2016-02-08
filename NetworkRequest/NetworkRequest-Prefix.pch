@@ -27,10 +27,6 @@
 
 #import "UIImage+scaled.h"
 #import "NSString+Additions.h"
-#import "NSArray+Additions.h"
-#import "NSDictionary+Additions.h"
-#import "NSMutableDictionary+Additions.h"
-#import "NSDate+Additions.h"
 #import "DateHelper.h"
 #import "NSNotificationCenter+Additions.h"
 

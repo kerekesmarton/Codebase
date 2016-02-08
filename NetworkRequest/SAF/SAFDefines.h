@@ -17,6 +17,6 @@ static NSString *DIFFICULTY_LEVEL_5 = @"Advanced, instructors & performers";
 
 
 static NSString *BACKEND    =  @"http://saf9.airedancecompany.ro";
-static NSString *IMAGE_HOST =  @"http://airedancecompany.ro/SAF/";
+static NSString *IMAGE_PATH =  @"images";
 
 #endif

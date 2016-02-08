@@ -78,7 +78,7 @@
             
             if (responseObject) {
                 [[ArtistImageDataManager sharedInstance] setObject:responseObject forKey:[NSString stringWithFormat:@"%@",string]];
-                
+                [[ArtistImageDataManager sharedInstance] save];
                 if (successBlock) {
                     successBlock(responseObject);
                 }

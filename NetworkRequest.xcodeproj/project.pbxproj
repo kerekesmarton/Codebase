@@ -28,8 +28,6 @@
 		10826EC01A79303000EFB63C /* RootViewController+UICreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10826EBE1A79303000EFB63C /* RootViewController+UICreation.m */; };
 		10826EC31A79331900EFB63C /* SAFStartupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10826EC21A79331900EFB63C /* SAFStartupManager.m */; };
 		10826EC41A79331900EFB63C /* SAFStartupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10826EC21A79331900EFB63C /* SAFStartupManager.m */; };
-		109278911A7F9BAE00F9AD7F /* SKSearchResult+SAF.m in Sources */ = {isa = PBXBuildFile; fileRef = 109278901A7F9BAE00F9AD7F /* SKSearchResult+SAF.m */; };
-		109278921A7F9BB200F9AD7F /* SKSearchResult+SAF.m in Sources */ = {isa = PBXBuildFile; fileRef = 109278901A7F9BAE00F9AD7F /* SKSearchResult+SAF.m */; };
 		109A12B61A84EE6500AB105C /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109A12B51A84EE6500AB105C /* Launch.xib */; };
 		10A3966C1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
 		10A3966D1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
@@ -137,12 +135,6 @@
 		3B622E8517DCBA6D00D24F0E /* CustomSlideViewControllerPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B622E8417DCBA6D00D24F0E /* CustomSlideViewControllerPhone.m */; };
 		3B622E9117DCC88400D24F0E /* CustomSlideMenuDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B622E8E17DCC88400D24F0E /* CustomSlideMenuDataModel.m */; };
 		3B622E9217DCC88400D24F0E /* CustomSlideMenuDataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B622E9017DCC88400D24F0E /* CustomSlideMenuDataSourceFactory.m */; };
-		3B649A1917E5DAC1005A2497 /* FMToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1317E5DAC1005A2497 /* FMToolbarButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B649A1A17E5DAC1005A2497 /* FMToolbarSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1517E5DAC1005A2497 /* FMToolbarSegmentedControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B649A1B17E5DAC1005A2497 /* FMToolbarStatisticsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1717E5DAC1005A2497 /* FMToolbarStatisticsButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B649A1F17E5DB36005A2497 /* FMToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1317E5DAC1005A2497 /* FMToolbarButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B649A2017E5DB36005A2497 /* FMToolbarSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1517E5DAC1005A2497 /* FMToolbarSegmentedControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B649A2117E5DB36005A2497 /* FMToolbarStatisticsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B649A1717E5DAC1005A2497 /* FMToolbarStatisticsButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B6F778A1799A54E005AC0E7 /* AppDelegate+BaseApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F77891799A54D005AC0E7 /* AppDelegate+BaseApp.m */; };
 		3B6F77981799A747005AC0E7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F77961799A747005AC0E7 /* RootViewController.m */; };
 		3B6F779C1799A766005AC0E7 /* SAFNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F779B1799A766005AC0E7 /* SAFNavigationBar.m */; };
@@ -213,17 +205,9 @@
 		3B8A626917D8DA5E003826CC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8A626817D8DA5E003826CC /* CoreLocation.framework */; };
 		3B8B9CE217958FD4006FB3E4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8B9CE117958FD4006FB3E4 /* SystemConfiguration.framework */; };
 		3B8B9CE517958FDF006FB3E4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8B9CE417958FDF006FB3E4 /* MobileCoreServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		3B8D9914179CFEF700939944 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D98FC179CFEF700939944 /* NSArray+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B8D9915179CFEF700939944 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D98FC179CFEF700939944 /* NSArray+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B8D9916179CFEF700939944 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D98FE179CFEF700939944 /* NSDate+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B8D9917179CFEF700939944 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D98FE179CFEF700939944 /* NSDate+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B8D9918179CFEF700939944 /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9900179CFEF700939944 /* NSDictionary+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B8D9919179CFEF700939944 /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9900179CFEF700939944 /* NSDictionary+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B8D991A179CFEF700939944 /* NSMutableDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9902179CFEF700939944 /* NSMutableDictionary+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B8D991B179CFEF700939944 /* NSMutableDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9902179CFEF700939944 /* NSMutableDictionary+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B8D991C179CFEF700939944 /* NSNotificationCenter+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9904179CFEF700939944 /* NSNotificationCenter+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B8D991D179CFEF700939944 /* NSNotificationCenter+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9904179CFEF700939944 /* NSNotificationCenter+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3B8D991E179CFEF700939944 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9906179CFEF700939944 /* NSString+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B8D991E179CFEF700939944 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9906179CFEF700939944 /* NSString+Additions.m */; };
 		3B8D991F179CFEF700939944 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9906179CFEF700939944 /* NSString+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B8D9920179CFEF700939944 /* UIApplication+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9909179CFEF700939944 /* UIApplication+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3B8D9921179CFEF700939944 /* UIApplication+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D9909179CFEF700939944 /* UIApplication+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -362,7 +346,6 @@
 		10826EBE1A79303000EFB63C /* RootViewController+UICreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RootViewController+UICreation.m"; sourceTree = "<group>"; };
 		10826EC11A79331900EFB63C /* SAFStartupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFStartupManager.h; path = ViewControllers/RootViewController/SAFStartupManager.h; sourceTree = "<group>"; };
 		10826EC21A79331900EFB63C /* SAFStartupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFStartupManager.m; path = ViewControllers/RootViewController/SAFStartupManager.m; sourceTree = "<group>"; };
-		109278901A7F9BAE00F9AD7F /* SKSearchResult+SAF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKSearchResult+SAF.m"; sourceTree = "<group>"; };
 		109A12B51A84EE6500AB105C /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		10A3966A1C35413D004D1EE6 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIAnnotation.h; path = DataModel/POIAnnotation.h; sourceTree = "<group>"; };
 		10A3966B1C35413D004D1EE6 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIAnnotation.m; path = DataModel/POIAnnotation.m; sourceTree = "<group>"; };
@@ -499,12 +482,6 @@
 		3B622E8E17DCC88400D24F0E /* CustomSlideMenuDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlideMenuDataModel.m; sourceTree = "<group>"; };
 		3B622E8F17DCC88400D24F0E /* CustomSlideMenuDataSourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlideMenuDataSourceFactory.h; sourceTree = "<group>"; };
 		3B622E9017DCC88400D24F0E /* CustomSlideMenuDataSourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlideMenuDataSourceFactory.m; sourceTree = "<group>"; };
-		3B649A1217E5DAC1005A2497 /* FMToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMToolbarButton.h; sourceTree = "<group>"; };
-		3B649A1317E5DAC1005A2497 /* FMToolbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMToolbarButton.m; sourceTree = "<group>"; };
-		3B649A1417E5DAC1005A2497 /* FMToolbarSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMToolbarSegmentedControl.h; sourceTree = "<group>"; };
-		3B649A1517E5DAC1005A2497 /* FMToolbarSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMToolbarSegmentedControl.m; sourceTree = "<group>"; };
-		3B649A1617E5DAC1005A2497 /* FMToolbarStatisticsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMToolbarStatisticsButton.h; sourceTree = "<group>"; };
-		3B649A1717E5DAC1005A2497 /* FMToolbarStatisticsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMToolbarStatisticsButton.m; sourceTree = "<group>"; };
 		3B6F77881799A54D005AC0E7 /* AppDelegate+BaseApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+BaseApp.h"; sourceTree = "<group>"; };
 		3B6F77891799A54D005AC0E7 /* AppDelegate+BaseApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+BaseApp.m"; sourceTree = "<group>"; };
 		3B6F778E1799A573005AC0E7 /* AppDelegate+SAF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+SAF.h"; sourceTree = "<group>"; };
@@ -536,14 +513,6 @@
 		3B8A626817D8DA5E003826CC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3B8B9CE117958FD4006FB3E4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3B8B9CE417958FDF006FB3E4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		3B8D98FB179CFEF700939944 /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
-		3B8D98FC179CFEF700939944 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
-		3B8D98FD179CFEF700939944 /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
-		3B8D98FE179CFEF700939944 /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
-		3B8D98FF179CFEF700939944 /* NSDictionary+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Additions.h"; sourceTree = "<group>"; };
-		3B8D9900179CFEF700939944 /* NSDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Additions.m"; sourceTree = "<group>"; };
-		3B8D9901179CFEF700939944 /* NSMutableDictionary+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Additions.h"; sourceTree = "<group>"; };
-		3B8D9902179CFEF700939944 /* NSMutableDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Additions.m"; sourceTree = "<group>"; };
 		3B8D9903179CFEF700939944 /* NSNotificationCenter+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+Additions.h"; sourceTree = "<group>"; };
 		3B8D9904179CFEF700939944 /* NSNotificationCenter+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+Additions.m"; sourceTree = "<group>"; };
 		3B8D9905179CFEF700939944 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
@@ -1097,19 +1066,6 @@
 			path = "Data Model";
 			sourceTree = "<group>";
 		};
-		3B649A0F17E5DAC0005A2497 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				3B649A1217E5DAC1005A2497 /* FMToolbarButton.h */,
-				3B649A1317E5DAC1005A2497 /* FMToolbarButton.m */,
-				3B649A1417E5DAC1005A2497 /* FMToolbarSegmentedControl.h */,
-				3B649A1517E5DAC1005A2497 /* FMToolbarSegmentedControl.m */,
-				3B649A1617E5DAC1005A2497 /* FMToolbarStatisticsButton.h */,
-				3B649A1717E5DAC1005A2497 /* FMToolbarStatisticsButton.m */,
-			);
-			path = "Custom Views";
-			sourceTree = "<group>";
-		};
 		3B6F77921799A73C005AC0E7 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1168,7 +1124,6 @@
 				3BDFFA2A17E0E0AC008447AC /* MapViewController+MapDelegate.h */,
 				3BDFFA2B17E0E0AC008447AC /* MapViewController+MapDelegate.m */,
 				1025D8931C306234008D3D87 /* DataModel */,
-				3B649A0F17E5DAC0005A2497 /* Custom Views */,
 			);
 			path = "Map Components";
 			sourceTree = "<group>";
@@ -1176,14 +1131,6 @@
 		3B8D98FA179CFEF700939944 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				3B8D98FB179CFEF700939944 /* NSArray+Additions.h */,
-				3B8D98FC179CFEF700939944 /* NSArray+Additions.m */,
-				3B8D98FD179CFEF700939944 /* NSDate+Additions.h */,
-				3B8D98FE179CFEF700939944 /* NSDate+Additions.m */,
-				3B8D98FF179CFEF700939944 /* NSDictionary+Additions.h */,
-				3B8D9900179CFEF700939944 /* NSDictionary+Additions.m */,
-				3B8D9901179CFEF700939944 /* NSMutableDictionary+Additions.h */,
-				3B8D9902179CFEF700939944 /* NSMutableDictionary+Additions.m */,
 				3B8D9903179CFEF700939944 /* NSNotificationCenter+Additions.h */,
 				3B8D9904179CFEF700939944 /* NSNotificationCenter+Additions.m */,
 				3B8D9905179CFEF700939944 /* NSString+Additions.h */,
@@ -1520,7 +1467,6 @@
 				3B2AA9731834D8670002B325 /* SAFPOIsViewController.h */,
 				3B2AA9741834D8670002B325 /* SAFPOIsViewController.m */,
 				3B2AA9751834D8670002B325 /* SAFPOIsViewController.xib */,
-				109278901A7F9BAE00F9AD7F /* SKSearchResult+SAF.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -1746,7 +1692,6 @@
 				3B86FFC717999E14009624CA /* AFJSONRequestOperation.m in Sources */,
 				3B86FFC817999E14009624CA /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3B86FFC917999E14009624CA /* AFPropertyListRequestOperation.m in Sources */,
-				109278921A7F9BB200F9AD7F /* SKSearchResult+SAF.m in Sources */,
 				3B86FFCA17999E14009624CA /* AFURLConnectionOperation.m in Sources */,
 				3B86FFCB17999E14009624CA /* AFXMLRequestOperation.m in Sources */,
 				3B86FFCC17999E14009624CA /* UIImageView+AFNetworking.m in Sources */,
@@ -1791,10 +1736,6 @@
 				3BB9F8E5179BEFB900C91ABC /* SAFWorkshopTabsViewController.m in Sources */,
 				3BB9F8E9179C7C5200C91ABC /* SAFWorkshopsViewController.m in Sources */,
 				3BB9F8EC179C7CBF00C91ABC /* SAFWorkshopsTableViewCell.m in Sources */,
-				3B8D9915179CFEF700939944 /* NSArray+Additions.m in Sources */,
-				3B8D9917179CFEF700939944 /* NSDate+Additions.m in Sources */,
-				3B8D9919179CFEF700939944 /* NSDictionary+Additions.m in Sources */,
-				3B8D991B179CFEF700939944 /* NSMutableDictionary+Additions.m in Sources */,
 				3B8D991D179CFEF700939944 /* NSNotificationCenter+Additions.m in Sources */,
 				3B8D991F179CFEF700939944 /* NSString+Additions.m in Sources */,
 				3B8D9921179CFEF700939944 /* UIApplication+Additions.m in Sources */,
@@ -1822,10 +1763,7 @@
 				1025D8921C30622F008D3D87 /* MapAnnotation.m in Sources */,
 				3BDFFA2917E0DFA5008447AC /* SAFMapViewController.m in Sources */,
 				3BDFFA2D17E0E2CB008447AC /* MapViewController+MapDelegate.m in Sources */,
-				3B649A1F17E5DB36005A2497 /* FMToolbarButton.m in Sources */,
 				107B1A7D1A7FB6C50089E57E /* PageControl.m in Sources */,
-				3B649A2017E5DB36005A2497 /* FMToolbarSegmentedControl.m in Sources */,
-				3B649A2117E5DB36005A2497 /* FMToolbarStatisticsButton.m in Sources */,
 				10FDC1201A779C5B001402E0 /* ParsedArtist.m in Sources */,
 				3BACAA70180E854800612BE7 /* DownloadManager.m in Sources */,
 				3BACAA74180E854800612BE7 /* AgendaParserDelegate.m in Sources */,
@@ -1846,7 +1784,6 @@
 				3BA6B8161750E39B006EB824 /* AFHTTPClient.m in Sources */,
 				3BA6B8171750E39B006EB824 /* AFHTTPRequestOperation.m in Sources */,
 				3BA6B8181750E39B006EB824 /* AFImageRequestOperation.m in Sources */,
-				109278911A7F9BAE00F9AD7F /* SKSearchResult+SAF.m in Sources */,
 				3BA6B8191750E39B006EB824 /* AFJSONRequestOperation.m in Sources */,
 				3BA6B81A1750E39B006EB824 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3BA6B81B1750E39B006EB824 /* AFPropertyListRequestOperation.m in Sources */,
@@ -1886,11 +1823,7 @@
 				3BD4F1021796F73000A33946 /* SettingOptionGroup.m in Sources */,
 				3B6F778A1799A54E005AC0E7 /* AppDelegate+BaseApp.m in Sources */,
 				1025D8911C30622F008D3D87 /* MapAnnotation.m in Sources */,
-				3B8D9914179CFEF700939944 /* NSArray+Additions.m in Sources */,
-				3B8D9916179CFEF700939944 /* NSDate+Additions.m in Sources */,
 				10FDC1271A77A531001402E0 /* ParsedAgenda.m in Sources */,
-				3B8D9918179CFEF700939944 /* NSDictionary+Additions.m in Sources */,
-				3B8D991A179CFEF700939944 /* NSMutableDictionary+Additions.m in Sources */,
 				3B8D991C179CFEF700939944 /* NSNotificationCenter+Additions.m in Sources */,
 				3B8D991E179CFEF700939944 /* NSString+Additions.m in Sources */,
 				3B8D9920179CFEF700939944 /* UIApplication+Additions.m in Sources */,
@@ -1913,9 +1846,6 @@
 				3B1114FF17DF97DF002A2AFC /* MenuTableViewCell.m in Sources */,
 				3BDFFA2C17E0E0AC008447AC /* MapViewController+MapDelegate.m in Sources */,
 				10E84A831A664AF700FEF0C1 /* UIColor+Additions.m in Sources */,
-				3B649A1917E5DAC1005A2497 /* FMToolbarButton.m in Sources */,
-				3B649A1A17E5DAC1005A2497 /* FMToolbarSegmentedControl.m in Sources */,
-				3B649A1B17E5DAC1005A2497 /* FMToolbarStatisticsButton.m in Sources */,
 				3BA7E8CB1807E90B009EF350 /* RadioViewController.m in Sources */,
 				3BABAF5C180BE05900C28D0B /* RadioLoginViewController.m in Sources */,
 				3BABAF62180BE1C700C28D0B /* RadioSignUpViewController.m in Sources */,
@@ -1964,10 +1894,7 @@
 				GCC_PREFIX_HEADER = "NetworkRequest/NetworkRequest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/NetworkRequest/SAF-App.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = SAFapp;
@@ -1993,10 +1920,7 @@
 				GCC_PREFIX_HEADER = "NetworkRequest/NetworkRequest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/NetworkRequest/SAF-App.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = SAFapp;
@@ -2076,10 +2000,7 @@
 				GCC_PREFIX_HEADER = "NetworkRequest/NetworkRequest-Prefix.pch";
 				INFOPLIST_FILE = "NetworkRequest/NetworkRequest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2102,10 +2023,7 @@
 				GCC_PREFIX_HEADER = "NetworkRequest/NetworkRequest-Prefix.pch";
 				INFOPLIST_FILE = "NetworkRequest/NetworkRequest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NetworkRequest/Externals/Mapbox-iOS-SDK-1.6.0",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -177,7 +177,7 @@ static char const * const kHYNButtonLabelKey = "kHYNButtonLabelKey";
 
     CGFloat margin = 7.0;
     UIFont *font = [UIFont fontWithName:@"Avenir-Heavy" size:12.0];
-    CGSize size = [title sizeWithFont:font];
+    CGSize size = [title sizeWithAttributes:@{NSFontAttributeName:font}];
     CGRect labelFrame = CGRectIntegral(CGRectMake(margin, 0.0, size.width * 1.2, 30.0));
     CGRect imgFrame = CGRectMake(margin * 2 + labelFrame.size.width, 0.0, img.size.width * MIN(23.0, img.size.height) / img.size.height, MIN(23.0, img.size.height));
     if (!img) imgFrame = CGRectMake(0.0, 0.0, 1.0, 23.0);

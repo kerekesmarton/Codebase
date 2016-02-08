@@ -105,7 +105,7 @@
 -(void)didPushButton:(UIButton *)sender {
     
     SAFWorkshopDetailsViewController *detail = [[SAFWorkshopDetailsViewController alloc] init];
-    detail.item = [WorkshopObject workshopForUID:[NSNumber numberWithInt:sender.tag]];
+    detail.item = [WorkshopObject workshopForUID:[NSNumber numberWithInteger:sender.tag]];
     [self.navigationController pushViewController:detail animated:YES];
 }
 
