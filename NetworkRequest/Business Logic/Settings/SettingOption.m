@@ -144,7 +144,7 @@
 +(NSDictionary*)initForKey:(NSString *)key {
     
     NSMutableDictionary *properties = [NSMutableDictionary dictionary];
-    NSNumber *type ;
+    NSNumber *type;
     id value;
     NSString *displayName;
     NSArray *possibleValues;
@@ -171,7 +171,7 @@
                            [NSNumber numberWithFloat:24],//one day
                            [NSNumber numberWithFloat:168],//one week
                            ];
-        value = [NSArray arrayWithObject:[possibleValues objectAtIndex:0]];
+        value = [NSArray arrayWithObject:[possibleValues objectAtIndex:2]];
         displayValsues = @[@"Off",@"One hour",@"Three hours",@"Twelve hours",@"One day",@"One week"];
     }
     
