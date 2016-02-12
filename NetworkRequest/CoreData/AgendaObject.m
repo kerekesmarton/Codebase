@@ -32,10 +32,10 @@
     
     NSArray *items = [[VICoreDataManager getInstance] arrayForModel:@"AgendaObject" withPredicate:predicate forContext:context];
     
-    AgendaObject *news = (AgendaObject *)[items lastObject];
+    AgendaObject *agendaObject = (AgendaObject *)[items lastObject];
     
-    if (news != nil) {
-        return [self editWithParams:params forObject:news];
+    if (agendaObject != nil) {
+        return [self editWithParams:params forObject:agendaObject];
     } else {
         return [self syncWithParams:params forManagedObjectContext:context];
     }
