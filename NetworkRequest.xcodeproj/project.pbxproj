@@ -20,6 +20,8 @@
 		1006CB291C62ABBC004F4C79 /* splash2~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB221C62ABBC004F4C79 /* splash2~iPad.png */; };
 		1025D8911C30622F008D3D87 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025D8901C30622F008D3D87 /* MapAnnotation.m */; };
 		1025D8921C30622F008D3D87 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025D8901C30622F008D3D87 /* MapAnnotation.m */; };
+		10417D161C6E4300005BD819 /* SAFCreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10417D141C6E4300005BD819 /* SAFCreditsViewController.m */; };
+		10417D171C6E4300005BD819 /* SAFCreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10417D151C6E4300005BD819 /* SAFCreditsViewController.xib */; };
 		1050D23B1C2EFB400025F23A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FDC12A1A77BA50001402E0 /* MapKit.framework */; };
 		1050D23C1C2EFB480025F23A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FDC12A1A77BA50001402E0 /* MapKit.framework */; };
 		107B1A7A1A7FB6870089E57E /* WSFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B1A781A7FB67D0089E57E /* WSFeedbackViewController.m */; };
@@ -31,7 +33,6 @@
 		109A12B61A84EE6500AB105C /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109A12B51A84EE6500AB105C /* Launch.xib */; };
 		10A3966C1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
 		10A3966D1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
-		10C101C21C6DB98C008BDB41 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C101C11C6DB98C008BDB41 /* CreditsViewController.xib */; };
 		10D7D3251C628FC50047FBCF /* Menu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3241C628FC50047FBCF /* Menu.xcassets */; };
 		10D7D3271C6290970047FBCF /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3261C6290970047FBCF /* Icons.xcassets */; };
 		10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */; };
@@ -127,7 +128,6 @@
 		3B5872CB179AC6EB00813129 /* SAFNewDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B5872C9179AC6EB00813129 /* SAFNewDetailViewController.xib */; };
 		3B5E416517BBEFB000915772 /* SAFMyAgendaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E416317BBEFB000915772 /* SAFMyAgendaTableViewCell.m */; };
 		3B5E416A17BBF3B800915772 /* SAFMyAgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E416817BBF3B600915772 /* SAFMyAgendaViewController.m */; };
-		3B61A1BE1799E63E00F4EB2F /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61A1BD1799E63E00F4EB2F /* CreditsViewController.m */; };
 		3B622E7A17DCB7E200D24F0E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8A626817D8DA5E003826CC /* CoreLocation.framework */; };
 		3B622E7D17DCB7F200D24F0E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8A626417D8D4B7003826CC /* libz.dylib */; };
 		3B622E7E17DCB7F700D24F0E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8A626217D8D4A8003826CC /* OpenGLES.framework */; };
@@ -337,6 +337,9 @@
 		1006CB221C62ABBC004F4C79 /* splash2~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash2~iPad.png"; sourceTree = "<group>"; };
 		1025D88F1C30622F008D3D87 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = DataModel/MapAnnotation.h; sourceTree = "<group>"; };
 		1025D8901C30622F008D3D87 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = DataModel/MapAnnotation.m; sourceTree = "<group>"; };
+		10417D131C6E4300005BD819 /* SAFCreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFCreditsViewController.h; sourceTree = "<group>"; };
+		10417D141C6E4300005BD819 /* SAFCreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFCreditsViewController.m; sourceTree = "<group>"; };
+		10417D151C6E4300005BD819 /* SAFCreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAFCreditsViewController.xib; sourceTree = "<group>"; };
 		107B1A771A7FB67D0089E57E /* WSFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedbackViewController.h; sourceTree = "<group>"; };
 		107B1A781A7FB67D0089E57E /* WSFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedbackViewController.m; sourceTree = "<group>"; };
 		107B1A7B1A7FB6C50089E57E /* PageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageControl.h; sourceTree = "<group>"; };
@@ -350,7 +353,6 @@
 		109A12B51A84EE6500AB105C /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		10A3966A1C35413D004D1EE6 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIAnnotation.h; path = DataModel/POIAnnotation.h; sourceTree = "<group>"; };
 		10A3966B1C35413D004D1EE6 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIAnnotation.m; path = DataModel/POIAnnotation.m; sourceTree = "<group>"; };
-		10C101C11C6DB98C008BDB41 /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
 		10C934211A8CC00300EB9126 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		10D7D3241C628FC50047FBCF /* Menu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Menu.xcassets; sourceTree = "<group>"; };
 		10D7D3261C6290970047FBCF /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -475,8 +477,6 @@
 		3B5E416317BBEFB000915772 /* SAFMyAgendaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFMyAgendaTableViewCell.m; sourceTree = "<group>"; };
 		3B5E416717BBF3B500915772 /* SAFMyAgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFMyAgendaViewController.h; sourceTree = "<group>"; };
 		3B5E416817BBF3B600915772 /* SAFMyAgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFMyAgendaViewController.m; sourceTree = "<group>"; };
-		3B61A1BC1799E63E00F4EB2F /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
-		3B61A1BD1799E63E00F4EB2F /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
 		3B622E7817DCB73400D24F0E /* SAF-App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SAF-App.plist"; sourceTree = "<group>"; };
 		3B622E8317DCBA6D00D24F0E /* CustomSlideViewControllerPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlideViewControllerPhone.h; sourceTree = "<group>"; };
 		3B622E8417DCBA6D00D24F0E /* CustomSlideViewControllerPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlideViewControllerPhone.m; sourceTree = "<group>"; };
@@ -1035,9 +1035,9 @@
 		3B61A1BB1799E63200F4EB2F /* Credits */ = {
 			isa = PBXGroup;
 			children = (
-				3B61A1BC1799E63E00F4EB2F /* CreditsViewController.h */,
-				3B61A1BD1799E63E00F4EB2F /* CreditsViewController.m */,
-				10C101C11C6DB98C008BDB41 /* CreditsViewController.xib */,
+				10417D131C6E4300005BD819 /* SAFCreditsViewController.h */,
+				10417D141C6E4300005BD819 /* SAFCreditsViewController.m */,
+				10417D151C6E4300005BD819 /* SAFCreditsViewController.xib */,
 			);
 			path = Credits;
 			sourceTree = "<group>";
@@ -1582,6 +1582,7 @@
 				1006CB281C62ABBC004F4C79 /* splash2@2x~iPad.png in Resources */,
 				3BB9F8E6179BEFB900C91ABC /* SAFWorkshopTabsViewController.xib in Resources */,
 				1006CB231C62ABBC004F4C79 /* splash.png in Resources */,
+				10417D171C6E4300005BD819 /* SAFCreditsViewController.xib in Resources */,
 				3B87C29F179D1B7E0095362E /* SAFArtistTabsViewController.xib in Resources */,
 				1006CB271C62ABBC004F4C79 /* splash2@2x.png in Resources */,
 				3B8FF7BE17A2B2DB00046FD9 /* AgendaViewController.xib in Resources */,
@@ -1604,7 +1605,6 @@
 				1006CB261C62ABBC004F4C79 /* splash2.png in Resources */,
 				3B2AA9771834D8670002B325 /* SAFPOIsViewController.xib in Resources */,
 				3BBB389B183CF69A00F6F62A /* SAFNewDetailViewController~iPad.xib in Resources */,
-				10C101C21C6DB98C008BDB41 /* CreditsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1729,7 +1729,6 @@
 				3B86FFF617999E14009624CA /* SettingOptionGroup.m in Sources */,
 				3B6F77981799A747005AC0E7 /* RootViewController.m in Sources */,
 				3B6F779C1799A766005AC0E7 /* SAFNavigationBar.m in Sources */,
-				3B61A1BE1799E63E00F4EB2F /* CreditsViewController.m in Sources */,
 				3BA909F0179A9C42001765C8 /* SAFNewsViewController.m in Sources */,
 				3BA909F5179A9D6A001765C8 /* SAFNewsTableViewCell.m in Sources */,
 				3B5872C1179ABA2100813129 /* SAFSettingsViewController.m in Sources */,
@@ -1761,6 +1760,7 @@
 				3B17433117A6DF5D009DABE8 /* SAFAgendaTableViewCell.m in Sources */,
 				3B5E416517BBEFB000915772 /* SAFMyAgendaTableViewCell.m in Sources */,
 				3B5E416A17BBF3B800915772 /* SAFMyAgendaViewController.m in Sources */,
+				10417D161C6E4300005BD819 /* SAFCreditsViewController.m in Sources */,
 				3B622E8017DCB85200D24F0E /* MapViewController.m in Sources */,
 				3B11150017DFA11B002A2AFC /* CustomNavigationBar.m in Sources */,
 				107B1A7A1A7FB6870089E57E /* WSFeedbackViewController.m in Sources */,

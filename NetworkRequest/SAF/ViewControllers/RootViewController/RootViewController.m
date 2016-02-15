@@ -9,14 +9,13 @@
 
 #import "RootViewController.h"
 #import "SAFNavigationBar.h"
-#import "CreditsViewController.h"
 #import "SAFNewsViewController.h"
 #import "SAFArtistTabsViewController.h"
 #import "SAFWorkshopTabsViewController.h"
 #import "SAFAgendaViewController.h"
 #import "UIViewController+Shareing.h"
 #import "WorkshopObject.h"
-
+#import "SAFCreditsViewController.h"
 
 #import "SAFMyAgendaViewController.h"
 #import "SAFMapViewController.h"
@@ -174,21 +173,25 @@
     }
     if (actionSheet.tag == 2) {
         
-        CreditsViewController *credits = nil;
+        SAFCreditsViewController *credits = nil;
         switch (buttonIndex) {
             case 0:
             {
-                credits = [[CreditsViewController alloc] initWithName:@"AIRE"];
+                credits = [[SAFCreditsViewController
+                            alloc] init];
+                credits.name = @"AIRE";
             }
                 break;
             case 1:
             {
-                credits = [[CreditsViewController alloc] initWithName:@"Nuvo"];
+                credits = [[SAFCreditsViewController alloc] init];
+                credits.name = @"Nuvo";
             }
                 break;
             case 2:
             {
-                credits = [[CreditsViewController alloc] initWithName:@"Advents"];
+                credits = [[SAFCreditsViewController alloc] init];
+                credits.name = @"Advents";
             }
                 
             default:
@@ -197,8 +200,7 @@
         
         if (credits) {
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:credits];
-            nav.navigationBar.barStyle = UIBarStyleBlackOpaque;
-            nav.toolbar.barStyle = UIBarStyleBlackOpaque;
+            nav.navigationBar.barStyle = UIBarStyleBlack;
             nav.modalPresentationStyle = UIModalPresentationPageSheet;
             nav.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
             
