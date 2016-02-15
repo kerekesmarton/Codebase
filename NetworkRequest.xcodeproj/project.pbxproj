@@ -11,13 +11,6 @@
 		100377A61A769E59008A93E4 /* ParsedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 100377A41A769E59008A93E4 /* ParsedObject.m */; };
 		100377A91A769EB1008A93E4 /* ParsedWorkshop.m in Sources */ = {isa = PBXBuildFile; fileRef = 100377A81A769EB1008A93E4 /* ParsedWorkshop.m */; };
 		100377AA1A769EB1008A93E4 /* ParsedWorkshop.m in Sources */ = {isa = PBXBuildFile; fileRef = 100377A81A769EB1008A93E4 /* ParsedWorkshop.m */; };
-		1006CB231C62ABBC004F4C79 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1C1C62ABBC004F4C79 /* splash.png */; };
-		1006CB241C62ABBC004F4C79 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1D1C62ABBC004F4C79 /* splash@2x.png */; };
-		1006CB251C62ABBC004F4C79 /* splash~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1E1C62ABBC004F4C79 /* splash~iPad.png */; };
-		1006CB261C62ABBC004F4C79 /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1F1C62ABBC004F4C79 /* splash2.png */; };
-		1006CB271C62ABBC004F4C79 /* splash2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB201C62ABBC004F4C79 /* splash2@2x.png */; };
-		1006CB281C62ABBC004F4C79 /* splash2@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB211C62ABBC004F4C79 /* splash2@2x~iPad.png */; };
-		1006CB291C62ABBC004F4C79 /* splash2~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB221C62ABBC004F4C79 /* splash2~iPad.png */; };
 		1025D8911C30622F008D3D87 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025D8901C30622F008D3D87 /* MapAnnotation.m */; };
 		1025D8921C30622F008D3D87 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1025D8901C30622F008D3D87 /* MapAnnotation.m */; };
 		10417D161C6E4300005BD819 /* SAFCreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10417D141C6E4300005BD819 /* SAFCreditsViewController.m */; };
@@ -33,8 +26,16 @@
 		109A12B61A84EE6500AB105C /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109A12B51A84EE6500AB105C /* Launch.xib */; };
 		10A3966C1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
 		10A3966D1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
+		10C4F60B1C725E90005640E5 /* artists.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D32A1C6295130047FBCF /* artists.xcassets */; };
+		10C4F60C1C725EE9005640E5 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1C1C62ABBC004F4C79 /* splash.png */; };
+		10C4F60D1C725EE9005640E5 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1D1C62ABBC004F4C79 /* splash@2x.png */; };
+		10C4F60E1C725EE9005640E5 /* splash~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1E1C62ABBC004F4C79 /* splash~iPad.png */; };
+		10C4F60F1C725EE9005640E5 /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1F1C62ABBC004F4C79 /* splash2.png */; };
+		10C4F6101C725EE9005640E5 /* splash2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB201C62ABBC004F4C79 /* splash2@2x.png */; };
+		10C4F6111C725EE9005640E5 /* splash2@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB211C62ABBC004F4C79 /* splash2@2x~iPad.png */; };
+		10C4F6121C725EE9005640E5 /* splash2~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB221C62ABBC004F4C79 /* splash2~iPad.png */; };
+		10C4F6131C725F10005640E5 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3261C6290970047FBCF /* Icons.xcassets */; };
 		10D7D3251C628FC50047FBCF /* Menu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3241C628FC50047FBCF /* Menu.xcassets */; };
-		10D7D3271C6290970047FBCF /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3261C6290970047FBCF /* Icons.xcassets */; };
 		10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */; };
 		10D7D32B1C6295130047FBCF /* artists.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D32A1C6295130047FBCF /* artists.xcassets */; };
 		10E84A831A664AF700FEF0C1 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E84A821A664AF700FEF0C1 /* UIColor+Additions.m */; };
@@ -1569,41 +1570,42 @@
 				3B86000717999E14009624CA /* Default.png in Resources */,
 				3B86000817999E14009624CA /* Default@2x.png in Resources */,
 				3B86000917999E14009624CA /* Default-568h@2x.png in Resources */,
-				1006CB291C62ABBC004F4C79 /* splash2~iPad.png in Resources */,
 				3B5872C2179AC37100813129 /* SettingsEnumControllerViewController.xib in Resources */,
 				3B5872C3179AC37700813129 /* SettingsViewController.xib in Resources */,
 				3B5872CB179AC6EB00813129 /* SAFNewDetailViewController.xib in Resources */,
 				3BB9F8DB179BE39400C91ABC /* ArtistDetailViewController.xib in Resources */,
 				3BB9F8DC179BE39A00C91ABC /* ArtistsViewController.xib in Resources */,
 				3BB9F8DD179BE39D00C91ABC /* NewsViewController.xib in Resources */,
+				10C4F60D1C725EE9005640E5 /* splash@2x.png in Resources */,
 				3BB9F8DE179BE3A000C91ABC /* DetailsViewController.xib in Resources */,
 				3BB9F8DF179BE3A300C91ABC /* WorkshopDetailsViewController.xib in Resources */,
 				3BB9F8E0179BE3A500C91ABC /* WorkshopsViewController.xib in Resources */,
-				1006CB281C62ABBC004F4C79 /* splash2@2x~iPad.png in Resources */,
+				10C4F60F1C725EE9005640E5 /* splash2.png in Resources */,
+				10C4F6131C725F10005640E5 /* Icons.xcassets in Resources */,
 				3BB9F8E6179BEFB900C91ABC /* SAFWorkshopTabsViewController.xib in Resources */,
-				1006CB231C62ABBC004F4C79 /* splash.png in Resources */,
 				10417D171C6E4300005BD819 /* SAFCreditsViewController.xib in Resources */,
+				10C4F60C1C725EE9005640E5 /* splash.png in Resources */,
 				3B87C29F179D1B7E0095362E /* SAFArtistTabsViewController.xib in Resources */,
-				1006CB271C62ABBC004F4C79 /* splash2@2x.png in Resources */,
 				3B8FF7BE17A2B2DB00046FD9 /* AgendaViewController.xib in Resources */,
 				3B622E8117DCB85F00D24F0E /* MapViewController.xib in Resources */,
 				109A12B61A84EE6500AB105C /* Launch.xib in Resources */,
 				10D7D3251C628FC50047FBCF /* Menu.xcassets in Resources */,
-				1006CB251C62ABBC004F4C79 /* splash~iPad.png in Resources */,
+				10C4F6121C725EE9005640E5 /* splash2~iPad.png in Resources */,
 				3B4EF89D17DE453D00D345E2 /* MyriadPro-It.otf in Resources */,
 				3B4EF89E17DE453D00D345E2 /* MyriadPro-Regular.otf in Resources */,
 				3B4EF89F17DE453D00D345E2 /* MyriadPro-Semibold.otf in Resources */,
-				10D7D3271C6290970047FBCF /* Icons.xcassets in Resources */,
-				1006CB241C62ABBC004F4C79 /* splash@2x.png in Resources */,
 				10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */,
+				10C4F60B1C725E90005640E5 /* artists.xcassets in Resources */,
 				3BF0B7BB17F5B22900C8D719 /* map_pin.png in Resources */,
 				3BF0B7BC17F5B22900C8D719 /* map_pin@2x.png in Resources */,
+				10C4F6101C725EE9005640E5 /* splash2@2x.png in Resources */,
+				10C4F60E1C725EE9005640E5 /* splash~iPad.png in Resources */,
 				3BF0B7BD17F5B22900C8D719 /* target.png in Resources */,
 				3BF0B7BE17F5B22900C8D719 /* target@2x.png in Resources */,
 				3BB0B4E218335A5600BF8D68 /* route@2x.png in Resources */,
 				3BB0B4E618335A6B00BF8D68 /* route.png in Resources */,
-				1006CB261C62ABBC004F4C79 /* splash2.png in Resources */,
 				3B2AA9771834D8670002B325 /* SAFPOIsViewController.xib in Resources */,
+				10C4F6111C725EE9005640E5 /* splash2@2x~iPad.png in Resources */,
 				3BBB389B183CF69A00F6F62A /* SAFNewDetailViewController~iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

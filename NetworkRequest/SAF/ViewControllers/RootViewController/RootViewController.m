@@ -200,7 +200,9 @@
         
         if (credits) {
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:credits];
-            nav.navigationBar.barStyle = UIBarStyleBlack;
+            nav.navigationBar.barTintColor = [UIColor blackColor];
+            nav.navigationBar.tintColor = [UIColor whiteColor];
+            [nav.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
             nav.modalPresentationStyle = UIModalPresentationPageSheet;
             nav.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
             

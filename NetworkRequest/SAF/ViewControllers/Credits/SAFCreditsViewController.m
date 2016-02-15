@@ -47,10 +47,6 @@
     _functionLbl.font = [UIFont fontWithName:myriadFontI size:20];
     
     _desc1.backgroundColor = [UIColor colorWithHex:0x3c3c3c];
-    _desc1.font = [UIFont fontWithName:myriadFontR size:16];
-    _desc1.textColor = [UIColor whiteColor];
-    _desc1.userInteractionEnabled = YES;
-    _desc1.editable = NO;
     
     if ([self.name isEqualToString: @"AIRE"])
     {
@@ -84,7 +80,10 @@
 {
     [super viewWillAppear:animated];
     
-    
+    _desc1.font = [UIFont fontWithName:myriadFontR size:16];
+    _desc1.textColor = [UIColor whiteColor];
+    _desc1.userInteractionEnabled = YES;
+    _desc1.editable = NO;
 }
 
 -(void)viewDidAppear:(BOOL)animated
