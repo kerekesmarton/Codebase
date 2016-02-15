@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "image_button_workshops.png",
+      "filename" : "image_button_workshops-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "image_button_workshops.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "image_button_workshops-1.png",
       "scale" : "3x"
     }
   ],

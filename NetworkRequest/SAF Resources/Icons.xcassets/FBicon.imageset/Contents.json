@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "FBicon.png",
+      "filename" : "[icon]72px.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "FBicon@2x.png",
+      "filename" : "[icon]144px.png",
       "scale" : "2x"
     },
     {

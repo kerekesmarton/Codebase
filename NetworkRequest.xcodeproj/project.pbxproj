@@ -34,7 +34,7 @@
 		10C4F6101C725EE9005640E5 /* splash2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB201C62ABBC004F4C79 /* splash2@2x.png */; };
 		10C4F6111C725EE9005640E5 /* splash2@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB211C62ABBC004F4C79 /* splash2@2x~iPad.png */; };
 		10C4F6121C725EE9005640E5 /* splash2~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB221C62ABBC004F4C79 /* splash2~iPad.png */; };
-		10C4F6131C725F10005640E5 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3261C6290970047FBCF /* Icons.xcassets */; };
+		10C4F6161C726294005640E5 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C4F6151C726294005640E5 /* Icons.xcassets */; };
 		10D7D3251C628FC50047FBCF /* Menu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3241C628FC50047FBCF /* Menu.xcassets */; };
 		10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */; };
 		10D7D32B1C6295130047FBCF /* artists.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D32A1C6295130047FBCF /* artists.xcassets */; };
@@ -111,11 +111,9 @@
 		3B2AA9761834D8670002B325 /* SAFPOIsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AA9741834D8670002B325 /* SAFPOIsViewController.m */; };
 		3B2AA9771834D8670002B325 /* SAFPOIsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2AA9751834D8670002B325 /* SAFPOIsViewController.xib */; };
 		3B2B69D717B93EF20004EEE0 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B69D117B93EF20004EEE0 /* SlideViewController.m */; };
-		3B31556A1807D6C6000F3941 /* StreamingDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3155691807D6C6000F3941 /* StreamingDataManager.m */; };
 		3B350E24176A262B0018D336 /* SettingOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B350E23176A262B0018D336 /* SettingOption.m */; };
 		3B350E2C176CB2C00018D336 /* SettingsEnumControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B350E2A176CB2C00018D336 /* SettingsEnumControllerViewController.m */; };
 		3B350E2D176CB2C00018D336 /* SettingsEnumControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B350E2B176CB2C00018D336 /* SettingsEnumControllerViewController.xib */; };
-		3B472661180F0C9B00903077 /* AVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B472660180F0C9B00903077 /* AVPlayerManager.m */; };
 		3B4726691812871500903077 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4726681812871500903077 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3B4EF89D17DE453D00D345E2 /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3B4EF84317DE453D00D345E2 /* MyriadPro-It.otf */; };
 		3B4EF89E17DE453D00D345E2 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3B4EF84417DE453D00D345E2 /* MyriadPro-Regular.otf */; };
@@ -254,14 +252,8 @@
 		3BA6B82D1750E418006EB824 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B8291750E418006EB824 /* Model.xcdatamodeld */; };
 		3BA6B82E1750E418006EB824 /* NewsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B82C1750E418006EB824 /* NewsObject.m */; };
 		3BA6B8301750E495006EB824 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA6B82F1750E495006EB824 /* CoreData.framework */; };
-		3BA7E8CB1807E90B009EF350 /* RadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7E8C91807E90B009EF350 /* RadioViewController.m */; };
-		3BA7E8CD1807E90B009EF350 /* RadioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA7E8CA1807E90B009EF350 /* RadioViewController.xib */; };
 		3BA909F0179A9C42001765C8 /* SAFNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA909EE179A9C42001765C8 /* SAFNewsViewController.m */; };
 		3BA909F5179A9D6A001765C8 /* SAFNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA909F4179A9D6A001765C8 /* SAFNewsTableViewCell.m */; };
-		3BABAF5C180BE05900C28D0B /* RadioLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BABAF5A180BE05900C28D0B /* RadioLoginViewController.m */; };
-		3BABAF5D180BE05900C28D0B /* RadioLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BABAF5B180BE05900C28D0B /* RadioLoginViewController.xib */; };
-		3BABAF62180BE1C700C28D0B /* RadioSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BABAF60180BE1C700C28D0B /* RadioSignUpViewController.m */; };
-		3BABAF63180BE1C700C28D0B /* RadioSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BABAF61180BE1C700C28D0B /* RadioSignUpViewController.xib */; };
 		3BACAA6F180E854800612BE7 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA61180E854800612BE7 /* DownloadManager.m */; };
 		3BACAA70180E854800612BE7 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA61180E854800612BE7 /* DownloadManager.m */; };
 		3BACAA71180E854800612BE7 /* StreamingContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA63180E854800612BE7 /* StreamingContentManager.m */; };
@@ -275,15 +267,8 @@
 		3BACAA7A180E854800612BE7 /* ParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA6C180E854800612BE7 /* ParserDelegate.m */; };
 		3BACAA7B180E854800612BE7 /* WorkshopsParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA6E180E854800612BE7 /* WorkshopsParserDelegate.m */; };
 		3BACAA7C180E854800612BE7 /* WorkshopsParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA6E180E854800612BE7 /* WorkshopsParserDelegate.m */; };
-		3BACAA80180E876600612BE7 /* StreamingUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA7F180E876600612BE7 /* StreamingUser.m */; };
-		3BACAA83180E93E100612BE7 /* StreamingMix.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA82180E93E100612BE7 /* StreamingMix.m */; };
-		3BACAA8B180EBE4F00612BE7 /* RadioListenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA89180EBE4E00612BE7 /* RadioListenViewController.m */; };
-		3BACAA8C180EBE4F00612BE7 /* RadioListenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BACAA8A180EBE4E00612BE7 /* RadioListenViewController.xib */; };
-		3BACAA8F180ECFCF00612BE7 /* StreamingTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BACAA8E180ECFCF00612BE7 /* StreamingTrack.m */; };
 		3BB0B4E118335A5600BF8D68 /* route@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB0B4E018335A5600BF8D68 /* route@2x.png */; };
-		3BB0B4E218335A5600BF8D68 /* route@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB0B4E018335A5600BF8D68 /* route@2x.png */; };
 		3BB0B4E518335A6B00BF8D68 /* route.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB0B4E418335A6B00BF8D68 /* route.png */; };
-		3BB0B4E618335A6B00BF8D68 /* route.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB0B4E418335A6B00BF8D68 /* route.png */; };
 		3BB143741767932A000E1211 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB143721767932A000E1211 /* SettingsViewController.m */; };
 		3BB143751767932A000E1211 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB143731767932A000E1211 /* SettingsViewController.xib */; };
 		3BB61992183B4C8400111CFC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB61991183B4C8400111CFC /* Security.framework */; };
@@ -314,10 +299,6 @@
 		3BDFFA4517E0F2B1008447AC /* favourite_place.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4417E0F2B1008447AC /* favourite_place.png */; };
 		3BDFFA4717E0F2E6008447AC /* map_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4617E0F2E6008447AC /* map_pin@2x.png */; };
 		3BDFFA4917E0F2F6008447AC /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4817E0F2F6008447AC /* map_pin.png */; };
-		3BF0B7BB17F5B22900C8D719 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4817E0F2F6008447AC /* map_pin.png */; };
-		3BF0B7BC17F5B22900C8D719 /* map_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA4617E0F2E6008447AC /* map_pin@2x.png */; };
-		3BF0B7BD17F5B22900C8D719 /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA3E17E0EC52008447AC /* target.png */; };
-		3BF0B7BE17F5B22900C8D719 /* target@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFFA3A17E0EC07008447AC /* target@2x.png */; };
 		3BFEDE7F175125790078AA58 /* AgendaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFEDE7A175125790078AA58 /* AgendaObject.m */; };
 		3BFEDE80175125790078AA58 /* ArtistObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFEDE7C175125790078AA58 /* ArtistObject.m */; };
 		3BFEDE81175125790078AA58 /* WorkshopObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFEDE7E175125790078AA58 /* WorkshopObject.m */; };
@@ -354,9 +335,9 @@
 		109A12B51A84EE6500AB105C /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		10A3966A1C35413D004D1EE6 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIAnnotation.h; path = DataModel/POIAnnotation.h; sourceTree = "<group>"; };
 		10A3966B1C35413D004D1EE6 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIAnnotation.m; path = DataModel/POIAnnotation.m; sourceTree = "<group>"; };
+		10C4F6151C726294005640E5 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		10C934211A8CC00300EB9126 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		10D7D3241C628FC50047FBCF /* Menu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Menu.xcassets; sourceTree = "<group>"; };
-		10D7D3261C6290970047FBCF /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Condensed Bold.ttf"; sourceTree = "<group>"; };
 		10D7D32A1C6295130047FBCF /* artists.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = artists.xcassets; sourceTree = "<group>"; };
 		10E84A811A664AF700FEF0C1 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
@@ -452,16 +433,12 @@
 		3B2AA9751834D8670002B325 /* SAFPOIsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAFPOIsViewController.xib; sourceTree = "<group>"; };
 		3B2B69D017B93EF20004EEE0 /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
 		3B2B69D117B93EF20004EEE0 /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
-		3B3155681807D6C6000F3941 /* StreamingDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingDataManager.h; sourceTree = "<group>"; };
-		3B3155691807D6C6000F3941 /* StreamingDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingDataManager.m; sourceTree = "<group>"; };
 		3B350E22176A262B0018D336 /* SettingOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingOption.h; sourceTree = "<group>"; };
 		3B350E23176A262B0018D336 /* SettingOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingOption.m; sourceTree = "<group>"; };
 		3B350E27176C9FC00018D336 /* SettingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingConstants.h; sourceTree = "<group>"; };
 		3B350E29176CB2C00018D336 /* SettingsEnumControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsEnumControllerViewController.h; sourceTree = "<group>"; };
 		3B350E2A176CB2C00018D336 /* SettingsEnumControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsEnumControllerViewController.m; sourceTree = "<group>"; };
 		3B350E2B176CB2C00018D336 /* SettingsEnumControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsEnumControllerViewController.xib; sourceTree = "<group>"; };
-		3B47265F180F0C9B00903077 /* AVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerManager.h; sourceTree = "<group>"; };
-		3B472660180F0C9B00903077 /* AVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerManager.m; sourceTree = "<group>"; };
 		3B4726681812871500903077 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3B4EF84317DE453D00D345E2 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
 		3B4EF84417DE453D00D345E2 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
@@ -593,19 +570,10 @@
 		3BA6B82B1750E418006EB824 /* NewsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsObject.h; sourceTree = "<group>"; };
 		3BA6B82C1750E418006EB824 /* NewsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsObject.m; sourceTree = "<group>"; };
 		3BA6B82F1750E495006EB824 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		3BA7E8C81807E90B009EF350 /* RadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioViewController.h; sourceTree = "<group>"; };
-		3BA7E8C91807E90B009EF350 /* RadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioViewController.m; sourceTree = "<group>"; };
-		3BA7E8CA1807E90B009EF350 /* RadioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioViewController.xib; sourceTree = "<group>"; };
 		3BA909ED179A9C42001765C8 /* SAFNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFNewsViewController.h; sourceTree = "<group>"; };
 		3BA909EE179A9C42001765C8 /* SAFNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFNewsViewController.m; sourceTree = "<group>"; };
 		3BA909F3179A9D6A001765C8 /* SAFNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFNewsTableViewCell.h; sourceTree = "<group>"; };
 		3BA909F4179A9D6A001765C8 /* SAFNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFNewsTableViewCell.m; sourceTree = "<group>"; };
-		3BABAF59180BE05900C28D0B /* RadioLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioLoginViewController.h; sourceTree = "<group>"; };
-		3BABAF5A180BE05900C28D0B /* RadioLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioLoginViewController.m; sourceTree = "<group>"; };
-		3BABAF5B180BE05900C28D0B /* RadioLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioLoginViewController.xib; sourceTree = "<group>"; };
-		3BABAF5F180BE1C700C28D0B /* RadioSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioSignUpViewController.h; sourceTree = "<group>"; };
-		3BABAF60180BE1C700C28D0B /* RadioSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioSignUpViewController.m; sourceTree = "<group>"; };
-		3BABAF61180BE1C700C28D0B /* RadioSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioSignUpViewController.xib; sourceTree = "<group>"; };
 		3BACAA60180E854800612BE7 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
 		3BACAA61180E854800612BE7 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		3BACAA62180E854800612BE7 /* StreamingContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingContentManager.h; sourceTree = "<group>"; };
@@ -620,15 +588,6 @@
 		3BACAA6C180E854800612BE7 /* ParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserDelegate.m; sourceTree = "<group>"; };
 		3BACAA6D180E854800612BE7 /* WorkshopsParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkshopsParserDelegate.h; sourceTree = "<group>"; };
 		3BACAA6E180E854800612BE7 /* WorkshopsParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkshopsParserDelegate.m; sourceTree = "<group>"; };
-		3BACAA7E180E876600612BE7 /* StreamingUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingUser.h; sourceTree = "<group>"; };
-		3BACAA7F180E876600612BE7 /* StreamingUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingUser.m; sourceTree = "<group>"; };
-		3BACAA81180E93E000612BE7 /* StreamingMix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingMix.h; sourceTree = "<group>"; };
-		3BACAA82180E93E100612BE7 /* StreamingMix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingMix.m; sourceTree = "<group>"; };
-		3BACAA88180EBE4D00612BE7 /* RadioListenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioListenViewController.h; sourceTree = "<group>"; };
-		3BACAA89180EBE4E00612BE7 /* RadioListenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioListenViewController.m; sourceTree = "<group>"; };
-		3BACAA8A180EBE4E00612BE7 /* RadioListenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioListenViewController.xib; sourceTree = "<group>"; };
-		3BACAA8D180ECFCF00612BE7 /* StreamingTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingTrack.h; sourceTree = "<group>"; };
-		3BACAA8E180ECFCF00612BE7 /* StreamingTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingTrack.m; sourceTree = "<group>"; };
 		3BB0B4E018335A5600BF8D68 /* route@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "route@2x.png"; sourceTree = "<group>"; };
 		3BB0B4E418335A6B00BF8D68 /* route.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route.png; sourceTree = "<group>"; };
 		3BB143711767932A000E1211 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -848,7 +807,6 @@
 				3B1842A9175A420400B2FFE7 /* Workshops */,
 				3B8FF7B217A2B21600046FD9 /* Shareing Category */,
 				3B8A625A17D8D264003826CC /* Map Components */,
-				3B31556C1807D8B7000F3941 /* Radio Streaming */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -906,11 +864,6 @@
 				3B1842C2175A426A00B2FFE7 /* ArtistsDataManager.m */,
 				3B1842C7175A426A00B2FFE7 /* WorkshopsDataManager.h */,
 				3B1842C8175A426A00B2FFE7 /* WorkshopsDataManager.m */,
-				3B3155681807D6C6000F3941 /* StreamingDataManager.h */,
-				3B3155691807D6C6000F3941 /* StreamingDataManager.m */,
-				3B47265F180F0C9B00903077 /* AVPlayerManager.h */,
-				3B472660180F0C9B00903077 /* AVPlayerManager.m */,
-				3BACAA7D180E874B00612BE7 /* Streaming Data Model */,
 			);
 			path = "Data Managers";
 			sourceTree = "<group>";
@@ -950,31 +903,12 @@
 			path = SlideViewControllers;
 			sourceTree = "<group>";
 		};
-		3B31556C1807D8B7000F3941 /* Radio Streaming */ = {
-			isa = PBXGroup;
-			children = (
-				3BA7E8C81807E90B009EF350 /* RadioViewController.h */,
-				3BA7E8C91807E90B009EF350 /* RadioViewController.m */,
-				3BA7E8CA1807E90B009EF350 /* RadioViewController.xib */,
-				3BABAF59180BE05900C28D0B /* RadioLoginViewController.h */,
-				3BABAF5A180BE05900C28D0B /* RadioLoginViewController.m */,
-				3BABAF5B180BE05900C28D0B /* RadioLoginViewController.xib */,
-				3BABAF5F180BE1C700C28D0B /* RadioSignUpViewController.h */,
-				3BABAF60180BE1C700C28D0B /* RadioSignUpViewController.m */,
-				3BABAF61180BE1C700C28D0B /* RadioSignUpViewController.xib */,
-				3BACAA88180EBE4D00612BE7 /* RadioListenViewController.h */,
-				3BACAA89180EBE4E00612BE7 /* RadioListenViewController.m */,
-				3BACAA8A180EBE4E00612BE7 /* RadioListenViewController.xib */,
-			);
-			path = "Radio Streaming";
-			sourceTree = "<group>";
-		};
 		3B4EF80117DE453C00D345E2 /* SAF Resources */ = {
 			isa = PBXGroup;
 			children = (
 				10D7D3241C628FC50047FBCF /* Menu.xcassets */,
-				10D7D3261C6290970047FBCF /* Icons.xcassets */,
 				10D7D32A1C6295130047FBCF /* artists.xcassets */,
+				10C4F6151C726294005640E5 /* Icons.xcassets */,
 				10F9DDDA1C6413BF0055D0D0 /* Images.xcassets */,
 				1006CB1C1C62ABBC004F4C79 /* splash.png */,
 				1006CB1D1C62ABBC004F4C79 /* splash@2x.png */,
@@ -1420,19 +1354,6 @@
 			path = Parsing;
 			sourceTree = "<group>";
 		};
-		3BACAA7D180E874B00612BE7 /* Streaming Data Model */ = {
-			isa = PBXGroup;
-			children = (
-				3BACAA7E180E876600612BE7 /* StreamingUser.h */,
-				3BACAA7F180E876600612BE7 /* StreamingUser.m */,
-				3BACAA81180E93E000612BE7 /* StreamingMix.h */,
-				3BACAA82180E93E100612BE7 /* StreamingMix.m */,
-				3BACAA8D180ECFCF00612BE7 /* StreamingTrack.h */,
-				3BACAA8E180ECFCF00612BE7 /* StreamingTrack.m */,
-			);
-			path = "Streaming Data Model";
-			sourceTree = "<group>";
-		};
 		3BB1436A176792A8000E1211 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1575,13 +1496,13 @@
 				3B5872CB179AC6EB00813129 /* SAFNewDetailViewController.xib in Resources */,
 				3BB9F8DB179BE39400C91ABC /* ArtistDetailViewController.xib in Resources */,
 				3BB9F8DC179BE39A00C91ABC /* ArtistsViewController.xib in Resources */,
+				10C4F6161C726294005640E5 /* Icons.xcassets in Resources */,
 				3BB9F8DD179BE39D00C91ABC /* NewsViewController.xib in Resources */,
 				10C4F60D1C725EE9005640E5 /* splash@2x.png in Resources */,
 				3BB9F8DE179BE3A000C91ABC /* DetailsViewController.xib in Resources */,
 				3BB9F8DF179BE3A300C91ABC /* WorkshopDetailsViewController.xib in Resources */,
 				3BB9F8E0179BE3A500C91ABC /* WorkshopsViewController.xib in Resources */,
 				10C4F60F1C725EE9005640E5 /* splash2.png in Resources */,
-				10C4F6131C725F10005640E5 /* Icons.xcassets in Resources */,
 				3BB9F8E6179BEFB900C91ABC /* SAFWorkshopTabsViewController.xib in Resources */,
 				10417D171C6E4300005BD819 /* SAFCreditsViewController.xib in Resources */,
 				10C4F60C1C725EE9005640E5 /* splash.png in Resources */,
@@ -1596,14 +1517,8 @@
 				3B4EF89F17DE453D00D345E2 /* MyriadPro-Semibold.otf in Resources */,
 				10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */,
 				10C4F60B1C725E90005640E5 /* artists.xcassets in Resources */,
-				3BF0B7BB17F5B22900C8D719 /* map_pin.png in Resources */,
-				3BF0B7BC17F5B22900C8D719 /* map_pin@2x.png in Resources */,
 				10C4F6101C725EE9005640E5 /* splash2@2x.png in Resources */,
 				10C4F60E1C725EE9005640E5 /* splash~iPad.png in Resources */,
-				3BF0B7BD17F5B22900C8D719 /* target.png in Resources */,
-				3BF0B7BE17F5B22900C8D719 /* target@2x.png in Resources */,
-				3BB0B4E218335A5600BF8D68 /* route@2x.png in Resources */,
-				3BB0B4E618335A6B00BF8D68 /* route.png in Resources */,
 				3B2AA9771834D8670002B325 /* SAFPOIsViewController.xib in Resources */,
 				10C4F6111C725EE9005640E5 /* splash2@2x~iPad.png in Resources */,
 				3BBB389B183CF69A00F6F62A /* SAFNewDetailViewController~iPad.xib in Resources */,
@@ -1670,10 +1585,6 @@
 				3BDFFA4517E0F2B1008447AC /* favourite_place.png in Resources */,
 				3BDFFA4717E0F2E6008447AC /* map_pin@2x.png in Resources */,
 				3BDFFA4917E0F2F6008447AC /* map_pin.png in Resources */,
-				3BA7E8CD1807E90B009EF350 /* RadioViewController.xib in Resources */,
-				3BABAF5D180BE05900C28D0B /* RadioLoginViewController.xib in Resources */,
-				3BABAF63180BE1C700C28D0B /* RadioSignUpViewController.xib in Resources */,
-				3BACAA8C180EBE4F00612BE7 /* RadioListenViewController.xib in Resources */,
 				3BB0B4E118335A5600BF8D68 /* route@2x.png in Resources */,
 				3BB0B4E518335A6B00BF8D68 /* route.png in Resources */,
 				3BBB389A183CF69A00F6F62A /* SAFNewDetailViewController~iPad.xib in Resources */,
@@ -1796,7 +1707,6 @@
 				3BA6B81C1750E39B006EB824 /* AFURLConnectionOperation.m in Sources */,
 				3BA6B81D1750E39B006EB824 /* AFXMLRequestOperation.m in Sources */,
 				3BA6B81E1750E39B006EB824 /* UIImageView+AFNetworking.m in Sources */,
-				3B31556A1807D6C6000F3941 /* StreamingDataManager.m in Sources */,
 				3BA6B8251750E39B006EB824 /* VICoreDataManager.m in Sources */,
 				3BA6B8261750E39B006EB824 /* VIFetchResultsDataSource.m in Sources */,
 				10826EC31A79331900EFB63C /* SAFStartupManager.m in Sources */,
@@ -1852,10 +1762,6 @@
 				3B1114FF17DF97DF002A2AFC /* MenuTableViewCell.m in Sources */,
 				3BDFFA2C17E0E0AC008447AC /* MapViewController+MapDelegate.m in Sources */,
 				10E84A831A664AF700FEF0C1 /* UIColor+Additions.m in Sources */,
-				3BA7E8CB1807E90B009EF350 /* RadioViewController.m in Sources */,
-				3BABAF5C180BE05900C28D0B /* RadioLoginViewController.m in Sources */,
-				3BABAF62180BE1C700C28D0B /* RadioSignUpViewController.m in Sources */,
-				3B472661180F0C9B00903077 /* AVPlayerManager.m in Sources */,
 				3BACAA6F180E854800612BE7 /* DownloadManager.m in Sources */,
 				3BACAA71180E854800612BE7 /* StreamingContentManager.m in Sources */,
 				3BACAA73180E854800612BE7 /* AgendaParserDelegate.m in Sources */,
@@ -1863,10 +1769,6 @@
 				3BACAA77180E854800612BE7 /* NewsParserDelegate.m in Sources */,
 				3BACAA79180E854800612BE7 /* ParserDelegate.m in Sources */,
 				3BACAA7B180E854800612BE7 /* WorkshopsParserDelegate.m in Sources */,
-				3BACAA80180E876600612BE7 /* StreamingUser.m in Sources */,
-				3BACAA83180E93E100612BE7 /* StreamingMix.m in Sources */,
-				3BACAA8B180EBE4F00612BE7 /* RadioListenViewController.m in Sources */,
-				3BACAA8F180ECFCF00612BE7 /* StreamingTrack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
