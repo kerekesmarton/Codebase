@@ -10,9 +10,13 @@
 #import "SAFDefines.h"
 #import "SAFAgendaTableViewCell.h"
 
-@implementation SAFAgendaViewController {
-    NSInteger expandedSection;
-}
+@interface SAFAgendaViewController ()
+
+@property(nonatomic,strong) NSDateFormatter *formatter;
+@property(nonatomic,assign) NSInteger expandedSection;
+@end
+
+@implementation SAFAgendaViewController
 
 - (id)init
 {
@@ -28,7 +32,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithHex:0x1b1a19];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    expandedSection = 0;
+    self.formatter = [[NSDateFormatter alloc] init];
+    [_formatter setDateFormat:@"H . mm"];
+    [_formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Europe/Bucharest"]];
+    _expandedSection = 0;
 	// Do any additional setup after loading the view.
 }
 
@@ -40,7 +47,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return section == expandedSection? [super tableView:tableView numberOfRowsInSection:section] : 0;
+    return section == _expandedSection? [super tableView:tableView numberOfRowsInSection:section] : 0;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -107,9 +114,8 @@
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"CellIdentifier";
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"H . mm"];
-    [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
+    
     SAFAgendaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[SAFAgendaTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
@@ -125,9 +131,9 @@
         infoString = [infoString stringByAppendingFormat:@"\n%@",object.details];
     }
     
-    NSString *interval = [formatter stringFromDate:object.time];
+    NSString *interval = [_formatter stringFromDate:object.time];
     if (object.endTime != NULL) {
-        interval = [interval stringByAppendingFormat:@"\n-\n%@",[formatter stringFromDate:object.endTime]];
+        interval = [interval stringByAppendingFormat:@"\n-\n%@",[_formatter stringFromDate:object.endTime]];
     }
     
     [cell setInfo:infoString andDate:interval];    
@@ -136,8 +142,8 @@
 
 -(void)animateTable:(id)sender {
     
-    if (expandedSection == [(UIButton *)sender tag]) {
-        expandedSection = 1000;
+    if (_expandedSection == [(UIButton *)sender tag]) {
+        _expandedSection = 1000;
         
         [self.tableView beginUpdates];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:[(UIButton *)sender tag]] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -147,12 +153,12 @@
         
         [self.tableView beginUpdates];
         
-        if (expandedSection !=1000) {
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:expandedSection] withRowAnimation:UITableViewRowAnimationAutomatic];
+        if (_expandedSection !=1000) {
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:_expandedSection] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
-        expandedSection = [(UIButton *)sender tag];
+        _expandedSection = [(UIButton *)sender tag];
         
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:expandedSection] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:_expandedSection] withRowAnimation:UITableViewRowAnimationAutomatic];
         
         [self.tableView endUpdates];
         
