@@ -21,7 +21,7 @@
 #define workshopObjectTypeKey                 @"type"
 #define workshopObjectLinkKey                 @"link"
 #define workshopObjectInstructorKey           @"instructor"
-#define workshopObjectResourceKey           @"resourceURI"
+#define workshopObjectResourceKey             @"resourceURI"
 
 typedef enum WSDifficulty {
     AllLevels = 0,

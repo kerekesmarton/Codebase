@@ -65,13 +65,9 @@
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             NewsParserDelegate *parser = [[NewsParserDelegate alloc] init];
-            [parser parseAndSaveObjects:parsedData];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                success(nil);
-            });
+            NSArray *results = [parser parseAndSaveObjects:parsedData];
+            [self verifyMissingData:results success:success failBlock:fail];
         });
-                
         
     } FailureBlock:^(NSError *error) {
         fail(error);
@@ -108,6 +104,11 @@
 -(NSString*)path {
     
     return @"api/saf/newsitem/?limit=0&format=json";
+}
+
+- (NSString *)objectClassString
+{
+    return NSStringFromClass([NewsObject class]);
 }
 
 @end

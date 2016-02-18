@@ -73,7 +73,7 @@
 
 -(void)saveDataAfterFinishingItem:(ParsedObject *)item {
     
-    [WorkshopObject addWithParams:[item dictionaryRepresentation] forManagedObjectContext:_context];
+    [WorkshopObject addWithParams:[item dictionaryRepresentation] forManagedObjectContext:self.context];
 }
 
 -(id)evaluateitem:(id)element forKey:(NSString *)key {

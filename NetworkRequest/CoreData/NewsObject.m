@@ -22,11 +22,13 @@
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uid == %@", [params objectForKey:@"id"]];
     
+//    Check if news exists.
     NewsObject *news = (NewsObject *)[self fetchForPredicate:predicate forManagedObjectContext:context];
     if ([news isKindOfClass:[NSArray class]]) {
         news = [(NSArray*)news lastObject];
     }
     if (news != nil) {
+//        If user previously marked it as deleted, don't add it again.
         if ([news.del boolValue]) {
             return nil;
         }

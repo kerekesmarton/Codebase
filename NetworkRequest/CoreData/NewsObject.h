@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSNumber * del;
 @property (nonatomic, retain) NSNumber * read;
-@property (nonatomic, retain) NSDate * timeStamp;
+@property (nonatomic, retain) NSDate   * timeStamp;
 @property (nonatomic, retain) NSNumber * uid;
 
 +(NSArray *)fetchUndeletedNews;

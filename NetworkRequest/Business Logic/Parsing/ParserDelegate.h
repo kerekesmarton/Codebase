@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "VICoreDataManager.h"
 
-@interface ParserDelegate : NSObject {
-    
-    @protected
-    NSManagedObjectContext *_context;
-}
+@interface ParserDelegate : NSObject
+
+@property(nonatomic,strong) NSManagedObjectContext *context;
 
 - (void)saveDataAfterFinishingItem:(id)item;
-- (void)parseAndSaveObjects:(NSDictionary *)jsonTree;
+
+/// Returns with an array containing the parsed objects.
+- (NSArray *)parseAndSaveObjects:(NSDictionary *)jsonTree;
 - (id)objectForDictionary:(NSDictionary *)name;
 
 @end

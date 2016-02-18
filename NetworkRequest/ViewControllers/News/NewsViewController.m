@@ -76,16 +76,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)startRefresh:(UIBarButtonItem*)control {
+- (void)startRefresh:(UIBarButtonItem*)control
+{
     
-    [[NewsDataManager sharedInstance] requestDataWitchSuccess:^(id data) {
+    [[NewsDataManager sharedInstance] requestDataWitchSuccess:^(id data)
+    {
         [self refresh];
-        if ([self.refreshControl isRefreshing]) {
+        if ([self.refreshControl isRefreshing])
+        {
             [self.refreshControl endRefreshing];
         }
-    } failBlock:^(id data) {
+    } failBlock:^(id data)
+    {
         [self alertMissingData];
-        if ([self.refreshControl isRefreshing]) {
+        if ([self.refreshControl isRefreshing])
+        {
             [self.refreshControl endRefreshing];
         }
     }];

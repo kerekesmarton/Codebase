@@ -69,7 +69,7 @@
 
 -(void)saveDataAfterFinishingItem:(ParsedArtist *)item{
     
-    [ArtistObject addWithParams:[item dictionaryRepresentation] forManagedObjectContext:_context];
+    [ArtistObject addWithParams:[item dictionaryRepresentation] forManagedObjectContext:self.context];    
 }
 
 

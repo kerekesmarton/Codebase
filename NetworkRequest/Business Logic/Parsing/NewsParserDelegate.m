@@ -63,7 +63,7 @@
     item.deleted = @NO;
     item.read = @NO;
     
-    [NewsObject addWithParams:[item dictionaryRepresentation] forManagedObjectContext:_context];
+    [NewsObject addWithParams:[item dictionaryRepresentation] forManagedObjectContext:self.context];
 }
 
 @end

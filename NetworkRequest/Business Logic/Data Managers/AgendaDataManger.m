@@ -51,11 +51,8 @@
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             AgendaParserDelegate *parser = [[AgendaParserDelegate alloc] init];
-            [parser parseAndSaveObjects:parsedData];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                success(nil);
-            });
+            NSArray *results = [parser parseAndSaveObjects:parsedData];
+            [self verifyMissingData:results success:success failBlock:fail];
         });
         
         
@@ -81,6 +78,11 @@
 -(NSString*)path {
 
     return @"api/saf/schedule/?limit=0&format=json";
+}
+
+- (NSString *)objectClassString
+{
+    return NSStringFromClass([AgendaObject class]);
 }
 
 

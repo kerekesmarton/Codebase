@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Jozsef-Marton Kerekes. All rights reserved.
 //
 
-#import "BaseDataManager.h"
+#import "DataManager.h"
 
 
-@interface ArtistsDataManager : NSObject <BaseDataManager>
+@interface ArtistsDataManager : DataManager <BaseDataManager>
 
 +(ArtistsDataManager *)sharedInstance;
 

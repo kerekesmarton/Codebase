@@ -13,34 +13,47 @@
 
 #pragma mark - xml parsing
 
--(void)parseAndSaveObjects:(NSDictionary *)jsonTree {
+-(NSArray *)parseAndSaveObjects:(NSDictionary *)jsonTree {
     
-    _context = [[VICoreDataManager getInstance] startTransaction];
+    NSMutableArray *freshObjects = [NSMutableArray array];
     
-    if ([jsonTree objectForKey:@"objects"]) {
+    self.context = [[VICoreDataManager getInstance] startTransaction];
+    if ([jsonTree objectForKey:@"objects"])
+    {
         NSArray *array = [jsonTree objectForKey:@"objects"];
-        for (NSDictionary *obj in array) {
-            [self parseObject:obj];
+        
+        for (NSDictionary *obj in array)
+        {
+            ParsedObject *parsedObject = [self parseObject:obj];
+            if (parsedObject)
+            {
+                [freshObjects addObject:parsedObject];
+            }
         }
         
-        [[VICoreDataManager getInstance] endTransactionForContext:_context];
+        [[VICoreDataManager getInstance] endTransactionForContext:self.context];
     }
+    self.context = nil;
+    
+    return [freshObjects copy];
 }
 
--(void)parseObject:(id)object {
+-(id)parseObject:(id)object {
     
     ParsedObject *obj = [self objectForDictionary:object];
     [self saveDataAfterFinishingItem:obj];
+    return obj;
 }
 
 -(id)objectForDictionary:(NSDictionary *)name{
-//    overwrite in successors
+
+    NSAssert(1, @"Base implementation");
     return nil;
 }
 
 -(void)saveDataAfterFinishingItem:(id)item {
     
-    //TODO : implement by successors
+    NSAssert(1, @"Base implementation");
 }
 
 @end

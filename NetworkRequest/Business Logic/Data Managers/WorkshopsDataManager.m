@@ -52,6 +52,8 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             WorkshopsParserDelegate *parser = [[WorkshopsParserDelegate alloc] init];
             [parser parseAndSaveObjects:parsedData];
+            NSArray *results = [parser parseAndSaveObjects:parsedData];
+            [self verifyMissingData:results success:success failBlock:fail];
             
             NSArray *rooms = parser.rooms;
             if (rooms.count) {
@@ -60,10 +62,6 @@
                 [[SettingsManager sharedInstance].workshopsFilter addToSelectedValues:room];
 
             }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                success(nil);
-            });
         });
         
         
@@ -100,5 +98,11 @@
 -(NSString*)path {
     return @"api/saf/workshopitem/?limit=0&format=json";
 }
+
+- (NSString *)objectClassString
+{
+    return NSStringFromClass([WorkshopObject class]);
+}
+
 
 @end

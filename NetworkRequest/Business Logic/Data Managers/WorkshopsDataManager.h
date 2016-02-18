@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Jozsef-Marton Kerekes. All rights reserved.
 //
 
-#import "BaseDataManager.h"
+#import "DataManager.h"
 
-@interface WorkshopsDataManager : NSObject <BaseDataManager>
+@interface WorkshopsDataManager : DataManager <BaseDataManager>
 
 +(WorkshopsDataManager *)sharedInstance;
 

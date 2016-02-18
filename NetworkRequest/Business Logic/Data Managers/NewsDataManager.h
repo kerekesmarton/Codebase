@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Jozsef-Marton Kerekes. All rights reserved.
 //
 
-#import "BaseDataManager.h"
+#import "DataManager.h"
 
-@interface NewsDataManager : NSObject <BaseDataManager>
+@interface NewsDataManager : DataManager <BaseDataManager>
 
-+(NewsDataManager *)sharedInstance;
++ (NewsDataManager *)sharedInstance;
 
--(void)setupRefreshRate;
+- (void)setupRefreshRate;
 
 @end
