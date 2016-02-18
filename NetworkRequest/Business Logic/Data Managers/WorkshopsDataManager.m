@@ -53,14 +53,13 @@
             WorkshopsParserDelegate *parser = [[WorkshopsParserDelegate alloc] init];
             [parser parseAndSaveObjects:parsedData];
             NSArray *results = [parser parseAndSaveObjects:parsedData];
-            [self verifyMissingData:results success:success failBlock:fail];
+            NSString *missing = [self verifyMissingData:results success:success failBlock:fail];
             
             NSArray *rooms = parser.rooms;
             if (rooms.count) {
                 [[SettingsManager sharedInstance].workshopsFilter addPossibleValues:rooms];
                 NSString *room = [rooms objectAtIndex:0];
                 [[SettingsManager sharedInstance].workshopsFilter addToSelectedValues:room];
-
             }
         });
         

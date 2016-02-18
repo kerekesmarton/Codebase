@@ -52,9 +52,8 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             AgendaParserDelegate *parser = [[AgendaParserDelegate alloc] init];
             NSArray *results = [parser parseAndSaveObjects:parsedData];
-            [self verifyMissingData:results success:success failBlock:fail];
+            NSString *missing = [self verifyMissingData:results success:success failBlock:fail];
         });
-        
         
     } FailureBlock:^(NSError *error) {
         fail(error);

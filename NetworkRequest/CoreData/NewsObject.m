@@ -16,11 +16,10 @@
 @dynamic del;
 @dynamic read;
 @dynamic timeStamp;
-@dynamic uid;
 
 + (id)addWithParams:(NSDictionary *)params forManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uid == %@", [params objectForKey:@"id"]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", [params objectForKey:newsIdentifier]];
     
 //    Check if news exists.
     NewsObject *news = (NewsObject *)[self fetchForPredicate:predicate forManagedObjectContext:context];
@@ -54,7 +53,7 @@
     
     news.timeStamp = [[params objectForKey:newsTimeStamp] isKindOfClass:[NSNull class]] ? news.timeStamp : [params objectForKey:newsTimeStamp];
     
-    news.uid = [[params objectForKey:@"id"] isKindOfClass:[NSNull class]] ? news.uid : [params objectForKey:@"id"];
+    news.uID = [[params objectForKey:newsIdentifier] isKindOfClass:[NSNull class]] ? news.uID : [params objectForKey:newsIdentifier];
     
     return news;
 }

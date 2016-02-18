@@ -67,7 +67,7 @@
             NewsParserDelegate *parser = [[NewsParserDelegate alloc] init];
             NSArray *results = [parser parseAndSaveObjects:parsedData];
             [self verifyMissingData:results success:success failBlock:fail];
-        });
+        });        
         
     } FailureBlock:^(NSError *error) {
         fail(error);

@@ -9,6 +9,11 @@
 #import "DataManager.h"
 #import "VIManagedObject.h"
 #import "ParsedObject.h"
+#import "DownloadManager.h"
+
+static NSString * const SET_SUFFIX = @"set";
+static NSString * const FORMAT = @"?format=json";
+static NSString * const NOT_FOUND = @"not_found";
 
 @implementation DataManager
 
@@ -23,42 +28,97 @@
 {
     NSAssert(1, @"Base implementation");
 }
-- (void)verifyMissingData:(NSArray *)existingData success:(successfulRequestBlock)success failBlock:(failedRequestBlock)fail
+- (void)verifyMissingData:(NSArray *)existingData success:(successfulRequestBlock)success failBlock:(failedFetchBlock)fail
 {
-//    NSManagedObjectContext *context = [[VICoreDataManager getInstance] startTransaction];
-//    
-//    NSArray *allItems = [[VICoreDataManager getInstance] arrayForModel:[self objectClassString] forContext:context];
-//    
-//    [existingData enumerateObjectsUsingBlock:^(ParsedObject *obj, NSUInteger idx, BOOL * _Nonnull stop)
-//    {
-//        [allItems enumerateObjectsUsingBlock:^(VIManagedObject *managedObject, NSUInteger idx, BOOL * _Nonnull stop) {
-//            
-//        }];
-//    }];
-//    
-//    [[VICoreDataManager getInstance] endTransactionForContext:context];
-//    
+    NSManagedObjectContext *context = [[VICoreDataManager getInstance] startTransaction];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        success(nil);
-    });
+    NSArray *allItems = [[VICoreDataManager getInstance] arrayForModel:[self objectClassString] forContext:context];
+    NSMutableArray *URIs = [NSMutableArray array];
+    [allItems enumerateObjectsUsingBlock:^(VIManagedObject *managedObject, NSUInteger idx, BOOL * _Nonnull stop)
+    {
+        [URIs addObject:managedObject.uID];
+    }];
+
+    [existingData enumerateObjectsUsingBlock:^(ParsedObject *parsedObj, NSUInteger idx, BOOL * _Nonnull stop)
+    {
+        [URIs removeObject:parsedObj.identifier];
+    }];
+    
+    [[VICoreDataManager getInstance] endTransactionForContext:context];
+
+    if (URIs.count)
+    {
+        NSString *path = [self specificPathWithArray:URIs];
+        [self fixWithPath:path success:success failBlock:fail];
+    } else
+    {
+        [self finish:success];
+    }
+}
+
+-(void)fixWithPath:(NSString *)path success:(successfulRequestBlock)success failBlock:(failedFetchBlock)fail
+{
+    [[DownloadManager sharedInstance] requestPath:path withSuccessBlock:^(id jsonData) {
+
+        NSError *error = nil;
+        NSDictionary *parsedData = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+
+        NSArray *notFound = [NSArray arrayWithArray:parsedData[NOT_FOUND]];
+        if (notFound.count)
+        {
+
+            NSManagedObjectContext *context = [[VICoreDataManager getInstance] startTransaction];
+
+            [notFound enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", notFound[idx]];
+                NSArray *fetchResult = [[VICoreDataManager getInstance] arrayForModel:[self objectClassString] withPredicate:predicate forContext:context];
+                VIManagedObject *object = [fetchResult firstObject];
+                [[VICoreDataManager getInstance] deleteObject:object];
+            }];
+            [[VICoreDataManager getInstance] endTransactionForContext:context];
+
+            [self finish:success];
+        }
+    } FailureBlock:^(NSError *error) {
+        [self finish:fail];
+    }];
 
 }
 
 - (NSString*)path
 {
-    NSAssert(1, @"Base implementation");
+    NSAssert(0, @"Base implementation");
     return nil;
+}
+-(NSString *)specificPathWithArray:(NSArray *)resourceURIs
+{
+    NSMutableString *setPath = [[[[self path] stringByDeletingLastPathComponent] stringByAppendingPathComponent:SET_SUFFIX] mutableCopy];
+    [setPath appendFormat:@"/"];
+    [resourceURIs enumerateObjectsUsingBlock:^(NSNumber *identifier, NSUInteger idx, BOOL * _Nonnull stop) {
+
+        [setPath appendFormat:@"%ld;",(long)[identifier integerValue]];
+//http://saf8.airedancecompany.ro/api/saf/newsitem/set/17;19/?format=json
+    }];
+
+    setPath = [[setPath substringToIndex:[setPath length]-1] mutableCopy];
+
+    return [setPath stringByAppendingPathComponent:FORMAT];
 }
 - (void)cancelRequest
 {
-    NSAssert(1, @"Base implementation");
+    NSAssert(0, @"Base implementation");
 }
 - (NSString *)objectClassString
 {
-    NSAssert(1, @"Base implementation");
+    NSAssert(0, @"Base implementation");
     return nil;
 }
-
+-(void)finish:(successfulRequestBlock)success
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        success(nil);
+    });
+}
 
 @end

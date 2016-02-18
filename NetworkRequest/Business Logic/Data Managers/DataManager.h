@@ -20,7 +20,7 @@ typedef void (^failedFetchBlock)(id data);
 
 - (NSArray *)fetchData:(successfulFetchBlock)success failBlock:(failedFetchBlock)fail;
 - (void)requestDataWitchSuccess:(successfulRequestBlock)success failBlock:(failedRequestBlock)fail;
-- (void)verifyMissingData:(NSArray *)existingData success:(successfulRequestBlock)success failBlock:(failedRequestBlock)fail;
+- (void)verifyMissingData:(NSArray *)existingData success:(successfulRequestBlock)success failBlock:(failedFetchBlock)fail;
 - (void)cancelRequest;
 
 
@@ -29,6 +29,7 @@ typedef void (^failedFetchBlock)(id data);
 @interface DataManager : NSObject <BaseDataManager>
 
 - (NSString *)path;
+- (NSString *)specificPathWithArray:(NSArray *)resourceURIs;
 - (NSString *)objectClassString;
-
+- (void)finish:(successfulRequestBlock)success;
 @end

@@ -8,12 +8,15 @@
 
 #import "VIManagedObject.h"
 
+#define newsRURI                @"resourceURI"
 #define newsTitleKey            @"title"
 #define newsLinkKey             @"link"
 #define newsDescriptionKey      @"desc"
 #define newsDeleted             @"del"
 #define newsRead                @"read"
 #define newsTimeStamp           @"timeStamp"
+#define newsIdentifier          @"id"
+
 
 
 @interface NewsObject : VIManagedObject
@@ -23,7 +26,6 @@
 @property (nonatomic, retain) NSNumber * del;
 @property (nonatomic, retain) NSNumber * read;
 @property (nonatomic, retain) NSDate   * timeStamp;
-@property (nonatomic, retain) NSNumber * uid;
 
 +(NSArray *)fetchUndeletedNews;
 +(NSArray *)fetchNews;

@@ -17,13 +17,11 @@
 @dynamic desc1;
 @dynamic desc2;
 @dynamic img;
-@dynamic id_num;
 @dynamic solo;
-
 
 + (id)addWithParams:(NSDictionary *)params forManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_num == %@", [params objectForKey:kArtistIDKey]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", [params objectForKey:kArtistIDKey]];
     
     NSArray *items = [[VICoreDataManager getInstance] arrayForModel:@"ArtistObject" withPredicate:predicate forContext:context];
     
@@ -47,7 +45,7 @@
     item.desc2  = [[params objectForKey:kArtistDesc2Key] isKindOfClass:[NSNull class]] ? item.desc2 : [params objectForKey:kArtistDesc2Key];
     item.img = [[params objectForKey:kArtistImgKey] isKindOfClass:[NSNull class]] ? item.img : [params objectForKey:kArtistImgKey];
 //    item.imgData = [[params objectForKey:kArtistImgDataKey] isKindOfClass:[NSNull class]] ? item.imgData : [params objectForKey:kArtistImgDataKey];
-    item.id_num = [[params objectForKey:kArtistIDKey] isKindOfClass:[NSNull class]] ? item.id_num : [params objectForKey:kArtistIDKey];
+    item.uID = [[params objectForKey:kArtistIDKey] isKindOfClass:[NSNull class]] ? item.uID : [params objectForKey:kArtistIDKey];
     item.solo = [[params objectForKey:kArtistSoloKey] isKindOfClass:[NSNull class]] ? item.solo : [params objectForKey:kArtistSoloKey];
     
     return item;
@@ -65,7 +63,7 @@
 
 +(ArtistObject*)artistForSolo:(NSNumber*)solo {
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_num == %@", solo];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", solo];
     
     NSArray *items = [[VICoreDataManager getInstance] arrayForModel:@"ArtistObject" withPredicate:predicate forContext:[[VICoreDataManager getInstance] managedObjectContext]];
     
@@ -101,7 +99,7 @@
 
 +(ArtistObject*)artistForId:(NSNumber*)idNum {
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_num == %@", idNum];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", idNum];
     
     NSArray *items = [[VICoreDataManager getInstance] arrayForModel:@"ArtistObject" withPredicate:predicate forContext:[VICoreDataManager getInstance].managedObjectContext];
     

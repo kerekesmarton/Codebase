@@ -11,6 +11,7 @@
 #import "VIManagedObject.h"
 
 #define agendaObjectID                      @"uID"
+#define agendaObjectRURI                    @"resourceURI"
 #define agendaObjectNameKey                 @"name"
 #define agendaObjectTimeKey                 @"startTime"
 #define agendaObjectEndTimeKey              @"endTime"
@@ -33,7 +34,6 @@ typedef enum AgendaObjectType {
 
 @interface AgendaObject : VIManagedObject
 
-@property (nonatomic, retain) NSNumber *uID;
 @property (nonatomic, retain) NSString * name;//
 @property (nonatomic, retain) NSDate   * time;//
 @property (nonatomic, retain) NSDate   * endTime;

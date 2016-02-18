@@ -44,7 +44,7 @@
 
 - (void)refresh {
     self.items = [[ArtistObject fetchArtistsForCurrentSettingsType] sortedArrayUsingComparator:^NSComparisonResult(ArtistObject *obj1, ArtistObject *obj2) {
-        return [obj1.id_num compare:obj2.id_num];
+        return [obj1.uID compare:obj2.uID];
     }];
     [self.tableView reloadData];
 }

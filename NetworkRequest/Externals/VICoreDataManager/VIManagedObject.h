@@ -11,6 +11,9 @@
 
 @interface VIManagedObject : NSManagedObject
 
+@property (nonatomic, strong) NSNumber *uID;
+@property (nonatomic, strong) NSString *resourceURI;
+
 //Use If No Relationship Is Being Made
 
 + (id)addWithArray:(NSArray *)array forManagedObjectContext:(NSManagedObjectContext *)context;

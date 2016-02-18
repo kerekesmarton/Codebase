@@ -22,7 +22,6 @@
 @dynamic type;
 @dynamic link;
 @dynamic instructor;
-@dynamic uID;
 @dynamic feedbackComment;
 @dynamic feedbackRating;
 @dynamic feedbackUseful;
@@ -32,7 +31,7 @@
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uID == %@", [params objectForKey:workshopObjectID]];
     
-    NSArray *items = [[VICoreDataManager getInstance] arrayForModel:@"WorkshopObject" withPredicate:predicate forContext:context];
+    NSArray *items = [[VICoreDataManager getInstance] arrayForModel:NSStringFromClass([self class]) withPredicate:predicate forContext:context];
     
     WorkshopObject *item = (WorkshopObject *)[items lastObject];
     

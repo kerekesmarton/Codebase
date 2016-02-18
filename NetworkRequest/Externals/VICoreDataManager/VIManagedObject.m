@@ -10,6 +10,9 @@
 
 @implementation VIManagedObject
 
+@dynamic uID;
+@dynamic resourceURI;
+
 #pragma mark - No Relationship
 
 + (id)addWithArray:(NSArray *)array forManagedObjectContext:(NSManagedObjectContext *)context

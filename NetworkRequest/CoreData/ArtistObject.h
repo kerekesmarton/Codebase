@@ -8,6 +8,7 @@
 
 #import "VIManagedObject.h"
 
+#define kartistRURI          @"resourceURI"
 #define kArtistNameKey       @"artistName"
 #define kArtistLocKey        @"artistLoc"
 #define kArtistTypeKey       @"artistType"
@@ -27,7 +28,6 @@
 @property (nonatomic, retain) NSString *desc1;
 @property (nonatomic, retain) NSString *desc2;
 @property (nonatomic, retain) NSString *img;
-@property (nonatomic, retain) NSNumber *id_num;
 @property (nonatomic, retain) NSNumber *solo;
 
 +(NSArray*)fetchArtists;

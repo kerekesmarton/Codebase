@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VIManagedObject.h"
 
-
+#define workshopObjectRURI                    @"resourceURI"
 #define workshopObjectID                      @"uID"
 #define workshopObjectNameKey                 @"name"
 #define workshopObjectTimeKey                 @"startTime"
@@ -32,7 +32,6 @@ typedef enum WSDifficulty {
 
 @interface WorkshopObject : VIManagedObject
 
-@property (nonatomic, retain) NSNumber * uID;
 @property (nonatomic, retain) NSString * name;//
 @property (nonatomic, retain) NSDate   * time;//
 @property (nonatomic, retain) NSDate   * endTime;
