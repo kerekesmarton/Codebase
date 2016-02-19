@@ -134,6 +134,7 @@
 }
 
 - (void)createUI {
+    
     UILabel *instructor = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(_border.frame), self.view.frame.size.width, 50)];
     instructor.text = artist.name;
     instructor.backgroundColor = [UIColor clearColor];
@@ -232,37 +233,37 @@
     [_content addSubview:diff];
     
     NSString *textWS = [NSString stringWithFormat:@"%@",self.item.details == NULL? @"No description available":[NSString stringWithFormat:@"\t%@\n\n\t",self.item.details]];
-    CGSize sizeWS = [textWS sizeWithFont:[UIFont fontWithName:myriadFontI size:17]
-                       constrainedToSize:CGSizeMake(self.view.frame.size.width-10, 999)
-                           lineBreakMode:NSLineBreakByTruncatingTail];
-    
-    UITextView *wsDetails = [[UITextView alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(diff.frame), self.view.frame.size.width-10, sizeWS.height)];
+    UIFont *wsFont = [UIFont fontWithName:myriadFontI size:17];
+    CGRect wsRect = [textWS boundingRectWithSize:CGSizeMake(self.view.frame.size.width-10, 999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:wsFont} context:nil];
+
+    UITextView *wsDetails = [[UITextView alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(diff.frame), self.view.frame.size.width-10, wsRect.size.height * 2)];
     wsDetails.backgroundColor = [UIColor clearColor];
-    wsDetails.font = [UIFont fontWithName:myriadFontI size:16];
+    wsDetails.font = wsFont;
     wsDetails.textColor = [UIColor whiteColor];
     wsDetails.text = textWS;
     wsDetails.userInteractionEnabled = NO;
     wsDetails.textAlignment = NSTextAlignmentJustified;
     
     [_content addSubview:wsDetails];
-    
+
     //artist details
     NSString *text = [NSString stringWithFormat:@"\t%@\n\n\t..read more",artist.desc1];
-    CGSize size = [text sizeWithFont:[UIFont fontWithName:myriadFontI size:16]
-                   constrainedToSize:CGSizeMake(self.view.frame.size.width-10, 999)
-                       lineBreakMode:NSLineBreakByTruncatingTail];
-    
-    UITextView *artistBtn = [[UITextView alloc] init];
-    artistBtn.delegate = self;
-    artistBtn.frame = CGRectMake(self.view.frame.size.width+5, 10, self.view.frame.size.width-10,size.height*1.5);
-    artistBtn.backgroundColor = [UIColor clearColor];
-    [artistBtn setFont:[UIFont fontWithName:myriadFontI size:16]];
-    [artistBtn setTextColor:[UIColor whiteColor]];
-    [artistBtn setText:text];
-    [_content addSubview:artistBtn];
+    UIFont *font = [UIFont fontWithName:myriadFontI size:16];
+
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(self.view.frame.size.width-10, 999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];
+
+    UITextView *artistDetails = [[UITextView alloc] init];
+    artistDetails.delegate = self;
+    artistDetails.frame = CGRectMake(self.view.frame.size.width+5, 10, self.view.frame.size.width-10,rect.size.height * 2);
+    artistDetails.backgroundColor = [UIColor clearColor];
+    [artistDetails setFont:font];
+    [artistDetails setTextColor:[UIColor whiteColor]];
+    [artistDetails setText:text];
+    [_content addSubview:artistDetails];
     _content.bounces = NO;
     
-    [(UIScrollView*)self.view setContentSize:CGSizeMake(self.view.frame.size.width, CGRectGetMinY(_content.frame)+MAX(CGRectGetMaxY(diff.frame) + sizeWS.height, 10+size.height))];
+    [(UIScrollView*)self.view setContentSize:CGSizeMake(self.view.frame.size.width, CGRectGetMinY(_content.frame)+MAX(CGRectGetMaxY(diff.frame) + MAX(wsRect.size.height, rect.size.height) * 2, 10+rect.size.height))];
+    
     [self preConfigureSharing];
 }
 

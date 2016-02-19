@@ -17,11 +17,11 @@
 
 @interface SAFWorkshopsViewController ()
 
+@property(nonatomic,strong) NSDateFormatter *cellDateFormatter;
+
 @end
 
-@implementation SAFWorkshopsViewController {
-    NSDateFormatter *_cellDateFormatter;
-}
+@implementation SAFWorkshopsViewController
 
 - (void)viewDidLoad
 {
@@ -34,6 +34,11 @@
     if ([self.tabBarController respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.tabBarController.edgesForExtendedLayout = UIRectEdgeNone;
     }
+
+    self.cellDateFormatter = [[NSDateFormatter alloc] init];
+    [_cellDateFormatter setDateFormat:@"HH : mm"];
+    [_cellDateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"Europe/Bucharest"]];
+
 }
 
 - (void)refresh {
@@ -54,11 +59,7 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"CellIdentifier";
-    if (!_cellDateFormatter) {
-        _cellDateFormatter = [[NSDateFormatter alloc] init];
-        [_cellDateFormatter setDateFormat:@"HH : mm"];
-    }
-    
+
     //init cell
     SAFWorkshopsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
@@ -72,10 +73,9 @@
     cell.name.text = item.name;
     cell.difficulty = item.difficulty.intValue;    
     
-    NSDate *wsTime = [NSDate dateWithTimeInterval:-7200 sinceDate:item.time];
     [cell.date setText:[NSString stringWithFormat:@"%@\n-\n%@",
-                    [_cellDateFormatter stringFromDate:wsTime],
-                    [_cellDateFormatter stringFromDate:[NSDate dateWithTimeInterval:3000 sinceDate:wsTime]]]];
+                    [_cellDateFormatter stringFromDate:item.time],
+                    [_cellDateFormatter stringFromDate:[NSDate dateWithTimeInterval:3000 sinceDate:item.time]]]];
     
     cell.favorited = item.favorited.boolValue;
     

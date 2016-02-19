@@ -152,24 +152,14 @@
 #endif
 }
 
-- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
-    
-#if !TARGET_IPHONE_SIMULATOR
-    
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err
+{
 	NSLog(@"Error in registration. Error: %@", err);
-    
-#endif
-    
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-     
-#if !TARGET_IPHONE_SIMULATOR
-    
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
     [self handleRemoteNotification:userInfo];
-    
-#endif
-    
 }
 
 - (void)handleRemoteNotification:(NSDictionary*)userInfo

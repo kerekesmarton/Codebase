@@ -55,7 +55,7 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             ArtistParserDelegate *parser = [[ArtistParserDelegate alloc] init];
             NSArray *results = [parser parseAndSaveObjects:parsedData];
-            NSString *missing = [self verifyMissingData:results success:success failBlock:fail];
+            [self verifyMissingData:results success:success failBlock:fail];
         });
         
     } FailureBlock:^(NSError *error) {

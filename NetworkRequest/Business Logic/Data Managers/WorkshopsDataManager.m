@@ -53,7 +53,7 @@
             WorkshopsParserDelegate *parser = [[WorkshopsParserDelegate alloc] init];
             [parser parseAndSaveObjects:parsedData];
             NSArray *results = [parser parseAndSaveObjects:parsedData];
-            NSString *missing = [self verifyMissingData:results success:success failBlock:fail];
+            [self verifyMissingData:results success:success failBlock:fail];
             
             NSArray *rooms = parser.rooms;
             if (rooms.count) {

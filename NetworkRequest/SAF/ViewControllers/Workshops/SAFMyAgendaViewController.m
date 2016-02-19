@@ -18,13 +18,10 @@
 
 @property (nonatomic, strong) NSDictionary *workshops;
 @property (nonatomic, strong) NSArray *distinctHours;
-
+@property(nonatomic,strong) NSDateFormatter *cellDateFormatter;
 @end
 
-@implementation SAFMyAgendaViewController {
-    
-    NSDateFormatter *_cellDateFormatter;
-}
+@implementation SAFMyAgendaViewController
 
 @synthesize workshops,distinctHours;
 
@@ -32,6 +29,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    self.cellDateFormatter = [[NSDateFormatter alloc] init];
+    [_cellDateFormatter setDateFormat:@"HH : mm"];
+    [_cellDateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"Europe/Bucharest"]];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -67,10 +68,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"CellIdentifier";
-    if (!_cellDateFormatter) {
-        _cellDateFormatter = [[NSDateFormatter alloc] init];
-        [_cellDateFormatter setDateFormat:@"HH : mm"];
-    }
     //init cell
     SAFMyAgendaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
@@ -82,11 +79,10 @@
     NSArray *array = [self.workshops objectForKey:time.description];
     
     [cell clearRows];
-    
+
     //hour label    
-    NSDate *wsTime = [NSDate dateWithTimeInterval:-7200 sinceDate:time];
-    NSString *interval = [_cellDateFormatter stringFromDate:wsTime];
-    interval = [interval stringByAppendingFormat:@"\n-\n%@",[_cellDateFormatter stringFromDate:[wsTime dateByAddingTimeInterval:3000]]];
+    NSString *interval = [_cellDateFormatter stringFromDate:time];
+    interval = [interval stringByAppendingFormat:@"\n-\n%@",[_cellDateFormatter stringFromDate:[time dateByAddingTimeInterval:3000]]];
     [cell configureTimeText:interval];
     
     //add details
