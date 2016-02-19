@@ -20,6 +20,8 @@
 
 #import <objc/runtime.h>
 
+static NSString * const USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS = @"USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS";
+
 @implementation AppDelegate (SAF)
 
 -(UIImageView*)splash {
@@ -56,7 +58,7 @@
 //            NSLog(@"%@", fontName);
 //        }
 //    }
-    
+
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
 
     
@@ -90,7 +92,8 @@
     [self performSelector:@selector(removeSplash) withObject:nil afterDelay:1];
     
     //registering for APNS
-    
+
+#if TARGET_IPHONE_SIMULATOR
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
@@ -98,6 +101,7 @@
     } else {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     }
+#endif
     
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
@@ -114,10 +118,17 @@
 #pragma mark - push notifications
 
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    
-    
-    
-#if !TARGET_IPHONE_SIMULATOR
+
+#if TARGET_IPHONE_SIMULATOR
+    return;
+#endif
+
+    BOOL didRegister = [[NSUserDefaults standardUserDefaults] boolForKey:USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS];
+
+    if (didRegister)
+    {
+        return;
+    }
     
     NSString *deviceTokenStr = [[[[deviceToken description]
                                   stringByReplacingOccurrencesOfString: @"<" withString: @""]
@@ -144,12 +155,15 @@
     NSMutableURLRequest *urlRequest = [helper requestWithMethod:@"POST" path:@"/api/saf/apnsdevice/" parameters:params];    
     
     [[DownloadManager sharedInstance] performRequest:urlRequest withSuccessBlock:^(id response) {
-        NSLog(@"Subscribed to notifications to AIRE server%@",[response description]);
+
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
     } FailureBlock:^(NSError *error) {
+
         NSLog(@"Already subscribed to AIRE Servers %@",error.userInfo[NSLocalizedDescriptionKey]);
+
     }];
-    
-#endif
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err

@@ -57,7 +57,7 @@ NSInteger kSAFNewsCellHeight = 100;
         self.detailTextLabel.backgroundColor = [UIColor clearColor];
         self.textLabel.backgroundColor = [UIColor clearColor];
         
-        self.imageView.image = [UIImage imageNamed:@"news icon"];
+        self.imageView.image = [UIImage imageNamed:@"news_icon"];
         
         self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sageata"]];
         
