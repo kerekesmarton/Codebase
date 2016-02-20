@@ -49,5 +49,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>New item</key>
+		<string>${SRCROOT}/NetworkRequest/SAF Resources/Images.xcassets/AppIcon.appiconinset/icon_60@2x-1.png</string>
+	</dict>
 </dict>
 </plist>

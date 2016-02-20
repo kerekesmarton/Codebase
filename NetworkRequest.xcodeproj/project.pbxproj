@@ -34,10 +34,10 @@
 		10A3966D1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
 		10A766A41C78FADB00DD3C53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A11C78FADB00DD3C53 /* Default-568h@2x.png */; };
 		10A766A51C78FADB00DD3C53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A11C78FADB00DD3C53 /* Default-568h@2x.png */; };
-		10A766A61C78FADB00DD3C53 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A21C78FADB00DD3C53 /* Default.png */; };
-		10A766A71C78FADB00DD3C53 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A21C78FADB00DD3C53 /* Default.png */; };
 		10A766A81C78FADB00DD3C53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A31C78FADB00DD3C53 /* Default@2x.png */; };
 		10A766A91C78FADB00DD3C53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A31C78FADB00DD3C53 /* Default@2x.png */; };
+		10A766AC1C7905CA00DD3C53 /* Default@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766AA1C7905CA00DD3C53 /* Default@2x~iPad.png */; };
+		10A766AD1C7905CA00DD3C53 /* Default~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766AB1C7905CA00DD3C53 /* Default~iPad.png */; };
 		10C4F60C1C725EE9005640E5 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1C1C62ABBC004F4C79 /* splash.png */; };
 		10C4F60D1C725EE9005640E5 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1D1C62ABBC004F4C79 /* splash@2x.png */; };
 		10C4F60E1C725EE9005640E5 /* splash~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1E1C62ABBC004F4C79 /* splash~iPad.png */; };
@@ -342,8 +342,9 @@
 		10A3966A1C35413D004D1EE6 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIAnnotation.h; path = DataModel/POIAnnotation.h; sourceTree = "<group>"; };
 		10A3966B1C35413D004D1EE6 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIAnnotation.m; path = DataModel/POIAnnotation.m; sourceTree = "<group>"; };
 		10A766A11C78FADB00DD3C53 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		10A766A21C78FADB00DD3C53 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		10A766A31C78FADB00DD3C53 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		10A766AA1C7905CA00DD3C53 /* Default@2x~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iPad.png"; sourceTree = "<group>"; };
+		10A766AB1C7905CA00DD3C53 /* Default~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iPad.png"; sourceTree = "<group>"; };
 		10C934211A8CC00300EB9126 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Condensed Bold.ttf"; sourceTree = "<group>"; };
 		10E84A811A664AF700FEF0C1 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
@@ -1175,8 +1176,9 @@
 				3B622E7817DCB73400D24F0E /* SAF-App.plist */,
 				3BA6B7D21750E35A006EB824 /* InfoPlist.strings */,
 				10A766A11C78FADB00DD3C53 /* Default-568h@2x.png */,
-				10A766A21C78FADB00DD3C53 /* Default.png */,
 				10A766A31C78FADB00DD3C53 /* Default@2x.png */,
+				10A766AA1C7905CA00DD3C53 /* Default@2x~iPad.png */,
+				10A766AB1C7905CA00DD3C53 /* Default~iPad.png */,
 				109A12B51A84EE6500AB105C /* Launch.xib */,
 				3BA6B7D51750E35A006EB824 /* main.m */,
 				3BA6B7D71750E35A006EB824 /* NetworkRequest-Prefix.pch */,
@@ -1451,10 +1453,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B86000617999E14009624CA /* InfoPlist.strings in Resources */,
+				10A766AC1C7905CA00DD3C53 /* Default@2x~iPad.png in Resources */,
 				108211801C77891600F67D33 /* artists.xcassets in Resources */,
 				3B5872C2179AC37100813129 /* SettingsEnumControllerViewController.xib in Resources */,
 				3B5872C3179AC37700813129 /* SettingsViewController.xib in Resources */,
-				10A766A71C78FADB00DD3C53 /* Default.png in Resources */,
 				3B5872CB179AC6EB00813129 /* SAFNewDetailViewController.xib in Resources */,
 				3BB9F8DB179BE39400C91ABC /* ArtistDetailViewController.xib in Resources */,
 				3BB9F8DC179BE39A00C91ABC /* ArtistsViewController.xib in Resources */,
@@ -1471,6 +1473,7 @@
 				10C4F60C1C725EE9005640E5 /* splash.png in Resources */,
 				3B87C29F179D1B7E0095362E /* SAFArtistTabsViewController.xib in Resources */,
 				3B8FF7BE17A2B2DB00046FD9 /* AgendaViewController.xib in Resources */,
+				10A766AD1C7905CA00DD3C53 /* Default~iPad.png in Resources */,
 				3B622E8117DCB85F00D24F0E /* MapViewController.xib in Resources */,
 				109A12B61A84EE6500AB105C /* Launch.xib in Resources */,
 				10C4F6121C725EE9005640E5 /* splash2~iPad.png in Resources */,
@@ -1543,7 +1546,6 @@
 				3BDFFA3D17E0EC3D008447AC /* upload@2x.png in Resources */,
 				3BDFFA4017E0EC52008447AC /* target.png in Resources */,
 				3BDFFA4117E0EC52008447AC /* upload.png in Resources */,
-				10A766A61C78FADB00DD3C53 /* Default.png in Resources */,
 				3BDFFA4317E0F2A1008447AC /* favourite_place@2x.png in Resources */,
 				3BDFFA4517E0F2B1008447AC /* favourite_place.png in Resources */,
 				3BDFFA4717E0F2E6008447AC /* map_pin@2x.png in Resources */,
