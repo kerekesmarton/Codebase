@@ -276,7 +276,7 @@
 }
 
 - (void)preConfigureSharing {
-    self.useMedia = YES;
+    self.useMedia = kPhotoDefaultNone | kPhotoTakePicture | kPhotoTakeMovie | kPhotoChoose | kPhotoProvidedPicture;
     [[ArtistImageDataManager sharedInstance] imageForString:artist.img completionBlock:^(NSData *imgData) {
         self.postImage = [UIImage imageWithData:imgData];
     } failureBlock:^(NSError *error) {

@@ -88,7 +88,7 @@
     [self setEditing:YES animated:animated];
     
     //sharing config
-    self.useMedia = NO;
+    self.useMedia = kPhotoDefaultNone | kPhotoTakePicture | kPhotoTakeMovie | kPhotoChoose;
     self.postImage = nil;
     self.postText = [NSString stringWithFormat:@"%@\n%@",self.item.title,self.item.desc];
     [self layoutShareButton];

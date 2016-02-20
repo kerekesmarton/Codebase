@@ -93,7 +93,7 @@ static NSString * const USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS = @"USER_DEFAULT
     
     //registering for APNS
 
-#if TARGET_IPHONE_SIMULATOR
+#if ! TARGET_IPHONE_SIMULATOR
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
@@ -101,8 +101,9 @@ static NSString * const USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS = @"USER_DEFAULT
     } else {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     }
+
 #endif
-    
+
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
     if (launchOptions != nil)
@@ -186,9 +187,6 @@ static NSString * const USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS = @"USER_DEFAULT
         
         NSLog(@"Handled remote notification%@",[userInfo description]);
     }
-    
-    [ArtistsDataManager sharedInstance];
-    [WorkshopsDataManager sharedInstance];
 }
 
 @end

@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum kShareTypes {
+
+    kShareFacebook = 0,
+    kShareTwitter = 1,
+} ShareType;
+
+typedef enum kPhotoTypes {
+
+    kPhotoDefaultNone = 1<<0,
+    kPhotoTakePicture = 1<<1,
+    kPhotoTakeMovie = 1<<2,
+    kPhotoChoose = 1<<3,
+    kPhotoProvidedPicture = 1<<4,
+
+} PhotoType;
+
+
 @interface UIViewController (Shareing) <UIActionSheetDelegate, UIAlertViewDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic, retain)   NSString    *activity;
@@ -15,7 +32,7 @@
 @property (nonatomic, retain)   NSString    *postText;
 @property (nonatomic, retain)   NSString    *postURL;
 
-@property (nonatomic, assign)   BOOL        useMedia;
+@property (nonatomic, assign)   PhotoType   useMedia;
 - (void) share:(id)sender;
 - (BOOL) shareActionSheet:(UIActionSheet *)actionSheet acionForIndex:(NSInteger)buttonIndex;
 

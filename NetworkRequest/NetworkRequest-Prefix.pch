@@ -20,7 +20,6 @@
 #pragma mark - Custom Imports
 
 //#import "Externals/Tapku/TapkuLibrary/TapkuLibrary.h"
-#define iOS6            ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
 #define degreesToRadians(x)             (M_PI * x / 180.0)
 #define navigationBarItemHeight (([UIDevice isiPad] || UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) ? 30.0 : 24.0)
 #define navigationBarItemHeightForOrientation(orientation) (([UIDevice isiPad] || UIInterfaceOrientationIsPortrait(orientation)) ? 30.0 : 24.0)

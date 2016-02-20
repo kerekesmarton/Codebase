@@ -10,6 +10,13 @@
 #import <Social/Social.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
+
+static NSString * const SHARE_BUTTON_TITLE_DEFAULT          = @"Just post it..";
+static NSString * const SHARE_BUTTON_TITLE_TAKE_PICTURE     = @"Take a photo";
+static NSString * const SHARE_BUTTON_TITLE_TAKE_MOVIE       = @"Capture a movie";
+static NSString * const SHARE_BUTTON_TITLE_CHOOSE           = @"Choose from library";
+static NSString * const SHARE_BUTTON_TITLE_USE_ARTIST_IMG   = @"Use provided artist picture";
+
 NSString    *_activity;
 NSString    *_postText;
 UIImage     *_postImage;
@@ -17,20 +24,6 @@ NSString    *_postURL;
 
 int shareActionSHeetTagShare = 0;
 int shareActionSHeetTagPicture = 1;
-
-typedef enum kShareTypes {
-    
-    kShareFacebook = 0,
-    kShareTwitter = 1,
-} ShareType;
-
-typedef enum kPhotoTypes {
-    
-    kPhotoTakePic = 0,
-    kPhotoTakeMovie = 1,
-    kPhotoChoose = 2,
-    kPhotoDefault = 3,
-} PhotoType;
 
 @implementation UIViewController (Shareing)
 
@@ -47,13 +40,13 @@ typedef enum kPhotoTypes {
     return controller;
 }
 
-bool _useMedia = true;
+PhotoType _useMedia = true;
 
--(BOOL)useMedia {
+-(PhotoType)useMedia {
     return _useMedia;
 }
 
--(void)setUseMedia:(BOOL)useMedia {
+-(void)setUseMedia:(PhotoType)useMedia {
  
     _useMedia = useMedia;
 }
@@ -112,8 +105,33 @@ bool _useMedia = true;
 }
 
 -(void)choosePicture:(id)sender {
-    
-    UIActionSheet *pictureMethods = [[UIActionSheet alloc] initWithTitle:@"Do you want to take a photo?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo",@"Capture Movie",@"Choose from existing",@"Use Artist Picture", nil];
+
+    NSMutableArray *titles = [NSMutableArray array];
+    if (_useMedia & kPhotoDefaultNone)
+    {
+        [titles addObject:SHARE_BUTTON_TITLE_DEFAULT];
+    }
+    if (_useMedia & kPhotoTakePicture)
+    {
+        [titles addObject:SHARE_BUTTON_TITLE_TAKE_PICTURE];
+    }
+    if (_useMedia & kPhotoTakeMovie)
+    {
+        [titles addObject:SHARE_BUTTON_TITLE_TAKE_MOVIE];
+    }
+    if (_useMedia & kPhotoChoose)
+    {
+        [titles addObject:SHARE_BUTTON_TITLE_CHOOSE];
+    }
+    if (_useMedia & kPhotoProvidedPicture)
+    {
+        [titles addObject:SHARE_BUTTON_TITLE_USE_ARTIST_IMG];
+    }
+
+    UIActionSheet *pictureMethods = [[UIActionSheet alloc] initWithTitle:@"Do you want to take a photo?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles: nil];
+    for (NSString *title in titles) {
+        [pictureMethods addButtonWithTitle:title];
+    }
     pictureMethods.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     pictureMethods.tag = shareActionSHeetTagPicture;
     
@@ -131,27 +149,24 @@ bool _useMedia = true;
         if (buttonIndex == actionSheet.cancelButtonIndex) {
             return NO;
         }
-        if (!iOS6) {
-            [[[UIAlertView alloc ] initWithTitle:@"We are sorry!" message:@"Sharing only supported on iOS 6 and above" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
-            return NO;
-        }
         switch (buttonIndex) {
             case  kShareFacebook:
                 self.activity = SLServiceTypeFacebook;
                 break;
             case  kShareTwitter:
                 self.activity = SLServiceTypeTwitter;
+                _useMedia =  _useMedia ^ kPhotoTakeMovie;
                 break;
             default:
                 self.activity = nil;
                 break;
         }
-        
+
         if (self.activity) {
-            if (self.useMedia) {
+            if (self.useMedia > kPhotoTakePicture) {
                 [self choosePicture:nil];
             } else {
-                [self selectImage:kPhotoDefault];
+                [self selectImage:kPhotoProvidedPicture];
             }
         }
         return YES;
@@ -160,27 +175,29 @@ bool _useMedia = true;
         if (buttonIndex == actionSheet.cancelButtonIndex) {
             return NO;
         }
-        switch (buttonIndex) {
-            case  kPhotoTakePic:
-                [self selectImage:kPhotoTakePic];
-                break;
-            case kPhotoTakeMovie:
-                if ([self.activity isEqualToString: SLServiceTypeTwitter]) {
-                    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Using picture" message:@"movie posting not avaible for twitter" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                    [av show];
-                    [self selectImage:kPhotoTakePic];
-                } else {
-                    [self selectImage:kPhotoTakeMovie];
-                }
-                break;
-            case  kPhotoChoose:
-                [self selectImage:kPhotoChoose];
-                break;
-            case kPhotoDefault:
-                [self selectImage:kPhotoDefault];
-                break;
-            default:
-                break;
+
+        NSString * title = [actionSheet buttonTitleAtIndex:buttonIndex];
+
+        if ([title isEqualToString:SHARE_BUTTON_TITLE_DEFAULT])
+        {
+            [self selectImage:kPhotoDefaultNone];
+            self.postImage = nil;
+        }
+        else if ([title isEqualToString:SHARE_BUTTON_TITLE_TAKE_PICTURE])
+        {
+            [self selectImage:kPhotoTakePicture];
+        }
+        else if ([title isEqualToString:SHARE_BUTTON_TITLE_TAKE_MOVIE])
+        {
+            [self selectImage:kPhotoTakeMovie];
+        }
+        else if ([title isEqualToString:SHARE_BUTTON_TITLE_CHOOSE])
+        {
+            [self selectImage:kPhotoChoose];
+        }
+        else if ([title isEqualToString:SHARE_BUTTON_TITLE_USE_ARTIST_IMG])
+        {
+            [self selectImage:kPhotoProvidedPicture];
         }
         return YES;
     } else
@@ -189,8 +206,7 @@ bool _useMedia = true;
 
 - (IBAction)selectImage:(PhotoType)type {
     
-    if (type == kPhotoDefault) {
-//        self.postImage = ???
+    if (type == kPhotoProvidedPicture || type == kPhotoDefaultNone) {
         
         if ([self.activity isEqualToString:SLServiceTypeFacebook]) {
             [self shareOnFacebook];
@@ -207,7 +223,7 @@ bool _useMedia = true;
     imagePicker.allowsEditing = NO;
     
     
-    if (type == kPhotoTakePic && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+    if (type == kPhotoTakePicture && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         imagePicker.mediaTypes = [NSArray arrayWithObjects: (NSString *) kUTTypeImage, nil];
     }
@@ -268,18 +284,21 @@ bool _useMedia = true;
 }
 
 -(void)shareOnFacebook {
-    if (!iOS6) {
-        
-        return;
-    }
+
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
-        
         SLComposeViewController *composeController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
         [composeController setInitialText:self.postText];
-        [composeController addImage:self.postImage];
-        [composeController addURL: [NSURL URLWithString:self.postURL]];
+        if (_postImage)
+        {
+            BOOL res = [composeController addImage:self.postImage];
+            NSLog(@"image attached: %d",res);
+        }
+        else
+        {
+            [composeController addURL: [NSURL URLWithString:self.postURL]];
+        }
         [composeController setCompletionHandler:^(SLComposeViewControllerResult result){
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (result == SLComposeViewControllerResultDone) {
@@ -294,18 +313,19 @@ bool _useMedia = true;
 }
 
 -(void)shareOnTwitter {
-    if (!iOS6) {
-        
-        return;
-    }
+
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         
         SLComposeViewController *composeController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         [composeController setInitialText:self.postText];
-        [composeController addImage:self.postImage];
         [composeController addURL: [NSURL URLWithString:self.postURL]];
+        if (_postImage)
+        {
+            [composeController addImage:self.postImage];
+        }
+
         [composeController setCompletionHandler:^(SLComposeViewControllerResult result){
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (result == SLComposeViewControllerResultDone) {
