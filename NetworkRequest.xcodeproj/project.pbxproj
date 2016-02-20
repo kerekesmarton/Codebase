@@ -32,6 +32,12 @@
 		109A12B61A84EE6500AB105C /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109A12B51A84EE6500AB105C /* Launch.xib */; };
 		10A3966C1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
 		10A3966D1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
+		10A766A41C78FADB00DD3C53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A11C78FADB00DD3C53 /* Default-568h@2x.png */; };
+		10A766A51C78FADB00DD3C53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A11C78FADB00DD3C53 /* Default-568h@2x.png */; };
+		10A766A61C78FADB00DD3C53 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A21C78FADB00DD3C53 /* Default.png */; };
+		10A766A71C78FADB00DD3C53 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A21C78FADB00DD3C53 /* Default.png */; };
+		10A766A81C78FADB00DD3C53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A31C78FADB00DD3C53 /* Default@2x.png */; };
+		10A766A91C78FADB00DD3C53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A31C78FADB00DD3C53 /* Default@2x.png */; };
 		10C4F60C1C725EE9005640E5 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1C1C62ABBC004F4C79 /* splash.png */; };
 		10C4F60D1C725EE9005640E5 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1D1C62ABBC004F4C79 /* splash@2x.png */; };
 		10C4F60E1C725EE9005640E5 /* splash~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1E1C62ABBC004F4C79 /* splash~iPad.png */; };
@@ -148,9 +154,6 @@
 		3B86000317999E14009624CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA6B7CB1750E35A006EB824 /* Foundation.framework */; };
 		3B86000417999E14009624CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA6B7CD1750E35A006EB824 /* CoreGraphics.framework */; };
 		3B86000617999E14009624CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6B7D21750E35A006EB824 /* InfoPlist.strings */; };
-		3B86000717999E14009624CA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6B7DB1750E35A006EB824 /* Default.png */; };
-		3B86000817999E14009624CA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6B7DD1750E35A006EB824 /* Default@2x.png */; };
-		3B86000917999E14009624CA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6B7DF1750E35A006EB824 /* Default-568h@2x.png */; };
 		3B86FFC217999E14009624CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7D51750E35A006EB824 /* main.m */; };
 		3B86FFC317999E14009624CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7D91750E35A006EB824 /* AppDelegate.m */; };
 		3B86FFC417999E14009624CA /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7EF1750E39B006EB824 /* AFHTTPClient.m */; };
@@ -235,9 +238,6 @@
 		3BA6B7D41750E35A006EB824 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6B7D21750E35A006EB824 /* InfoPlist.strings */; };
 		3BA6B7D61750E35A006EB824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7D51750E35A006EB824 /* main.m */; };
 		3BA6B7DA1750E35A006EB824 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7D91750E35A006EB824 /* AppDelegate.m */; };
-		3BA6B7DC1750E35A006EB824 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6B7DB1750E35A006EB824 /* Default.png */; };
-		3BA6B7DE1750E35A006EB824 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6B7DD1750E35A006EB824 /* Default@2x.png */; };
-		3BA6B7E01750E35A006EB824 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6B7DF1750E35A006EB824 /* Default-568h@2x.png */; };
 		3BA6B8161750E39B006EB824 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7EF1750E39B006EB824 /* AFHTTPClient.m */; };
 		3BA6B8171750E39B006EB824 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7F11750E39B006EB824 /* AFHTTPRequestOperation.m */; };
 		3BA6B8181750E39B006EB824 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6B7F31750E39B006EB824 /* AFImageRequestOperation.m */; };
@@ -341,6 +341,9 @@
 		109A12B51A84EE6500AB105C /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		10A3966A1C35413D004D1EE6 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIAnnotation.h; path = DataModel/POIAnnotation.h; sourceTree = "<group>"; };
 		10A3966B1C35413D004D1EE6 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIAnnotation.m; path = DataModel/POIAnnotation.m; sourceTree = "<group>"; };
+		10A766A11C78FADB00DD3C53 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		10A766A21C78FADB00DD3C53 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		10A766A31C78FADB00DD3C53 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		10C934211A8CC00300EB9126 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Condensed Bold.ttf"; sourceTree = "<group>"; };
 		10E84A811A664AF700FEF0C1 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
@@ -526,9 +529,6 @@
 		3BA6B7D71750E35A006EB824 /* NetworkRequest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NetworkRequest-Prefix.pch"; sourceTree = "<group>"; };
 		3BA6B7D81750E35A006EB824 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3BA6B7D91750E35A006EB824 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3BA6B7DB1750E35A006EB824 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		3BA6B7DD1750E35A006EB824 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		3BA6B7DF1750E35A006EB824 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3BA6B7EE1750E39B006EB824 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		3BA6B7EF1750E39B006EB824 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		3BA6B7F01750E39B006EB824 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -1174,12 +1174,12 @@
 				3BA6B7D11750E35A006EB824 /* NetworkRequest-Info.plist */,
 				3B622E7817DCB73400D24F0E /* SAF-App.plist */,
 				3BA6B7D21750E35A006EB824 /* InfoPlist.strings */,
+				10A766A11C78FADB00DD3C53 /* Default-568h@2x.png */,
+				10A766A21C78FADB00DD3C53 /* Default.png */,
+				10A766A31C78FADB00DD3C53 /* Default@2x.png */,
 				109A12B51A84EE6500AB105C /* Launch.xib */,
 				3BA6B7D51750E35A006EB824 /* main.m */,
 				3BA6B7D71750E35A006EB824 /* NetworkRequest-Prefix.pch */,
-				3BA6B7DB1750E35A006EB824 /* Default.png */,
-				3BA6B7DD1750E35A006EB824 /* Default@2x.png */,
-				3BA6B7DF1750E35A006EB824 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1452,11 +1452,9 @@
 			files = (
 				3B86000617999E14009624CA /* InfoPlist.strings in Resources */,
 				108211801C77891600F67D33 /* artists.xcassets in Resources */,
-				3B86000717999E14009624CA /* Default.png in Resources */,
-				3B86000817999E14009624CA /* Default@2x.png in Resources */,
-				3B86000917999E14009624CA /* Default-568h@2x.png in Resources */,
 				3B5872C2179AC37100813129 /* SettingsEnumControllerViewController.xib in Resources */,
 				3B5872C3179AC37700813129 /* SettingsViewController.xib in Resources */,
+				10A766A71C78FADB00DD3C53 /* Default.png in Resources */,
 				3B5872CB179AC6EB00813129 /* SAFNewDetailViewController.xib in Resources */,
 				3BB9F8DB179BE39400C91ABC /* ArtistDetailViewController.xib in Resources */,
 				3BB9F8DC179BE39A00C91ABC /* ArtistsViewController.xib in Resources */,
@@ -1464,6 +1462,7 @@
 				10C4F60D1C725EE9005640E5 /* splash@2x.png in Resources */,
 				3BB9F8DE179BE3A000C91ABC /* DetailsViewController.xib in Resources */,
 				3BB9F8DF179BE3A300C91ABC /* WorkshopDetailsViewController.xib in Resources */,
+				10A766A91C78FADB00DD3C53 /* Default@2x.png in Resources */,
 				3BB9F8E0179BE3A500C91ABC /* WorkshopsViewController.xib in Resources */,
 				10C4F60F1C725EE9005640E5 /* splash2.png in Resources */,
 				108211821C77891600F67D33 /* Images.xcassets in Resources */,
@@ -1478,6 +1477,7 @@
 				3B4EF89D17DE453D00D345E2 /* MyriadPro-It.otf in Resources */,
 				108211831C77891600F67D33 /* Menu.xcassets in Resources */,
 				3B4EF89E17DE453D00D345E2 /* MyriadPro-Regular.otf in Resources */,
+				10A766A51C78FADB00DD3C53 /* Default-568h@2x.png in Resources */,
 				3B4EF89F17DE453D00D345E2 /* MyriadPro-Semibold.otf in Resources */,
 				10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */,
 				10C4F6101C725EE9005640E5 /* splash2@2x.png in Resources */,
@@ -1494,13 +1494,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA6B7D41750E35A006EB824 /* InfoPlist.strings in Resources */,
-				3BA6B7DC1750E35A006EB824 /* Default.png in Resources */,
-				3BA6B7DE1750E35A006EB824 /* Default@2x.png in Resources */,
-				3BA6B7E01750E35A006EB824 /* Default-568h@2x.png in Resources */,
 				3B1842B1175A420400B2FFE7 /* ArtistDetailViewController.xib in Resources */,
 				3B1842B3175A420400B2FFE7 /* ArtistsViewController.xib in Resources */,
 				3B1842B5175A420400B2FFE7 /* DetailsViewController.xib in Resources */,
 				3B1842B7175A420400B2FFE7 /* NewsViewController.xib in Resources */,
+				10A766A41C78FADB00DD3C53 /* Default-568h@2x.png in Resources */,
 				3B1842B9175A420400B2FFE7 /* WorkshopDetailsViewController.xib in Resources */,
 				3B1842BB175A420400B2FFE7 /* WorkshopsViewController.xib in Resources */,
 				3BB143751767932A000E1211 /* SettingsViewController.xib in Resources */,
@@ -1521,6 +1519,7 @@
 				3B1114E317DF9163002A2AFC /* users@2x.png in Resources */,
 				3B1114E417DF9163002A2AFC /* waste@2x.png in Resources */,
 				3B1114E517DF9163002A2AFC /* world@2x.png in Resources */,
+				10A766A81C78FADB00DD3C53 /* Default@2x.png in Resources */,
 				3B1114EF17DF91B0002A2AFC /* back.png in Resources */,
 				3B1114F017DF91B0002A2AFC /* calendar.png in Resources */,
 				3B1114F117DF91B0002A2AFC /* clock.png in Resources */,
@@ -1544,6 +1543,7 @@
 				3BDFFA3D17E0EC3D008447AC /* upload@2x.png in Resources */,
 				3BDFFA4017E0EC52008447AC /* target.png in Resources */,
 				3BDFFA4117E0EC52008447AC /* upload.png in Resources */,
+				10A766A61C78FADB00DD3C53 /* Default.png in Resources */,
 				3BDFFA4317E0F2A1008447AC /* favourite_place@2x.png in Resources */,
 				3BDFFA4517E0F2B1008447AC /* favourite_place.png in Resources */,
 				3BDFFA4717E0F2E6008447AC /* map_pin@2x.png in Resources */,
@@ -1767,7 +1767,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/NetworkRequest/SAF-App.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
@@ -1796,7 +1796,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/NetworkRequest/SAF-App.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AIRE.${PRODUCT_NAME:rfc1034identifier}";
