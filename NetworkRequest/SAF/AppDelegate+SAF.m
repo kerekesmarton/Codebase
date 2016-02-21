@@ -87,9 +87,8 @@ static NSString * const USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS = @"USER_DEFAULT
     self.splash.image = [UIImage imageNamed:@"splash"];
     self.splash.frame = self.window.frame;
     [self.window addSubview:self.splash];
-#warning Change before release!!!
-    [self.splash performSelector:@selector(setImage:) withObject:[UIImage imageNamed:@"splash2"] afterDelay:0.5];
-    [self performSelector:@selector(removeSplash) withObject:nil afterDelay:1];
+    [self.splash performSelector:@selector(setImage:) withObject:[UIImage imageNamed:@"splash2"] afterDelay:1];
+    [self performSelector:@selector(removeSplash) withObject:nil afterDelay:2];
     
     //registering for APNS
 

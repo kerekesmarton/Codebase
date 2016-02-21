@@ -23,7 +23,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>9.0</string>
+	<string>9.0.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -32,9 +32,9 @@
 		<dict>
 			<key>saf9.airedancecompany.ro</key>
 			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
 		</dict>
