@@ -21,7 +21,7 @@
 
 @implementation FeedbackClient
 
-static NSString * const kRequestURL = @"http://saf8.airedancecompany.ro/";
+static NSString * const kRequestURL = @"http://saf9.airedancecompany.ro/";
 
 + (FeedbackClient *)sharedClient {
     static FeedbackClient *_sharedClient = nil;

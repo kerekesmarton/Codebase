@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view.
     
     UIBarButtonItem *dismiss = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
-    UIBarButtonItem *goToFB = [[UIBarButtonItem alloc] initWithTitle:@"Visit us on Facebook" style:UIBarButtonItemStyleDone target:self action:@selector(goToFacebook:)];
+    UIBarButtonItem *goToFB = [[UIBarButtonItem alloc] initWithTitle:@"Visit us" style:UIBarButtonItemStyleDone target:self action:@selector(goToFacebook:)];
     
     self.navigationItem.leftBarButtonItem = dismiss;
     self.navigationItem.rightBarButtonItem = goToFB;
@@ -70,6 +70,7 @@
         
         UIImage *img = [UIImage imageNamed:@"advents logo"];
         _logo.image = img;
+        _logo.backgroundColor = [UIColor whiteColor];
         _nameLbl.text = @"Advents";
         _functionLbl.text = @"design";
         _desc1.text = [NSString stringWithFormat:@"\tFrom marketing strategy to advertising campaigns, from Branding to graphic design, from company events to guerrilla marketing and PR... we choose from the menu of solutions that fits you best to differentiate yourself in the market and improve your business..\n\n\tWe hope you enjoy SAF App, and have a great party!!"];
@@ -115,7 +116,7 @@
     }
     else
     {
-        url = [NSURL URLWithString:@"http://www.facebook.com/208224446006164"];
+        url = [NSURL URLWithString:@"http://www.advents.ro"];
     }
     [[UIApplication sharedApplication] openURL:url];
 }
