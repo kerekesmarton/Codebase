@@ -310,6 +310,10 @@ PhotoType _useMedia = true;
         }];
         [self.navigationController presentViewController:composeController animated:YES completion:^(){}];
     }
+    else
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Facebook not installed" message:@"Please download from the app store and log in to the Facebook app or log in from Settings app/Facebook." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
 }
 
 -(void)shareOnTwitter {
@@ -336,6 +340,10 @@ PhotoType _useMedia = true;
             });
         }];
         [self.navigationController presentViewController:composeController animated:YES completion:^(){}];
+    }
+    else
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Twitter not installed" message:@"Please download from the app store and log in to the Twitter app or log in from Settings app/Twitter." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
 }
 

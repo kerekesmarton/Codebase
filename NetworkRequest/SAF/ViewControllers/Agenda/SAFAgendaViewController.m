@@ -161,9 +161,18 @@
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:_expandedSection] withRowAnimation:UITableViewRowAnimationAutomatic];
         
         [self.tableView endUpdates];
-        
-        NSIndexPath *ip = [NSIndexPath indexPathForRow:0 inSection:[(UIButton*)sender tag]];
-        [self.tableView scrollToRowAtIndexPath:ip atScrollPosition:UITableViewScrollPositionTop animated:YES];
+
+        NSInteger section = [(UIButton*)sender tag];
+        NSInteger numberOfRows = [self tableView:self.tableView numberOfRowsInSection:section];
+        if (numberOfRows)
+        {
+            NSIndexPath *ip = [NSIndexPath indexPathForRow:0 inSection:section];
+            [self.tableView scrollToRowAtIndexPath:ip atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        }
+        else
+        {
+            _expandedSection = 1000;
+        }
     }
 }
 

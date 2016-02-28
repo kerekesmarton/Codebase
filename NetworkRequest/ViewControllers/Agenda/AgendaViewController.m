@@ -56,7 +56,15 @@
 }
 
 - (void)refresh {
-    self.items = [AgendaObject dataSource];
+    NSDictionary *items = [AgendaObject dataSource];
+    NSMutableDictionary *dataSource = [NSMutableDictionary dictionary];
+    [items enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (obj && [obj count])
+        {
+            [dataSource setObject:obj forKey:key];
+        }
+    }];
+    self.items = [dataSource copy];
     self.sortedDays = [[self.items allKeys] sortedArrayUsingSelector:@selector(compare:)];
     [self.tableView reloadData];
 }
