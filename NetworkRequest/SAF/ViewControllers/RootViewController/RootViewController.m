@@ -220,7 +220,7 @@
 {
     self.useMedia = kPhotoDefaultNone | kPhotoTakePicture | kPhotoTakeMovie | kPhotoChoose;
     self.postImage = nil;
-    self.postText = @"I'm attending the 7th Salsa Addicted Festival! We know how to party!";
+    self.postText = @"I'm attending the 9th Salsa Addicted Festival! We know how to party!";
 }
 
 

@@ -48,6 +48,7 @@
 		10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */; };
 		10E84A831A664AF700FEF0C1 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E84A821A664AF700FEF0C1 /* UIColor+Additions.m */; };
 		10E84A841A664AF700FEF0C1 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E84A821A664AF700FEF0C1 /* UIColor+Additions.m */; };
+		10E9AC7D1C86C6DD00876128 /* splash@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 10E9AC7C1C86C6DD00876128 /* splash@2x~iPad.png */; };
 		10FDC11F1A779C5B001402E0 /* ParsedArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC11E1A779C5B001402E0 /* ParsedArtist.m */; };
 		10FDC1201A779C5B001402E0 /* ParsedArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC11E1A779C5B001402E0 /* ParsedArtist.m */; };
 		10FDC1231A779F58001402E0 /* ParsedNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC1221A779F58001402E0 /* ParsedNews.m */; };
@@ -349,6 +350,7 @@
 		10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Condensed Bold.ttf"; sourceTree = "<group>"; };
 		10E84A811A664AF700FEF0C1 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		10E84A821A664AF700FEF0C1 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		10E9AC7C1C86C6DD00876128 /* splash@2x~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x~iPad.png"; sourceTree = "<group>"; };
 		10FDC11D1A779C5B001402E0 /* ParsedArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedArtist.h; sourceTree = "<group>"; };
 		10FDC11E1A779C5B001402E0 /* ParsedArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedArtist.m; sourceTree = "<group>"; };
 		10FDC1211A779F58001402E0 /* ParsedNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedNews.h; sourceTree = "<group>"; };
@@ -901,6 +903,7 @@
 				1006CB1C1C62ABBC004F4C79 /* splash.png */,
 				1006CB1D1C62ABBC004F4C79 /* splash@2x.png */,
 				1006CB1E1C62ABBC004F4C79 /* splash~iPad.png */,
+				10E9AC7C1C86C6DD00876128 /* splash@2x~iPad.png */,
 				1006CB1F1C62ABBC004F4C79 /* splash2.png */,
 				1006CB201C62ABBC004F4C79 /* splash2@2x.png */,
 				1006CB211C62ABBC004F4C79 /* splash2@2x~iPad.png */,
@@ -1454,6 +1457,7 @@
 			files = (
 				3B86000617999E14009624CA /* InfoPlist.strings in Resources */,
 				10A766AC1C7905CA00DD3C53 /* Default@2x~iPad.png in Resources */,
+				10E9AC7D1C86C6DD00876128 /* splash@2x~iPad.png in Resources */,
 				108211801C77891600F67D33 /* artists.xcassets in Resources */,
 				3B5872C2179AC37100813129 /* SettingsEnumControllerViewController.xib in Resources */,
 				3B5872C3179AC37700813129 /* SettingsViewController.xib in Resources */,
