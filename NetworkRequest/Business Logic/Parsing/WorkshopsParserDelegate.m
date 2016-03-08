@@ -59,7 +59,7 @@
             workshop.instructor = obj;
         }
         
-        if ([key isEqualToString:@"description "]) {
+        if ([key isEqualToString:@"description"]) {
             workshop.desc = obj;
         }
         

@@ -146,8 +146,9 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH.mm"];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Europe/Bucharest"]];
     
-    NSDate *wsTime = [NSDate dateWithTimeInterval:-7200 sinceDate:self.item.time];
+    NSDate *wsTime = self.item.time;
     
     //time
     UILabel *dateLbl = [[UILabel alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(instructor.frame), self.view.frame.size.width-10, 20)];
@@ -232,7 +233,7 @@
     diff.textColor = [UIColor whiteColor];
     [_content addSubview:diff];
     
-    NSString *textWS = [NSString stringWithFormat:@"%@",self.item.details == NULL? @"No description available":[NSString stringWithFormat:@"\t%@\n\n\t",self.item.details]];
+    NSString *textWS = [NSString stringWithFormat:@"%@",self.item.details == NULL? @"No description available":[NSString stringWithFormat:@"%@\n",self.item.details]];
     UIFont *wsFont = [UIFont fontWithName:myriadFontI size:17];
     CGRect wsRect = [textWS boundingRectWithSize:CGSizeMake(self.view.frame.size.width-10, 999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:wsFont} context:nil];
 
@@ -247,7 +248,7 @@
     [_content addSubview:wsDetails];
 
     //artist details
-    NSString *text = [NSString stringWithFormat:@"\t%@\n\n\t..read more",artist.desc1];
+    NSString *text = [NSString stringWithFormat:@"%@\n\n\t..read more",artist.desc1];
     UIFont *font = [UIFont fontWithName:myriadFontI size:16];
 
     CGRect rect = [text boundingRectWithSize:CGSizeMake(self.view.frame.size.width-10, 999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];

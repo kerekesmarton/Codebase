@@ -159,7 +159,7 @@
 - (void)credits:(id)sender
 {
 
-    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     NSString *title = [NSString stringWithFormat:@"Version %@, Thanks to",appVersion];
     
     UIActionSheet *credits = [[UIActionSheet alloc] initWithTitle:title delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"AIRE Dance Company",@"Nuvo Studio",@"Advents", nil];
