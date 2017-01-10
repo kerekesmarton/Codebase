@@ -86,25 +86,11 @@
         case RootFunctionWorkshops: {
             //workshops
             viewController = [[SAFWorkshopTabsViewController alloc] init];
-            NSArray *days = [WorkshopObject distinctWorkshopDays];
-            if (days.count) {
-                [[SettingsManager sharedInstance].selectedDay addPossibleValues:days];
-                NSDate *day = [days objectAtIndex:0];
-                [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
-                [(SAFWorkshopTabsViewController *)viewController setDay:day];
-            }
         }
             break;
         case RootFunctionMyAgenda: {
             //my agenda
-            viewController = [[SAFMyAgendaViewController alloc] init];
-            NSArray *days = [WorkshopObject distinctWorkshopDays];
-            if (days.count) {
-                [[SettingsManager sharedInstance].selectedDay addPossibleValues:days];
-                NSDate *day = [days objectAtIndex:0];
-                [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
-                [(SAFMyAgendaViewController *)viewController setDay:day];
-            }
+            viewController = [[SAFMyAgendaViewController alloc] init];            
         }
             break;
         case RootFunctionArtists:

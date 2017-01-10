@@ -9,10 +9,6 @@
 #import "SAFWorkshopsViewController.h"
 #import "SAFWorkshopTabsViewController.h"
 
-@interface SAFMyAgendaViewController : SAFWorkshopsViewController <SAFModalDelegate>
-
-@property (nonatomic, assign) UIViewController <SAFModalDelegate> *modalDelegate;
-
-@property (nonatomic, retain) NSDate *day;
+@interface SAFMyAgendaViewController : SAFWorkshopsViewController
 
 @end

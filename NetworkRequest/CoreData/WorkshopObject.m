@@ -82,7 +82,6 @@
     return [WorkshopObject fetchWorkshopsFromRooms:[SettingsManager sharedInstance].workshopsFilter.selectedValues];
 }
 
-
 +(WorkshopObject *)workshopForUID:(NSNumber *)uid {
     
     NSArray *result =[self fetchForPredicate:[NSPredicate predicateWithFormat:@"uID == %@",uid] forManagedObjectContext:[VICoreDataManager getInstance].managedObjectContext];
@@ -92,7 +91,6 @@
     {
         return nil;
     }
-    
 }
 
 +(NSArray *)fetchWorkshopsForDay:(NSDate*)day rooms:(NSArray *)rooms{
@@ -184,24 +182,25 @@
     return [NSArray arrayWithArray:[days sortedArrayUsingSelector:@selector(compare:)]];
 }
 
-+(NSArray *)distinctWorkshopHours:(BOOL)favorited {
++(NSArray *)distinctWorkshopHoursForArray:(NSArray *)array day:(NSDate *)day filterFavorites:(BOOL)filterFavorites {
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"favorited == %@", [NSNumber numberWithBool:favorited]];
-    
-    NSArray *results = [[VICoreDataManager getInstance] arrayForModel:NSStringFromClass([self class]) withPredicate:pred forContext:[VICoreDataManager getInstance].managedObjectContext];
-    
-    NSDate *day = [[SettingsManager sharedInstance].selectedDay.selectedValues lastObject];
-    NSDate *startOfDay = [DateHelper begginingOfDay:day];
-    NSDate *endOfDay = [DateHelper endOfDay:day];
+    NSArray *results = array;
+    if (filterFavorites) {
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"favorited == %@", [NSNumber numberWithBool:YES]];
+        results = [array filteredArrayUsingPredicate:pred];
+    }
     
     NSMutableArray *secondResults = [[NSMutableArray alloc] init];
+    
+    NSDate *startOfDay = [DateHelper begginingOfDay:day];
+    NSDate *endOfDay = [DateHelper endOfDay:day];        
     [results enumerateObjectsUsingBlock:^(WorkshopObject *obj, NSUInteger idx, BOOL *stop) {
         
         if ([obj.time earlierDate:startOfDay] == startOfDay && [obj.time laterDate:endOfDay]==endOfDay) {
             [secondResults addObject:obj];
         }
     }];
-
+    
     NSMutableArray *hours = [NSMutableArray array];
     [secondResults enumerateObjectsUsingBlock:^(WorkshopObject *obj, NSUInteger idx, BOOL *stop) {
         
@@ -212,30 +211,6 @@
     }];
     
     return [NSArray arrayWithArray:[hours sortedArrayUsingSelector:@selector(compare:)]];
-}
-
-+(NSDictionary *)fetchWorkshopsForDistinctHours:(BOOL)favorited {
-    
-    NSMutableDictionary *results = [NSMutableDictionary dictionary];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"favorited == %@", [NSNumber numberWithBool:favorited]];
-    NSArray *firstResults = [[VICoreDataManager getInstance] arrayForModel:NSStringFromClass([self class]) withPredicate:pred forContext:[VICoreDataManager getInstance].managedObjectContext];
-    
-    
-    [[self distinctWorkshopHours:favorited] enumerateObjectsUsingBlock:^(NSDate *date, NSUInteger idx, BOOL *stop) {
-        
-        NSMutableArray *secondResults = [NSMutableArray array];
-        
-        [firstResults enumerateObjectsUsingBlock:^(WorkshopObject *obj, NSUInteger idx, BOOL *stop) {
-            
-            if ([obj.time isEqualToDate:date]) {
-                [secondResults addObject:obj];
-            }
-        }];
-        [results setObject:secondResults forKey:date.description];
-        
-    }];
-    
-    return [NSDictionary dictionaryWithDictionary:results];
 }
 
 +(NSString *)stringForDifficulty:(int)value {

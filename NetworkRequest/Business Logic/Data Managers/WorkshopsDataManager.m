@@ -83,17 +83,6 @@
     }
 }
 
--(NSArray *)fetchDataForDay:(NSDate *)day{
-    
-    id result = [WorkshopObject fetchWorkshopsForDay:day rooms:[SettingsManager sharedInstance].workshopsFilter.selectedValues];
-    if ([result respondsToSelector:@selector(count)]) {
-        self.items = result;
-    } else {
-        self.items = @[result];
-    }
-    return self.items;
-}
-
 -(NSString*)path {
     return @"api/saf/workshopitem/?limit=0&format=json";
 }

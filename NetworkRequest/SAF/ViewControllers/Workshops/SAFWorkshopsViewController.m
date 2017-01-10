@@ -10,6 +10,7 @@
 #import "SAFWorkshopsTableViewCell.h"
 #import "SAFWorkshopDetailsViewController.h"
 #import "WorkshopObject.h"
+#import "WorkshopDay.h"
 #import "WorkshopsDataManager.h"
 #import "ArtistObject.h"
 #import "SettingsManager.h"
@@ -18,6 +19,8 @@
 @interface SAFWorkshopsViewController ()
 
 @property(nonatomic,strong) NSDateFormatter *cellDateFormatter;
+@property (nonatomic, strong) NSMutableArray *objects;
+@property (nonatomic, strong) NSIndexPath *today;
 
 @end
 
@@ -38,17 +41,54 @@
     self.cellDateFormatter = [[NSDateFormatter alloc] init];
     [_cellDateFormatter setDateFormat:@"HH : mm"];
     [_cellDateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"Europe/Bucharest"]];
-
 }
 
 - (void)refresh {
-    self.items = [WorkshopObject fetchWorkshopsForSelectedDayAndRooms];
+    
+    self.objects = [NSMutableArray array];
+    NSDate *today = [DateHelper begginingOfDay:[NSDate date]];
+    NSArray *days = [[WorkshopObject distinctWorkshopDays] mutableCopy];
+    [days enumerateObjectsUsingBlock:^(NSDate *day, NSUInteger idx, BOOL * _Nonnull stop) {
+        [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
+        NSArray *workshops = [WorkshopObject fetchWorkshopsForSelectedRooms];
+        WorkshopDay *wsDay = [WorkshopDay new];
+        wsDay.day = day;
+        wsDay.workshops = workshops;
+        [self.objects addObject:wsDay];
+        if ([today isEqual:day]) {
+            self.today = [NSIndexPath indexPathForRow:0 inSection:idx];
+        }
+    }];
+    
     [self.tableView reloadData];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.today) {
+        [self.tableView scrollToRowAtIndexPath:self.today atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    }
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.objects.count;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    WorkshopDay *wsDay = self.objects[section];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    formatter.dateFormat = @"EEEE";
+//    formatter.doesRelativeDateFormatting = YES;
+    
+    return wsDay.workshops.count?[formatter stringFromDate:wsDay.day] : nil;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.items.count;
+    WorkshopDay *wsDay = self.objects[section];
+    return wsDay.workshops.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,8 +105,8 @@
     if (!cell) {
         cell = [[SAFWorkshopsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
-    WorkshopObject *item = [self.items objectAtIndex:indexPath.row];
+    WorkshopDay *wsDay = self.objects[indexPath.section];
+    WorkshopObject *item = wsDay.workshops[indexPath.row];
     
     ArtistObject *artistO = [ArtistObject artistForId:item.instructor];
     cell.instructor.text = artistO.name;
@@ -88,7 +128,8 @@
     // Navigation logic may go here. Create and push another view controller.
     
     SAFWorkshopDetailsViewController *detailViewController = [[SAFWorkshopDetailsViewController alloc] init];
-    detailViewController.item = [self.items objectAtIndex:indexPath.row];
+    WorkshopDay *wsDay = self.objects[indexPath.section];
+    detailViewController.item = wsDay.workshops[indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

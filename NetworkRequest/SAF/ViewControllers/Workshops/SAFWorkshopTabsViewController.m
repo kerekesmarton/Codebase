@@ -18,8 +18,6 @@
 @end
 
 @implementation SAFWorkshopTabsViewController
-@synthesize modalDelegate;
-@synthesize day;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,7 +64,6 @@
     [self saveItemAtIndex:0];
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -77,12 +74,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self configureNavigation];
 }
 
 -(NSString*)configureTabBarItemString:(NSString*)str {
@@ -100,7 +91,6 @@
     [self saveItemAtIndex:index];
 }
 
-
 -(void)saveItemAtIndex:(int)index {
     SettingOption *workshopOption = [SettingsManager sharedInstance].workshopsFilter;
     if (workshopOption.possibleValues.count && workshopOption.possibleValues.count >= index) {
@@ -108,85 +98,6 @@
         workshopOption.selectedValues = @[obj];
         [workshopOption save];
     }
-}
-
--(void)configureNavigation {
-    
-    //decide if there is a day before this.
-    
-    
-    if ([self.day compare: [[SettingsManager sharedInstance].selectedDay.possibleValues firstObject]]==NSOrderedSame) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sunday" style:UIBarButtonItemStylePlain target:self action:@selector(nextDay:)];
-    } else {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(flipAndPop)];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Saturday" style:UIBarButtonItemStylePlain target:self action:@selector(previousDay:)];
-    }
-    
-}
-
--(void)previousDay:(UIBarButtonItem *)sender {
-    
-    NSArray *days = [WorkshopObject distinctWorkshopDays];
-    
-    if (days.count) {
-        NSDate *firstDay = [days firstObject];
-        [[SettingsManager sharedInstance].selectedDay addToSelectedValues:firstDay];
-    }
-    [self flip];
-    
-}
-
--(void)nextDay:(UIBarButtonItem *)sender {
-    
-    NSArray *days = [WorkshopObject distinctWorkshopDays];
-    
-    if (days.count) {
-        NSDate *lastDay = [days lastObject];
-        [[SettingsManager sharedInstance].selectedDay addToSelectedValues:lastDay];
-        
-        SAFWorkshopTabsViewController *next = [[SAFWorkshopTabsViewController alloc] init];
-        next.day = lastDay;
-        next.modalDelegate = self;
-        UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[SAFNavigationBar class] toolbarClass:[UIToolbar class]];
-        navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-        navController.toolbar.barStyle = UIBarStyleBlackOpaque;
-        navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        navController.viewControllers = @[next];
-        
-        if ([navController.navigationBar respondsToSelector:@selector(barTintColor)]) {
-            navController.navigationBar.barTintColor = [UIColor blackColor];
-            navController.navigationBar.tintColor = [UIColor whiteColor];
-            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-            navController.navigationBar.translucent = NO;
-        }
-        
-        [self.navigationController presentViewController:navController animated:YES completion:^{
-            
-        }];
-    }
-}
-
--(void)flipAndPop {
-    if (self.modalDelegate && [self.modalDelegate respondsToSelector:@selector(popModalWithCompletion:)]) {
-        [self.modalDelegate popModalWithCompletion:^{
-            [self.modalDelegate.navigationController popViewControllerAnimated:YES];
-        }];
-    }
-}
-
--(void)flip {
-    if (self.modalDelegate && [self.modalDelegate respondsToSelector:@selector(popModalWithCompletion:)]) {
-        [self.modalDelegate popModalWithCompletion:^{
-            //
-        }];
-    }
-}
-
--(void)popModalWithCompletion:(void (^)(void))block {
-    
-    [self.navigationController dismissViewControllerAnimated:YES completion:^{
-        block();
-    }];
 }
 
 @end

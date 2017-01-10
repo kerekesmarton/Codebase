@@ -8,16 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol SAFModalDelegate <NSObject>
-
--(void)popModalWithCompletion:(void (^) (void))block;
-
-@end
-
-@interface SAFWorkshopTabsViewController : UITabBarController <SAFModalDelegate>
-
-@property (nonatomic, assign) UIViewController <SAFModalDelegate> *modalDelegate;
-
-@property (nonatomic, retain) NSDate *day;
+@interface SAFWorkshopTabsViewController : UITabBarController
 
 @end

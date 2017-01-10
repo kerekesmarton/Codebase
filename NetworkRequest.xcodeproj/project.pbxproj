@@ -38,6 +38,7 @@
 		10A766A91C78FADB00DD3C53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766A31C78FADB00DD3C53 /* Default@2x.png */; };
 		10A766AC1C7905CA00DD3C53 /* Default@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766AA1C7905CA00DD3C53 /* Default@2x~iPad.png */; };
 		10A766AD1C7905CA00DD3C53 /* Default~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766AB1C7905CA00DD3C53 /* Default~iPad.png */; };
+		10BDF6F21E237BEC00A919D8 /* WorkshopDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BDF6F11E237BEC00A919D8 /* WorkshopDay.m */; };
 		10C4F60C1C725EE9005640E5 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1C1C62ABBC004F4C79 /* splash.png */; };
 		10C4F60D1C725EE9005640E5 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1D1C62ABBC004F4C79 /* splash@2x.png */; };
 		10C4F60E1C725EE9005640E5 /* splash~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1E1C62ABBC004F4C79 /* splash~iPad.png */; };
@@ -346,6 +347,8 @@
 		10A766A31C78FADB00DD3C53 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		10A766AA1C7905CA00DD3C53 /* Default@2x~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iPad.png"; sourceTree = "<group>"; };
 		10A766AB1C7905CA00DD3C53 /* Default~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iPad.png"; sourceTree = "<group>"; };
+		10BDF6F01E237BEC00A919D8 /* WorkshopDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkshopDay.h; sourceTree = "<group>"; };
+		10BDF6F11E237BEC00A919D8 /* WorkshopDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkshopDay.m; sourceTree = "<group>"; };
 		10C934211A8CC00300EB9126 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Condensed Bold.ttf"; sourceTree = "<group>"; };
 		10E84A811A664AF700FEF0C1 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
@@ -1339,6 +1342,8 @@
 		3BB9F8E1179BEF2100C91ABC /* Workshops */ = {
 			isa = PBXGroup;
 			children = (
+				10BDF6F01E237BEC00A919D8 /* WorkshopDay.h */,
+				10BDF6F11E237BEC00A919D8 /* WorkshopDay.m */,
 				3BB9F8E2179BEFB900C91ABC /* SAFWorkshopTabsViewController.h */,
 				3BB9F8E3179BEFB900C91ABC /* SAFWorkshopTabsViewController.m */,
 				3BB9F8E4179BEFB900C91ABC /* SAFWorkshopTabsViewController.xib */,
@@ -1580,6 +1585,7 @@
 				3B86FFC917999E14009624CA /* AFPropertyListRequestOperation.m in Sources */,
 				3B86FFCA17999E14009624CA /* AFURLConnectionOperation.m in Sources */,
 				3B86FFCB17999E14009624CA /* AFXMLRequestOperation.m in Sources */,
+				10BDF6F21E237BEC00A919D8 /* WorkshopDay.m in Sources */,
 				3B86FFCC17999E14009624CA /* UIImageView+AFNetworking.m in Sources */,
 				107B1A811A7FB7190089E57E /* FeedbackClient.m in Sources */,
 				3B86FFD317999E14009624CA /* VICoreDataManager.m in Sources */,
@@ -1763,6 +1769,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HQQ63777MM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1792,6 +1799,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HQQ63777MM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",

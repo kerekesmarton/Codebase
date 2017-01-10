@@ -12,6 +12,4 @@
 
 +(WorkshopsDataManager *)sharedInstance;
 
--(NSArray *)fetchDataForDay:(NSDate *)day;
-
 @end

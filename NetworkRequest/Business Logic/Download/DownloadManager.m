@@ -50,7 +50,7 @@
 -(NSOperation *)requestPath:(NSString *)path withSuccessBlock:(ExecutionBlock)successBlock FailureBlock:(ErrorBlock)failureBlock {
     
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[[self baseURL] stringByAppendingPathComponent:path]] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[BACKEND stringByAppendingPathComponent:path]] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
     
     return [self performRequest:request withSuccessBlock:successBlock FailureBlock:failureBlock];
 }

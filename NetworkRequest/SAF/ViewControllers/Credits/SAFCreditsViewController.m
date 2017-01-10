@@ -108,15 +108,15 @@
     NSURL *url;
     if ([self.name isEqualToString: @"AIRE"])
     {
-        url = [NSURL URLWithString:@"http://www.facebook.com/168510689919677"];
+        url = [NSURL URLWithString:@"https://www.facebook.com/168510689919677"];
     }
     else if ([self.name isEqualToString:@"Nuvo"])
     {
-        url = [NSURL URLWithString:@"http://www.facebook.com/225076320862473"];
+        url = [NSURL URLWithString:@"https://www.facebook.com/225076320862473"];
     }
     else
     {
-        url = [NSURL URLWithString:@"http://www.advents.ro"];
+        url = [NSURL URLWithString:@"https://www.advents.ro"];
     }
     [[UIApplication sharedApplication] openURL:url];
 }

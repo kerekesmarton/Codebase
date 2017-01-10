@@ -98,7 +98,6 @@ static NSString * const NOT_FOUND = @"not_found";
     [resourceURIs enumerateObjectsUsingBlock:^(NSNumber *identifier, NSUInteger idx, BOOL * _Nonnull stop) {
 
         [setPath appendFormat:@"%ld;",(long)[identifier integerValue]];
-//http://saf8.airedancecompany.ro/api/saf/newsitem/set/17;19/?format=json
     }];
 
     setPath = [[setPath substringToIndex:[setPath length]-1] mutableCopy];

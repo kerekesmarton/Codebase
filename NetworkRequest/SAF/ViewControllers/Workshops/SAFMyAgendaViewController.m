@@ -13,17 +13,17 @@
 #import "SAFMyAgendaTableViewCell.h"
 #import "SettingsManager.h"
 #import "SAFNavigationBar.h"
+#import "WorkshopDay.h"
 
 @interface SAFMyAgendaViewController ()
 
-@property (nonatomic, strong) NSDictionary *workshops;
-@property (nonatomic, strong) NSArray *distinctHours;
 @property(nonatomic,strong) NSDateFormatter *cellDateFormatter;
+@property (nonatomic, strong) NSMutableArray *objects;
+@property (nonatomic, strong) NSIndexPath *today;
+
 @end
 
 @implementation SAFMyAgendaViewController
-
-@synthesize workshops,distinctHours;
 
 - (void)viewDidLoad
 {
@@ -38,10 +38,31 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.workshops = [WorkshopObject fetchWorkshopsForDistinctHours:YES];
-    self.distinctHours = [WorkshopObject distinctWorkshopHours:YES];
     
-    [self configureNavigation];
+    [self.tableView reloadData];
+}
+
+- (void)refresh {
+    
+    self.objects = [NSMutableArray array];
+    NSDate *today = [DateHelper begginingOfDay:[NSDate date]];
+    NSArray *days = [[WorkshopObject distinctWorkshopDays] mutableCopy];
+    [days enumerateObjectsUsingBlock:^(NSDate *day, NSUInteger idx, BOOL * _Nonnull stop) {
+        [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
+        NSArray *workshops = [WorkshopObject fetchWorkshopsForSelectedRooms];
+        WorkshopDay *wsDay = [WorkshopDay new];
+        
+        
+        //Create a method in workshopObject to return a WorkshopDay / FavoriteWorkshopsDay
+        
+        wsDay.distinctHours = [WorkshopObject distinctWorkshopHoursForArray:workshops day:day filterFavorites:YES];
+        wsDay.day = day;
+        wsDay.workshops = workshops;
+        [self.objects addObject:wsDay];
+        if ([today isEqual:day]) {
+            self.today = [NSIndexPath indexPathForRow:0 inSection:idx];
+        }
+    }];
     
     [self.tableView reloadData];
 }
@@ -54,15 +75,19 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSDate *time = [self.distinctHours objectAtIndex:indexPath.row];
-    NSArray *array = [self.workshops objectForKey:time.description];
+    WorkshopDay *wsDay = self.objects[indexPath.section];
+    NSDate *time = wsDay.distinctHours[indexPath.row];
+//    NSArray *array = [self.workshops objectForKey:time.description];
     
-    return (array.count*kTableViewCellHeight + 20);
+//    return (array.count*kTableViewCellHeight + 20);
+    
+    return 44;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.distinctHours.count;
+    WorkshopDay *wsDay = self.objects[section];
+    return wsDay.distinctHours.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -75,8 +100,10 @@
     }
     
     //data
-    NSDate *time = [self.distinctHours objectAtIndex:indexPath.row];
-    NSArray *array = [self.workshops objectForKey:time.description];
+    WorkshopDay *wsDay = self.objects[indexPath.section];
+    NSDate *time = wsDay.distinctHours[indexPath.row];
+    NSArray *array = @[];
+    //[self.workshops objectForKey:time.description];
     
     [cell clearRows];
 
@@ -114,85 +141,6 @@
         workshopOption.selectedValues = @[obj];
         [workshopOption save];
     }
-}
-
--(void)configureNavigation {
-    
-    //decide if there is a day before this.
-    
-    
-    if ([self.day compare: [[SettingsManager sharedInstance].selectedDay.possibleValues firstObject]]==NSOrderedSame) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sunday" style:UIBarButtonItemStylePlain target:self action:@selector(nextDay:)];
-    } else {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(flipAndPop)];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Saturday" style:UIBarButtonItemStylePlain target:self action:@selector(previousDay:)];
-    }
-    
-}
-
--(void)previousDay:(UIBarButtonItem *)sender {
-    
-    NSArray *days = [WorkshopObject distinctWorkshopDays];
-    
-    if (days.count) {
-        NSDate *firstDay = [days firstObject];
-        [[SettingsManager sharedInstance].selectedDay addToSelectedValues:firstDay];
-    }
-    [self flip];
-    
-}
-
--(void)nextDay:(UIBarButtonItem *)sender {
-    
-    NSArray *days = [WorkshopObject distinctWorkshopDays];
-    
-    if (days.count) {
-        NSDate *lastDay = [days lastObject];
-        [[SettingsManager sharedInstance].selectedDay addToSelectedValues:lastDay];
-        
-        SAFMyAgendaViewController *next = [[SAFMyAgendaViewController alloc] init];
-        next.day = lastDay;
-        next.modalDelegate = self;
-        UINavigationController *navController = [[UINavigationController alloc] initWithNavigationBarClass:[SAFNavigationBar class] toolbarClass:[UIToolbar class]];
-        navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-        navController.toolbar.barStyle = UIBarStyleBlackOpaque;
-        navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        navController.viewControllers = @[next];
-        
-        if ([navController.navigationBar respondsToSelector:@selector(barTintColor)]) {
-            navController.navigationBar.barTintColor = [UIColor blackColor];
-            navController.navigationBar.tintColor = [UIColor whiteColor];
-            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-            navController.navigationBar.translucent = NO;
-        }
-        
-        [self.navigationController presentViewController:navController animated:YES completion:^{
-            
-        }];
-    }
-}
-
--(void)flipAndPop {
-    if (self.modalDelegate && [self.modalDelegate respondsToSelector:@selector(popModalWithCompletion:)]) {
-        [self.modalDelegate popModalWithCompletion:^{
-            [self.modalDelegate.navigationController popViewControllerAnimated:YES];
-        }];
-    }
-}
-
--(void)flip {
-    if (self.modalDelegate && [self.modalDelegate respondsToSelector:@selector(popModalWithCompletion:)]) {
-        [self.modalDelegate popModalWithCompletion:^{
-            //
-        }];
-    }
-}
-
--(void)popModalWithCompletion:(void (^)(void))block {
-    
-    [self.navigationController dismissViewControllerAnimated:YES completion:^{
-        block();
-    }];
 }
 
 @end

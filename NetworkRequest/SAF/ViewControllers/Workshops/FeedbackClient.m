@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "WorkshopObject.h"
 #import "ArtistObject.h"
+#import "SAFDefines.h"
 
 @interface FeedbackClient ()
 
@@ -18,16 +19,13 @@
 @property (atomic, strong) NSOperationQueue *requestQueue;
 @end
 
-
 @implementation FeedbackClient
-
-static NSString * const kRequestURL = @"http://saf9.airedancecompany.ro/";
 
 + (FeedbackClient *)sharedClient {
     static FeedbackClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[FeedbackClient alloc] initWithBaseURL:[NSURL URLWithString:kRequestURL]];
+        _sharedClient = [[FeedbackClient alloc] initWithBaseURL:[NSURL URLWithString:BACKEND]];
     });
     
     return _sharedClient;
@@ -68,7 +66,7 @@ static NSString * const kRequestURL = @"http://saf9.airedancecompany.ro/";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        NSURL *url = [NSURL URLWithString:kRequestURL];
+        NSURL *url = [NSURL URLWithString:BACKEND];
         AFHTTPClient *helper = [[AFHTTPClient alloc] initWithBaseURL:url];
         
         NSManagedObjectContext *tmp = [[VICoreDataManager getInstance] startTransaction];

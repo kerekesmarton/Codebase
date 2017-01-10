@@ -23,7 +23,6 @@ typedef void (^ ExecutionBlock)(id);
 
 - (NSOperation *)performRequest:(NSURLRequest *)urlRequest withSuccessBlock:(ExecutionBlock)successBlock FailureBlock:(ErrorBlock)failureBlock;
 
--(NSString*) baseURL;
 -(NSString*) defaultHeaderTitle;
 -(NSString*) defaultHeaderValue;
 
