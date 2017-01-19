@@ -29,10 +29,10 @@
 		10826EC01A79303000EFB63C /* RootViewController+UICreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10826EBE1A79303000EFB63C /* RootViewController+UICreation.m */; };
 		10826EC31A79331900EFB63C /* SAFStartupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10826EC21A79331900EFB63C /* SAFStartupManager.m */; };
 		10826EC41A79331900EFB63C /* SAFStartupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10826EC21A79331900EFB63C /* SAFStartupManager.m */; };
-		1097FF521E30BB40004A5C92 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF4E1E30BB40004A5C92 /* splash.png */; };
-		1097FF531E30BB40004A5C92 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF4F1E30BB40004A5C92 /* splash@2x.png */; };
-		1097FF541E30BB40004A5C92 /* splash@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF501E30BB40004A5C92 /* splash@2x~iPad.png */; };
-		1097FF551E30BB40004A5C92 /* splash~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF511E30BB40004A5C92 /* splash~iPad.png */; };
+		1097FF621E30BE7E004A5C92 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF5E1E30BE7E004A5C92 /* splash.png */; };
+		1097FF631E30BE7E004A5C92 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF5F1E30BE7E004A5C92 /* splash@2x.png */; };
+		1097FF641E30BE7E004A5C92 /* splash@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF601E30BE7E004A5C92 /* splash@2x~iPad.png */; };
+		1097FF651E30BE7E004A5C92 /* splash~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF611E30BE7E004A5C92 /* splash~iPad.png */; };
 		109A12B61A84EE6500AB105C /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109A12B51A84EE6500AB105C /* Launch.xib */; };
 		10A3966C1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
 		10A3966D1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
@@ -340,10 +340,10 @@
 		10826EBE1A79303000EFB63C /* RootViewController+UICreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RootViewController+UICreation.m"; sourceTree = "<group>"; };
 		10826EC11A79331900EFB63C /* SAFStartupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFStartupManager.h; path = ViewControllers/RootViewController/SAFStartupManager.h; sourceTree = "<group>"; };
 		10826EC21A79331900EFB63C /* SAFStartupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFStartupManager.m; path = ViewControllers/RootViewController/SAFStartupManager.m; sourceTree = "<group>"; };
-		1097FF4E1E30BB40004A5C92 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ../../../../../Downloads/Archive/splash.png; sourceTree = "<group>"; };
-		1097FF4F1E30BB40004A5C92 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@2x.png"; path = "../../../../../Downloads/Archive/splash@2x.png"; sourceTree = "<group>"; };
-		1097FF501E30BB40004A5C92 /* splash@2x~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@2x~iPad.png"; path = "../../../../../Downloads/Archive/splash@2x~iPad.png"; sourceTree = "<group>"; };
-		1097FF511E30BB40004A5C92 /* splash~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash~iPad.png"; path = "../../../../../Downloads/Archive/splash~iPad.png"; sourceTree = "<group>"; };
+		1097FF5E1E30BE7E004A5C92 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		1097FF5F1E30BE7E004A5C92 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
+		1097FF601E30BE7E004A5C92 /* splash@2x~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x~iPad.png"; sourceTree = "<group>"; };
+		1097FF611E30BE7E004A5C92 /* splash~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash~iPad.png"; sourceTree = "<group>"; };
 		109A12B51A84EE6500AB105C /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		10A3966A1C35413D004D1EE6 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIAnnotation.h; path = DataModel/POIAnnotation.h; sourceTree = "<group>"; };
 		10A3966B1C35413D004D1EE6 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIAnnotation.m; path = DataModel/POIAnnotation.m; sourceTree = "<group>"; };
@@ -935,10 +935,10 @@
 				1082117D1C77891600F67D33 /* Icons.xcassets */,
 				1082117E1C77891600F67D33 /* Images.xcassets */,
 				1082117F1C77891600F67D33 /* Menu.xcassets */,
-				1097FF4E1E30BB40004A5C92 /* splash.png */,
-				1097FF4F1E30BB40004A5C92 /* splash@2x.png */,
-				1097FF501E30BB40004A5C92 /* splash@2x~iPad.png */,
-				1097FF511E30BB40004A5C92 /* splash~iPad.png */,
+				1097FF5E1E30BE7E004A5C92 /* splash.png */,
+				1097FF5F1E30BE7E004A5C92 /* splash@2x.png */,
+				1097FF601E30BE7E004A5C92 /* splash@2x~iPad.png */,
+				1097FF611E30BE7E004A5C92 /* splash~iPad.png */,
 				1006CB1F1C62ABBC004F4C79 /* splash2.png */,
 				1006CB201C62ABBC004F4C79 /* splash2@2x.png */,
 				1006CB211C62ABBC004F4C79 /* splash2@2x~iPad.png */,
@@ -1491,7 +1491,7 @@
 				3B5872CB179AC6EB00813129 /* SAFNewDetailViewController.xib in Resources */,
 				3BB9F8DB179BE39400C91ABC /* ArtistDetailViewController.xib in Resources */,
 				3BB9F8DC179BE39A00C91ABC /* ArtistsViewController.xib in Resources */,
-				1097FF541E30BB40004A5C92 /* splash@2x~iPad.png in Resources */,
+				1097FF641E30BE7E004A5C92 /* splash@2x~iPad.png in Resources */,
 				3BB9F8DD179BE39D00C91ABC /* NewsViewController.xib in Resources */,
 				3BB9F8DE179BE3A000C91ABC /* DetailsViewController.xib in Resources */,
 				3BB9F8DF179BE3A300C91ABC /* WorkshopDetailsViewController.xib in Resources */,
@@ -1509,13 +1509,13 @@
 				10C4F6121C725EE9005640E5 /* splash2~iPad.png in Resources */,
 				3B4EF89D17DE453D00D345E2 /* MyriadPro-It.otf in Resources */,
 				108211831C77891600F67D33 /* Menu.xcassets in Resources */,
-				1097FF531E30BB40004A5C92 /* splash@2x.png in Resources */,
+				1097FF631E30BE7E004A5C92 /* splash@2x.png in Resources */,
 				3B4EF89E17DE453D00D345E2 /* MyriadPro-Regular.otf in Resources */,
 				10A766A51C78FADB00DD3C53 /* Default-568h@2x.png in Resources */,
 				3B4EF89F17DE453D00D345E2 /* MyriadPro-Semibold.otf in Resources */,
 				10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */,
-				1097FF551E30BB40004A5C92 /* splash~iPad.png in Resources */,
-				1097FF521E30BB40004A5C92 /* splash.png in Resources */,
+				1097FF651E30BE7E004A5C92 /* splash~iPad.png in Resources */,
+				1097FF621E30BE7E004A5C92 /* splash.png in Resources */,
 				10C4F6101C725EE9005640E5 /* splash2@2x.png in Resources */,
 				108211811C77891600F67D33 /* Icons.xcassets in Resources */,
 				3B2AA9771834D8670002B325 /* SAFPOIsViewController.xib in Resources */,
