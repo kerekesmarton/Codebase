@@ -57,10 +57,10 @@
 
 - (CGSize)sizeWithFontName:(NSString *)fontName size:(CGFloat)fontSize constraint:(CGSize)constraint {
     
-    id font = (id) CTFontCreateWithName((CFStringRef)fontName, fontSize, NULL);
+    id font = (id) CFBridgingRelease(CTFontCreateWithName((CFStringRef)fontName, fontSize, NULL));
 
     NSDictionary *attributesDict = @{(id)kCTFontAttributeName:font};
-    CFStringRef stringRef = (CFStringRef)self;
+    CFStringRef stringRef = (__bridge CFStringRef)self;
     
     CFAttributedStringRef currentText = CFAttributedStringCreate(NULL, stringRef, (CFDictionaryRef)attributesDict);
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString(currentText);
@@ -74,7 +74,7 @@
     
     if (font)
     {
-        CFRelease(font);
+        CFRelease((__bridge CFTypeRef)(font));
     }
     
     if (framesetter)

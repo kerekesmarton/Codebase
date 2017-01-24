@@ -13,7 +13,6 @@
 #import "WorkshopsViewController.h"
 #import "AgendaViewController.h"
 #import "MapViewController.h"
-#import "RadioViewController.h"
 
 
 @implementation CustomSlideMenuDataModel
