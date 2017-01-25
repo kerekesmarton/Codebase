@@ -52,4 +52,16 @@
     }];
     [self presentViewController:dropIn animated:YES completion:nil];
 }
+
+- (void)postNonceToServer:(NSString *)paymentMethodNonce {
+    // Update URL with your server
+    NSURL *paymentURL = [NSURL URLWithString:@"https://your-server.example.com/checkout"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:paymentURL];
+    request.HTTPBody = [[NSString stringWithFormat:@"payment_method_nonce=%@", paymentMethodNonce] dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPMethod = @"POST";
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        // TODO: Handle success and failure
+    }] resume];
+}
 @end
