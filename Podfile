@@ -1,6 +1,7 @@
-platform :ios, '8.0'
+platform :ios, ‘9.1’
 use_frameworks!
 
-target 'NetworkRequest' do
-#	pod 'Braintree'
+target 'SAF App' do
+	pod 'Braintree'
+	pod 'BraintreeDropIn'
 end

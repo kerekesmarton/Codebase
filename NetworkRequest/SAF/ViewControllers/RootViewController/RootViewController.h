@@ -37,6 +37,7 @@ typedef enum RootFunctions{
     RootFunctionMyAgenda,
     RootFunctionShare,
     RootFunctionCredits,
+    RootFunctionShop,
     RootFunctionsCount
     
 } RootFunctions;

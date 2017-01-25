@@ -4,13 +4,69 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-NetworkRequest.xcscheme</key>
+		<key>Braintree-Braintree-Drop-In-Localization.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Braintree-Braintree-UI-Localization.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Braintree.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BraintreeDropIn-Braintree-UIKit-Localization.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BraintreeDropIn.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SAF App.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>20507CEA23B15089335FC03403311054</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>312B3E952FE0D7D7ECFB3CFF8C2E6CD1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6790D628D80FD40ECFC593645BE6E552</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7F9C17EEF35B1512FDCE8283D7E6ACC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1684BFC91DA2C5B06F236419A4A91BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA4AD1551F810C38B893E73D65768D9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

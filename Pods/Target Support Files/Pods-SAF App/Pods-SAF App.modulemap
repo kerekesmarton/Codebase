@@ -1,0 +1,6 @@
+framework module Pods_SAF_App {
+  umbrella header "Pods-SAF App-umbrella.h"
+
+  export *
+  module * { export * }
+}

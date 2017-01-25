@@ -15,6 +15,7 @@
 #import "SAFAgendaViewController.h"
 #import "UIViewController+Shareing.h"
 #import "WorkshopObject.h"
+#import "ShopViewController.h"
 #import "SAFCreditsViewController.h"
 
 #import "SAFMyAgendaViewController.h"
@@ -54,9 +55,12 @@
 {
     
     [super viewDidLoad];
-    
-//    this will generate the following four buttons, don't reverse their order.
     [self createUI];
+    
+    UIBarButtonItem *shopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(buttonPressed:)];
+    shopButton.tag = RootFunctionShop;
+    self.navigationItem.rightBarButtonItem = shopButton;
+    
     self.block(self);
 }
 
@@ -119,6 +123,10 @@
             [self credits:sender];
             return;
             break;
+        
+        case RootFunctionShop:
+            viewController = [[ShopViewController alloc] initWithNibName:@"ShopViewController" bundle:nil];
+            break;
             
         default:
             return;//sharing is treated by an action sheet
@@ -135,11 +143,10 @@
 
 -(void)buttonPressed:(id)sender
 {
-    
-    UIButton *buttonPressed = (UIButton*)sender;
-    NSInteger tag = (NSInteger)buttonPressed.tag;
-    
-    [self openFunction:tag sender:sender];
+    if ([sender respondsToSelector:@selector(tag)]) {
+        NSInteger tag = (NSInteger)[sender performSelector:@selector(tag)];
+        [self openFunction:tag sender:sender];
+    }
 }
 
 - (void)credits:(id)sender
@@ -152,6 +159,11 @@
     credits.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     credits.tag = 2;
     [credits showInView:self.navigationController.view];
+}
+
+- (void)shop:(id)sender
+{
+    
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
