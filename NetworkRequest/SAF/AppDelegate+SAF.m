@@ -51,16 +51,9 @@ static NSString * const USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS = @"USER_DEFAULT
 
 - (void)application:(UIApplication*)application performAppSpecificTasks:(NSDictionary *)launchOptions {
     
-    [[VICoreDataManager getInstance] setResource:@"Model" database:@"coreDataModel9.sqlite"];
-    
-//    for (NSString *familyName in [UIFont familyNames]) {
-//        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
-//            NSLog(@"%@", fontName);
-//        }
-//    }
+    [[VICoreDataManager getInstance] setResource:@"Model" database:@"coreDataModel10.sqlite"];
 
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
