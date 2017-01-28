@@ -23,6 +23,7 @@
     [self generateWorkshop];
     [self generateScheduleButton];
     [self generateMapButton];
+    [self generateShopButton];
     [self generateArtistsButton];
     [self generateMyAgenda];
     [self generateShare];
@@ -70,9 +71,15 @@
                                              title:@"Locations & Hotels" andImage:[UIImage imageNamed:@"[location]"]]];
 }
 
+- (void)generateShopButton {
+    [self.contents addSubview:[self generateButton:CGRectMake(0, kMenuRowHeight*3, self.view.frame.size.width, kMenuRowHeight)
+                                           withTag:RootFunctionShop
+                                             title:@"Buy your ticket" andImage:[UIImage imageNamed:@"[location]"]]];
+}
+
 - (void)generateArtistsButton {
     
-    UIView *button = [self generateButton:CGRectMake(0, kMenuRowHeight*3, kMenuRowThirdPosX, kMenuRowHeight)
+    UIView *button = [self generateButton:CGRectMake(0, kMenuRowHeight*4, kMenuRowThirdPosX, kMenuRowHeight)
                                    withTag:RootFunctionArtists
                                      title:@"Artists" andImage:[UIImage imageNamed:@"[artists]"]];
     [self.contents addSubview:button];
@@ -81,7 +88,7 @@
 }
 
 - (void)generateMyAgenda{
-    UIView *button = [self generateButton:CGRectMake(kMenuRowThirdPosX, kMenuRowHeight*3, self.view.frame.size.width-kMenuRowThirdPosX, kMenuRowHeight)
+    UIView *button = [self generateButton:CGRectMake(kMenuRowThirdPosX, kMenuRowHeight*4, self.view.frame.size.width-kMenuRowThirdPosX, kMenuRowHeight)
                                            withTag:RootFunctionMyAgenda
                                              title:@"My Agenda" andImage:[UIImage imageNamed:@"[agenda]"]];
     [self.contents addSubview:button];
@@ -91,14 +98,14 @@
 
 
 - (void)generateShare {
-    [self.contents addSubview:[self generateButton:CGRectMake(0, kMenuRowHeight*4, self.view.frame.size.width, kMenuRowHeight)
+    [self.contents addSubview:[self generateButton:CGRectMake(0, kMenuRowHeight*5, self.view.frame.size.width, kMenuRowHeight)
                                            withTag:RootFunctionShare
                                              title:@"Share"
                                           andImage:[UIImage imageNamed:@"[share]"]]];
 }
 
 -(void)generateCredits {
-    [self.contents addSubview:[self generateButton:CGRectMake(0, kMenuRowHeight*5, self.view.frame.size.width, kMenuRowHeight)
+    [self.contents addSubview:[self generateButton:CGRectMake(0, kMenuRowHeight*6, self.view.frame.size.width, kMenuRowHeight)
                                            withTag:RootFunctionCredits
                                              title:@"Credits"
                                           andImage:[UIImage imageNamed:@"[credits]"]]];

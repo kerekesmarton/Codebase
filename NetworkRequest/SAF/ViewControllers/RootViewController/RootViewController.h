@@ -33,11 +33,11 @@ typedef enum RootFunctions{
     RootFunctionWorkshops,
     RootFunctionSchedule,
     RootFunctionMap,
+    RootFunctionShop,
     RootFunctionArtists,
     RootFunctionMyAgenda,
     RootFunctionShare,
     RootFunctionCredits,
-    RootFunctionShop,
     RootFunctionsCount
     
 } RootFunctions;

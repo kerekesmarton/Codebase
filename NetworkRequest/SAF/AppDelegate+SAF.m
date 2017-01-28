@@ -68,7 +68,6 @@ static NSString * const USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS = @"USER_DEFAULT
     {
         if (param && [param isKindOfClass:[RootViewController class]])
         {
-            
             RootViewController *root = (RootViewController *)param;
             
             [[SAFStartupManager sharedInstance] startNewsRequestWithButtons:@[root.newsButton] activityIndicators:@[root.newsAI]];

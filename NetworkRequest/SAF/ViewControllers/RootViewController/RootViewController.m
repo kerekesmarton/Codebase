@@ -15,8 +15,8 @@
 #import "SAFAgendaViewController.h"
 #import "UIViewController+Shareing.h"
 #import "WorkshopObject.h"
-#import "ShopViewController.h"
 #import "SAFCreditsViewController.h"
+#import "SAFShopViewController.h"
 
 #import "SAFMyAgendaViewController.h"
 #import "SAFMapViewController.h"
@@ -56,10 +56,6 @@
     
     [super viewDidLoad];
     [self createUI];
-    
-    UIBarButtonItem *shopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(buttonPressed:)];
-    shopButton.tag = RootFunctionShop;
-    self.navigationItem.rightBarButtonItem = shopButton;
     
     self.block(self);
 }
@@ -106,6 +102,11 @@
             viewController = [[SAFMapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
             break;
         }
+        case RootFunctionShop: {
+            viewController = [[SAFShopViewController alloc] initWithNibName:@"SAFShopViewController" bundle:nil];
+            break;
+        }
+            
         case RootFunctionSchedule:
             //schedule
             viewController = [[SAFAgendaViewController alloc] init];
@@ -123,11 +124,7 @@
             [self credits:sender];
             return;
             break;
-        
-        case RootFunctionShop:
-            viewController = [[ShopViewController alloc] initWithNibName:@"ShopViewController" bundle:nil];
-            break;
-            
+                
         default:
             return;//sharing is treated by an action sheet
             break;
