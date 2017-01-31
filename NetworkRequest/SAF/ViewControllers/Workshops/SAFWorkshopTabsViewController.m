@@ -32,23 +32,14 @@
             [items addObject:ws];
         }
         self.viewControllers = items;
-        
-        CGSize imageSize = CGSizeMake(40, 40);
-        UIColor *fillColor = [UIColor blackColor];
-        UIGraphicsBeginImageContextWithOptions(imageSize, YES, 0);
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        [fillColor setFill];
-        CGContextFillRect(context, CGRectMake(0, 0, imageSize.width, imageSize.height));
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        [self.tabBar setBackgroundImage:image];
-        
+
+        [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
+
         [[UITabBarItem appearance] setTitleTextAttributes:
          [NSDictionary dictionaryWithObjectsAndKeys:
           [UIColor whiteColor], NSForegroundColorAttributeName,
           [UIFont fontWithName:futuraCondendsedBold size:12], NSFontAttributeName,
-          nil] forState:UIControlStateHighlighted];
+          nil] forState:UIControlStateSelected];
         
         [[UITabBarItem appearance] setTitleTextAttributes:
          [NSDictionary dictionaryWithObjectsAndKeys:
@@ -68,12 +59,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 -(NSString*)configureTabBarItemString:(NSString*)str {

@@ -77,11 +77,11 @@ static NSString * const USER_DEFAULTS_KEY_DID_REGISTER_FOR_APNS = @"USER_DEFAULT
     [self.window makeKeyAndVisible];
     
     //display splash screens
-    self.splash.image = [UIImage imageNamed:@"splash"];
+    self.splash.image = [UIImage imageNamed:@"splash"]; //sets first image in imageview
     self.splash.frame = self.window.frame;
     [self.window addSubview:self.splash];
-    [self.splash performSelector:@selector(setImage:) withObject:[UIImage imageNamed:@"splash2"] afterDelay:1];
-    [self performSelector:@selector(removeSplash) withObject:nil afterDelay:2];
+    [self.splash performSelector:@selector(setImage:) withObject:[UIImage imageNamed:@"splash2"] afterDelay:1]; //sets second image after 1 second
+    [self performSelector:@selector(removeSplash) withObject:nil afterDelay:2]; //removes splash, now having the second image
     
     //registering for APNS
 
