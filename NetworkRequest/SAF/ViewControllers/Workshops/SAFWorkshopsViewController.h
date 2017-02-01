@@ -11,6 +11,5 @@
 @interface SAFWorkshopsViewController : WorkshopsViewController
 
 @property (nonatomic) NSDate *day;
-@property (nonatomic) NSArray <NSDate *> *allDays;
 
 @end

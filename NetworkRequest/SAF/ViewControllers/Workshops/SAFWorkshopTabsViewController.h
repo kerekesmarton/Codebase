@@ -10,4 +10,9 @@
 
 @interface SAFWorkshopTabsViewController : UITabBarController
 
+@property (nonatomic) NSDate *day;
+@property (nonatomic) NSDate *nextDay;
+@property(nonatomic) NSArray *allDays;
+@property(nonatomic) NSDateFormatter *headerDateFormatter;
+
 @end

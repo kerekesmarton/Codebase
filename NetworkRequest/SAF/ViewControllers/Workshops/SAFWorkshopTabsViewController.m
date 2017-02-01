@@ -23,13 +23,22 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [ArtistsDataManager sharedInstance];
+
+        self.allDays = [WorkshopObject distinctWorkshopDays];
+
+        if (!self.day) {
+            self.day = [self.allDays firstObject];
+        }
+
+        NSAssert(self.day, @"Day should have been set");
+
         SettingOption *workshopOption = [SettingsManager sharedInstance].workshopsFilter;
         NSMutableArray *items = [NSMutableArray array];
         for (NSString *obj in workshopOption.possibleValues) {
-            SAFWorkshopsViewController *ws = [[SAFWorkshopsViewController alloc] init];
-            ws.tabBarItem.title = [self configureTabBarItemString:obj];
-            [items addObject:ws];
+            SAFWorkshopsViewController *workshopsViewController = [[SAFWorkshopsViewController alloc] init];
+            workshopsViewController.tabBarItem.title = [self configureTabBarItemString:obj];
+            workshopsViewController.day = self.day;
+            [items addObject:workshopsViewController];
         }
         self.viewControllers = items;
 
@@ -46,6 +55,19 @@
           [UIColor redColor], NSForegroundColorAttributeName,
           [UIFont fontWithName:futuraCondendsedBold size:12], NSFontAttributeName,
           nil] forState:UIControlStateNormal];
+
+        self.headerDateFormatter = [NSDateFormatter new];
+        _headerDateFormatter.timeStyle = NSDateFormatterNoStyle;
+        _headerDateFormatter.dateFormat = @"EEEE";
+
+        NSUInteger index = [self.allDays indexOfObject:self.day];
+        if (self.allDays.count >= index+1) {
+            self.nextDay = self.allDays[index+1];
+            NSString *nextDayTitle = [_headerDateFormatter stringFromDate:self.nextDay];
+            NSString *todayTitle = [_headerDateFormatter stringFromDate:self.day];
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nextDayTitle style:UIBarButtonItemStyleDone target:self action:@selector(goToNextDay)];
+            self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:todayTitle style:UIBarButtonItemStyleDone target:nil action:nil];
+        }
     }
     return self;
 }
@@ -53,12 +75,6 @@
 - (void)dealloc
 {
     [self saveItemAtIndex:0];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(NSString*)configureTabBarItemString:(NSString*)str {
@@ -83,6 +99,13 @@
         workshopOption.selectedValues = @[obj];
         [workshopOption save];
     }
+}
+
+- (void)goToNextDay {
+    SAFWorkshopTabsViewController *nextVC = [[SAFWorkshopTabsViewController alloc] init];
+    nextVC.allDays = self.allDays;
+    nextVC.day = self.nextDay;
+    [self.navigationController pushViewController:nextVC animated:YES];
 }
 
 @end

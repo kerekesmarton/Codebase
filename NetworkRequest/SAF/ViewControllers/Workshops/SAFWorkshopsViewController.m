@@ -43,21 +43,6 @@
     _headerDateFormatter.timeStyle = NSDateFormatterNoStyle;
     _headerDateFormatter.dateFormat = @"EEEE";
 
-    if (!self.day) {
-        self.day = [self.allDays firstObject];
-    }
-    if (!self.allDays) {
-        self.allDays = [WorkshopObject distinctWorkshopDays];
-    }
-
-    NSUInteger index = [self.allDays indexOfObject:self.day];
-    if (self.allDays.count >= index+1) {
-        self.nextDay = self.allDays[index+1];
-        NSString *nextDayTitle = [_headerDateFormatter stringFromDate:self.nextDay];
-        NSString *todayTitle = [_headerDateFormatter stringFromDate:self.day];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nextDayTitle style:UIBarButtonItemStyleDone target:self action:@selector(goToNextDay)];
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:todayTitle style:UIBarButtonItemStyleDone target:nil action:nil];
-    }
 }
 
 - (void)refresh {
@@ -115,13 +100,6 @@
     SAFWorkshopDetailsViewController *detailViewController = [[SAFWorkshopDetailsViewController alloc] init];
     detailViewController.item = self.wsDay.workshops[indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
-}
-
-- (void)goToNextDay {
-    SAFWorkshopsViewController *nextVC = [[SAFWorkshopsViewController alloc] init];
-    nextVC.allDays = self.allDays;
-    nextVC.day = self.nextDay;
-    [self.navigationController pushViewController:nextVC animated:YES];
 }
 
 @end
