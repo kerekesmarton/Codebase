@@ -22,11 +22,21 @@
 @property(nonatomic) NSDateFormatter *cellDateFormatter;
 @property(nonatomic) NSDateFormatter *headerDateFormatter;
 @property(nonatomic) WorkshopDay *wsDay;
+@property(nonatomic) NSDate *day;
 @property(nonatomic) NSDate *nextDay;
 
 @end
 
 @implementation SAFWorkshopsViewController
+
+- (instancetype)initWithDay:(NSDate *)day
+{
+    self = [super init];
+    if (self) {
+        _day = day;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,7 +52,6 @@
     self.headerDateFormatter = [NSDateFormatter new];
     _headerDateFormatter.timeStyle = NSDateFormatterNoStyle;
     _headerDateFormatter.dateFormat = @"EEEE";
-
 }
 
 - (void)refresh {

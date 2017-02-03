@@ -10,6 +10,7 @@
 
 @interface SAFWorkshopsViewController : WorkshopsViewController
 
-@property (nonatomic) NSDate *day;
+- (instancetype)init __attribute__((unavailable("use initWithDay")));
+- (instancetype)initWithDay:(NSDate *)day;
 
 @end

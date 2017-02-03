@@ -18,39 +18,65 @@
 @interface SAFMyAgendaViewController ()
 
 @property(nonatomic) NSDateFormatter *cellDateFormatter;
+@property(nonatomic) NSDate *day;
+@property(nonatomic) NSDate *nextDay;
+@property(nonatomic) NSArray *allDays;
 @property(nonatomic) SavedWorkshopsForDay *wsDay;
+@property(nonatomic) NSDateFormatter *headerDateFormatter;
+
 
 @end
 
 @implementation SAFMyAgendaViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithDay:(NSDate *)day
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithDay:day];
     if (self) {
 
-        self.allDays = [WorkshopObject distinctWorkshopDays];
+        _day = day;
 
-        if (!self.day) {
-            self.day = [self.allDays firstObject];
-        }
-
-        self.headerDateFormatter = [NSDateFormatter new];
-        _headerDateFormatter.timeStyle = NSDateFormatterNoStyle;
-        _headerDateFormatter.dateFormat = @"EEEE";
-
-        NSUInteger index = [self.allDays indexOfObject:self.day];
-        if (self.allDays.count >= index+1) {
-            self.nextDay = self.allDays[index+1];
-            NSString *nextDayTitle = [_headerDateFormatter stringFromDate:self.nextDay];
-            NSString *todayTitle = [_headerDateFormatter stringFromDate:self.day];
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nextDayTitle style:UIBarButtonItemStyleDone target:self action:@selector(goToNextDay)];
-            self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:todayTitle style:UIBarButtonItemStyleDone target:nil action:nil];
-        }
+        [self configureDay];
+        [self configureAppearance];
     }
-
     return self;
 }
+
+- (void)configureDay {
+    self.allDays = [WorkshopObject distinctWorkshopDays];
+    if (!self.day) {
+        self.day = [self.allDays firstObject];
+    }
+}
+
+- (void)configureAppearance {
+    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UITabBarItem appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:futuraCondendsedBold size:12], NSFontAttributeName,
+      nil] forState:UIControlStateSelected];
+
+    [[UITabBarItem appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor redColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:futuraCondendsedBold size:12], NSFontAttributeName,
+      nil] forState:UIControlStateNormal];
+
+    self.headerDateFormatter = [NSDateFormatter new];
+    _headerDateFormatter.timeStyle = NSDateFormatterNoStyle;
+    _headerDateFormatter.dateFormat = @"EEEE";
+
+    NSUInteger index = [self.allDays indexOfObject:self.day];
+    if (self.allDays.count > index+1) {
+        self.nextDay = self.allDays[index+1];
+        NSString *nextDayTitle = [_headerDateFormatter stringFromDate:self.nextDay];
+        NSString *todayTitle = [_headerDateFormatter stringFromDate:self.day];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nextDayTitle style:UIBarButtonItemStyleDone target:self action:@selector(goToNextDay)];
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:todayTitle style:UIBarButtonItemStyleDone target:nil action:nil];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -141,9 +167,7 @@
 }
 
 - (void)goToNextDay {
-    SAFWorkshopTabsViewController *nextVC = [[SAFWorkshopTabsViewController alloc] init];
-    nextVC.allDays = self.allDays;
-    nextVC.day = self.nextDay;
+    SAFMyAgendaViewController *nextVC = [[SAFMyAgendaViewController alloc] initWithDay:self.nextDay];
     [self.navigationController pushViewController:nextVC animated:YES];
 }
 

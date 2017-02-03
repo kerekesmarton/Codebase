@@ -11,8 +11,4 @@
 
 @interface SAFMyAgendaViewController : SAFWorkshopsViewController
 
-@property (nonatomic) NSDate *nextDay;
-@property(nonatomic) NSArray *allDays;
-@property(nonatomic) NSDateFormatter *headerDateFormatter;
-
 @end
