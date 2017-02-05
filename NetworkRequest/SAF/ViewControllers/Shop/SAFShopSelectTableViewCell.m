@@ -6,9 +6,9 @@
 //  Copyright © 2017 Jozsef-Marton Kerekes. All rights reserved.
 //
 
-#import "SAFShopTableViewCell.h"
+#import "SAFShopSelectTableViewCell.h"
 
-@implementation SAFShopTableViewCell
+@implementation SAFShopSelectTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

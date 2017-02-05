@@ -16,7 +16,7 @@
 #import "UIViewController+Shareing.h"
 #import "WorkshopObject.h"
 #import "SAFCreditsViewController.h"
-#import "SAFShopViewController.h"
+#import "SAFShopSelectViewController.h"
 
 #import "SAFMyAgendaViewController.h"
 #import "SAFMapViewController.h"
@@ -80,47 +80,40 @@
     
     switch (functionNumber) {
         case RootFunctionNews:
-            //news
             viewController = [[SAFNewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
             break;
         case RootFunctionWorkshops: {
-            //workshops
             viewController = [[SAFWorkshopTabsViewController alloc] init];
         }
             break;
         case RootFunctionMyAgenda: {
-            //my agenda
-            viewController = [[SAFMyAgendaViewController alloc] init];            
+            viewController = [[SAFMyAgendaViewController alloc] init];
         }
             break;
         case RootFunctionArtists:
-            //artists
             viewController = [[SAFArtistTabsViewController alloc] init];
             break;
         case RootFunctionMap: {
-            //map
             viewController = [[SAFMapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
             break;
         }
         case RootFunctionShop: {
-            viewController = [[SAFShopViewController alloc] initWithNibName:@"SAFShopViewController" bundle:nil];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ShopStoryboard" bundle:nil];
+            viewController = [sb instantiateViewControllerWithIdentifier:@"SAFShopSelectViewController"];
             break;
         }
             
         case RootFunctionSchedule:
-            //schedule
             viewController = [[SAFAgendaViewController alloc] init];
             break;
             
         case RootFunctionShare:
-            //share
             [self preConfigureSharing];
             [self share:sender];
             return;
             break;
             
         case RootFunctionCredits:
-            //credits
             [self credits:sender];
             return;
             break;

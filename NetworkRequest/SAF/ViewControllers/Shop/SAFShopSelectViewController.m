@@ -6,23 +6,22 @@
 //  Copyright © 2017 Jozsef-Marton Kerekes. All rights reserved.
 //
 
-#import "SAFShopViewController.h"
-#import "SAFShopTableViewCell.h"
+#import "SAFShopSelectViewController.h"
+#import "SAFShopSelectTableViewCell.h"
+#import "SAFShopCalculatorViewController.h"
 
-@interface SAFShopViewController ()
+@interface SAFShopSelectViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *headerLabel;
 
 @end
 
-@implementation SAFShopViewController
+@implementation SAFShopSelectViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UIColor *bgColor = [UIColor colorWithHex:0x1b1a19];
     self.view.backgroundColor = bgColor;
-    [self.tableView registerNib:[UINib nibWithNibName:@"SAFShopTableViewCell" bundle:nil] forCellReuseIdentifier:@"ShopCell"];
-    
     self.headerLabel.backgroundColor = bgColor;
     self.tableView.tableHeaderView = self.headerLabel;
 }
@@ -44,21 +43,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"ShopCell";
-    SAFShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    SAFShopSelectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     return cell;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Available Tickets";
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-//    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-//    
-//    // Pass the selected object to the new view controller.
-//    
-//    // Push the view controller.
-//    [self.navigationController pushViewController:detailViewController animated:YES];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ShopStoryboard" bundle:nil];
+    SAFShopCalculatorViewController *viewController = [sb instantiateViewControllerWithIdentifier:@"SAFShopCalculatorViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 

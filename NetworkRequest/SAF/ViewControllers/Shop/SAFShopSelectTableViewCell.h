@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SAFShopTableViewCell : UITableViewCell
+@interface SAFShopSelectTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UILabel *title;

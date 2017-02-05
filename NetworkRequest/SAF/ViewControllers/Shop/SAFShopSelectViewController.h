@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SAFShopViewController : UITableViewController
+@interface SAFShopSelectViewController : UITableViewController
 
 @end
