@@ -15,5 +15,5 @@
 @interface NewsViewController : UITableViewController <SettingsProtocol>
 
 @property (nonatomic, strong) NSArray *items;
-
+- (void)startRefresh;
 @end

@@ -55,11 +55,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
-//    [[NewsDataManager sharedInstance] cancelRequest];
 }
-
-
 
 -(UIBarButtonItem *)editButtonItem {
     UIButton *editButton = [UIButton buttonWithFrame:CGRectMake(0, 0, 24, 24) image:[UIImage imageNamed:@"edit_notes"] highlightedImage:[UIImage imageNamed:@"approve_notes"]];
@@ -68,32 +64,33 @@
     return refresh;
 }
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)startRefresh {
+    [[NewsDataManager sharedInstance] requestDataWitchSuccess:^(id data)
+     {
+         [self refresh];
+         if ([self.refreshControl isRefreshing])
+         {
+             [self.refreshControl endRefreshing];
+         }
+     } failBlock:^(id data)
+     {
+         [self alertMissingData];
+         if ([self.refreshControl isRefreshing])
+         {
+             [self.refreshControl endRefreshing];
+         }
+     }];
+}
+
 - (void)startRefresh:(UIBarButtonItem*)control
 {
-    
-    [[NewsDataManager sharedInstance] requestDataWitchSuccess:^(id data)
-    {
-        [self refresh];
-        if ([self.refreshControl isRefreshing])
-        {
-            [self.refreshControl endRefreshing];
-        }
-    } failBlock:^(id data)
-    {
-        [self alertMissingData];
-        if ([self.refreshControl isRefreshing])
-        {
-            [self.refreshControl endRefreshing];
-        }
-    }];
+    [self startRefresh];
 }
 
 - (void)refresh {
