@@ -20,6 +20,8 @@
     // Do any additional setup after loading the view from its nib.
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.view.backgroundColor = [UIColor colorWithHex:0x1b1a19];
+    self.tableView.backgroundColor = [UIColor colorWithHex:0x3c3c3c];
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -78,6 +80,16 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+//- (void)tableView:(UITableView*)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    self
+//}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -86,7 +98,7 @@
 
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated{
     [super setEditing:editing animated:animated];
-    
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
     [self.navigationController setToolbarHidden:!editing animated:animated];
     
     
@@ -113,7 +125,6 @@
 -(void)toggleEditing {
     
     [self setEditing:!self.editing animated:YES];
-    self.navigationItem.rightBarButtonItems = @[self.editButtonItem];
 }
 
 @end

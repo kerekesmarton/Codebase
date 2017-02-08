@@ -11,30 +11,36 @@
 
 NSInteger kSAFNewsCellHeight = 100;
 
-@implementation SAFNewsTableViewCell {
-//    CAGradientLayer *_gradientLayer;
-}
+@interface SAFNewsTableViewCell ()
 
-//-(CALayer *)gradientLayer {
-//    
-//    return _gradientLayer;
-//}
+@property (nonatomic, readwrite) CAGradientLayer *gradientLayer;
+@end
+
+@implementation SAFNewsTableViewCell
 
 -(void)setRead:(BOOL)read {
     _gradientLayer.frame = CGRectMake(0, 0, self.frameWidth, kSAFNewsCellHeight);
     if (read == YES){
         self.textLabel.textColor = [UIColor whiteColor];
         self.detailTextLabel.textColor = [UIColor colorWithHex:0x9e9e9e];
-        [self.gradientLayer setColors:[NSArray arrayWithObjects:(id)[[UIColor colorWithHex:0x3c3c3c] CGColor],(id)[[UIColor colorWithHex:0x323232] CGColor], nil]];
+        self.gradientLayer.colors = [self readColors];
         self.imageView.alpha = 0.5;
         self.accessoryView.alpha = 0.5;
     } else {
         self.textLabel.textColor = [UIColor redColor];
         self.detailTextLabel.textColor = [UIColor colorWithHex:0x9e9e9e];
-        [self.gradientLayer setColors:[NSArray arrayWithObjects:(id)[[UIColor colorWithHex:0x2d2d2d] CGColor],(id)[[UIColor colorWithHex:0x232323] CGColor], nil]];
+        self.gradientLayer.colors = [self unreadColors];
         self.imageView.alpha = 1;
         self.accessoryView.alpha = 1;
     }
+}
+
+- (NSArray <UIColor *> *)readColors {
+    return @[(id)[[UIColor colorWithHex:0x3c3c3c] CGColor],(id)[[UIColor colorWithHex:0x323232] CGColor]];
+}
+
+- (NSArray <UIColor *> *)unreadColors {
+    return @[(id)[[UIColor colorWithHex:0x2d2d2d] CGColor],(id)[[UIColor colorWithHex:0x232323] CGColor]];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -45,12 +51,12 @@ NSInteger kSAFNewsCellHeight = 100;
         self.backgroundView = [[UIView alloc] initWithFrame:[UIDevice isiPad]?CGRectMake(0, 0, 768, kSAFNewsCellHeight):CGRectMake(0, 0, self.boundsWidth, kSAFNewsCellHeight)];
         self.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         
-        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+        self.gradientLayer = [CAGradientLayer layer];
         CGSize size = [UIScreen mainScreen].bounds.size;
-        gradientLayer.frame = CGRectMake(0, 0, size.width, kSAFNewsCellHeight);
-        [gradientLayer setMasksToBounds:YES];
-        [gradientLayer setColors:[NSArray arrayWithObjects:(id)[[UIColor colorWithHex:0x3c3c3c] CGColor],(id)[[UIColor colorWithHex:0x323232] CGColor], nil]];
-        [self.contentView.layer insertSublayer:gradientLayer atIndex:0];
+        self.gradientLayer.frame = CGRectMake(0, 0, size.width, kSAFNewsCellHeight);
+        self.gradientLayer.masksToBounds = YES;
+        self.gradientLayer.colors = [self readColors];
+        [self.contentView.layer insertSublayer:_gradientLayer atIndex:0];
         
         self.textLabel.font = [UIFont fontWithName:futuraCondendsedBold size:20];
         self.detailTextLabel.font = [UIFont fontWithName:@"MyriadPro-It" size:15];
@@ -70,11 +76,8 @@ NSInteger kSAFNewsCellHeight = 100;
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    
 }
 
 @end
