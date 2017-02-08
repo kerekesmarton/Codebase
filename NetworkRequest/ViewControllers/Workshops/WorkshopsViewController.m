@@ -53,8 +53,8 @@ static NSString *CellIdentifier = @"Cell";
     
     [self.tableView reloadData];
     
-    UIBarButtonItem *filter = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(settingsButtonTapped:)];
-    self.navigationItem.rightBarButtonItem = filter;
+//    UIBarButtonItem *filter = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(settingsButtonTapped:)];
+//    self.navigationItem.rightBarButtonItem = filter;
 }
 
 -(void)viewWillDisappear:(BOOL)animated {

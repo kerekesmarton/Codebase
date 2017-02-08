@@ -17,13 +17,65 @@
 
 @interface SAFMyAgendaViewController ()
 
-@property(nonatomic,strong) NSDateFormatter *cellDateFormatter;
-@property (nonatomic, strong) NSMutableArray *objects;
-@property (nonatomic, strong) NSIndexPath *today;
+@property(nonatomic) NSDateFormatter *cellDateFormatter;
+@property(nonatomic) NSDate *day;
+@property(nonatomic) NSDate *nextDay;
+@property(nonatomic) NSArray *allDays;
+@property(nonatomic) SavedWorkshopsForDay *wsDay;
+@property(nonatomic) NSDateFormatter *headerDateFormatter;
+
 
 @end
 
 @implementation SAFMyAgendaViewController
+
+- (instancetype)initWithDay:(NSDate *)day
+{
+    self = [super initWithDay:day];
+    if (self) {
+
+        _day = day;
+
+        [self configureDay];
+        [self configureAppearance];
+    }
+    return self;
+}
+
+- (void)configureDay {
+    self.allDays = [WorkshopObject distinctWorkshopDays];
+    if (!self.day) {
+        self.day = [self.allDays firstObject];
+    }
+}
+
+- (void)configureAppearance {
+    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UITabBarItem appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:futuraCondendsedBold size:12], NSFontAttributeName,
+      nil] forState:UIControlStateSelected];
+
+    [[UITabBarItem appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor redColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:futuraCondendsedBold size:12], NSFontAttributeName,
+      nil] forState:UIControlStateNormal];
+
+    self.headerDateFormatter = [NSDateFormatter new];
+    _headerDateFormatter.timeStyle = NSDateFormatterNoStyle;
+    _headerDateFormatter.dateFormat = @"EEEE";
+
+    NSUInteger index = [self.allDays indexOfObject:self.day];
+    if (self.allDays.count > index+1) {
+        self.nextDay = self.allDays[index+1];
+        NSString *nextDayTitle = [_headerDateFormatter stringFromDate:self.nextDay];
+        NSString *todayTitle = [_headerDateFormatter stringFromDate:self.day];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nextDayTitle style:UIBarButtonItemStyleDone target:self action:@selector(goToNextDay)];
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:todayTitle style:UIBarButtonItemStyleDone target:nil action:nil];
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -37,34 +89,21 @@
 
 - (void)refresh {
     
-    self.objects = [NSMutableArray array];
-    NSDate *today = [DateHelper begginingOfDay:[NSDate date]];
     NSArray *days = [[WorkshopObject distinctWorkshopDays] mutableCopy];
     [days enumerateObjectsUsingBlock:^(NSDate *day, NSUInteger idx, BOOL * _Nonnull stop) {
         [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
         NSArray *workshops = [WorkshopObject fetchWorkshops];
-        SavedWorkshopsForDay *wsDay = [SavedWorkshopsForDay new];
-        wsDay.workshops = [WorkshopObject favoritedWorkshopForArray:workshops day:day];
-        wsDay.day = day;
-        wsDay.hours = [wsDay.workshops.allKeys sortedArrayUsingSelector:@selector(compare:)];
-        [self.objects addObject:wsDay];
-        if ([today isEqual:day]) {
-            self.today = [NSIndexPath indexPathForRow:0 inSection:idx];
-        }
+        self.wsDay = [SavedWorkshopsForDay new];
+        self.wsDay.workshops = [WorkshopObject favoritedWorkshopForArray:workshops day:day];
+        self.wsDay.day = day;
+        self.wsDay.hours = [_wsDay.workshops.allKeys sortedArrayUsingSelector:@selector(compare:)];
     }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    SavedWorkshopsForDay *wsDay = self.objects[indexPath.section];
-    NSDate *time = wsDay.hours[indexPath.row];
-    NSArray *array = wsDay.workshops[time];
+    NSDate *time = self.wsDay.hours[indexPath.row];
+    NSArray *array = self.wsDay.workshops[time];
     
     return (array.count*kTableViewCellHeight + 20);
     
@@ -73,8 +112,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    SavedWorkshopsForDay *wsDay = self.objects[section];
-    return wsDay.hours.count;
+    return self.wsDay.hours.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,9 +125,8 @@
     }
     
     //data
-    SavedWorkshopsForDay *wsDay = self.objects[indexPath.section];
-    NSDate *time = wsDay.hours[indexPath.row];
-    NSArray *array = wsDay.workshops[time];
+    NSDate *time = self.wsDay.hours[indexPath.row];
+    NSArray *array = self.wsDay.workshops[time];
     
     [cell clearRows];
 
@@ -127,6 +164,11 @@
         workshopOption.selectedValues = @[obj];
         [workshopOption save];
     }
+}
+
+- (void)goToNextDay {
+    SAFMyAgendaViewController *nextVC = [[SAFMyAgendaViewController alloc] initWithDay:self.nextDay];
+    [self.navigationController pushViewController:nextVC animated:YES];
 }
 
 @end

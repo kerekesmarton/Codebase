@@ -85,12 +85,12 @@
             break;
         case RootFunctionWorkshops: {
             //workshops
-            viewController = [[SAFWorkshopTabsViewController alloc] init];
+            viewController = [[SAFWorkshopTabsViewController alloc] initWithDay:nil];
         }
             break;
         case RootFunctionMyAgenda: {
             //my agenda
-            viewController = [[SAFMyAgendaViewController alloc] init];            
+            viewController = [[SAFMyAgendaViewController alloc] initWithDay:nil];
         }
             break;
         case RootFunctionArtists:

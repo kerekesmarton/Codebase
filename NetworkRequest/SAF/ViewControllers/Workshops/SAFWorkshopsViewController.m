@@ -19,79 +19,63 @@
 
 @interface SAFWorkshopsViewController ()
 
-@property(nonatomic,strong) NSDateFormatter *cellDateFormatter;
-@property (nonatomic, strong) NSMutableArray *objects;
-@property (nonatomic, strong) NSIndexPath *today;
+@property(nonatomic) NSDateFormatter *cellDateFormatter;
+@property(nonatomic) NSDateFormatter *headerDateFormatter;
+@property(nonatomic) WorkshopDay *wsDay;
+@property(nonatomic) NSDate *day;
+@property(nonatomic) NSDate *nextDay;
 
 @end
 
 @implementation SAFWorkshopsViewController
 
-- (void)viewDidLoad
+- (instancetype)initWithDay:(NSDate *)day
 {
+    self = [super init];
+    if (self) {
+        _day = day;
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithHex:0x1b1a19];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.tabBarController.edgesForExtendedLayout = UIRectEdgeNone;
     
-    //    tabbar covers uitableview
-    if ([self.tabBarController respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
-        self.tabBarController.edgesForExtendedLayout = UIRectEdgeNone;
-    }
-
     self.cellDateFormatter = [[NSDateFormatter alloc] init];
     [_cellDateFormatter setDateFormat:@"HH : mm"];
     [_cellDateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"Europe/Bucharest"]];
+
+    self.headerDateFormatter = [NSDateFormatter new];
+    _headerDateFormatter.timeStyle = NSDateFormatterNoStyle;
+    _headerDateFormatter.dateFormat = @"EEEE";
 }
 
 - (void)refresh {
+    [[SettingsManager sharedInstance].selectedDay addToSelectedValues:self.day];
+    [self refreshForDay:self.day];
+}
+
+- (void)refreshForDay:(NSDate *)day {
+    NSArray *workshops = [WorkshopObject fetchWorkshopsForDay:day rooms:[SettingsManager sharedInstance].workshopsFilter.selectedValues];
+    self.wsDay = [WorkshopDay new];
+    self.wsDay.day = day;
+    self.wsDay.workshops = workshops;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return self.wsDay.workshops.count?[self.headerDateFormatter stringFromDate:self.wsDay.day] : nil;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    self.objects = [NSMutableArray array];
-    NSArray *days = [[WorkshopObject distinctWorkshopDays] mutableCopy];
-    [days enumerateObjectsUsingBlock:^(NSDate *day, NSUInteger idx, BOOL * _Nonnull stop) {
-        [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
-        NSArray *workshops = [WorkshopObject fetchWorkshopsForDay:day rooms:[SettingsManager sharedInstance].workshopsFilter.selectedValues];
-        WorkshopDay *wsDay = [WorkshopDay new];
-        wsDay.day = day;
-        wsDay.workshops = workshops;
-        [self.objects addObject:wsDay];
-        
-        //decide where to scroll, if any
-        if ([day isEqual:[DateHelper begginingOfDay:[NSDate date]]]) {
-            self.today = [NSIndexPath indexPathForRow:0 inSection:idx];
-        }
-    }];
+    return self.wsDay.workshops.count;
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    if (self.today) {
-        [self.tableView scrollToRowAtIndexPath:self.today atScrollPosition:UITableViewScrollPositionTop
-                                      animated:YES];
-    }
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.objects.count;
-}
-
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    WorkshopDay *wsDay = self.objects[section];
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.timeStyle = NSDateFormatterNoStyle;
-    formatter.dateFormat = @"EEEE";
-    
-    return wsDay.workshops.count?[formatter stringFromDate:wsDay.day] : nil;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    WorkshopDay *wsDay = self.objects[section];
-    return wsDay.workshops.count;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 90;
 }
@@ -105,8 +89,7 @@
     if (!cell) {
         cell = [[SAFWorkshopsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    WorkshopDay *wsDay = self.objects[indexPath.section];
-    WorkshopObject *item = wsDay.workshops[indexPath.row];
+    WorkshopObject *item = self.wsDay.workshops[indexPath.row];
     
     ArtistObject *artistO = [ArtistObject artistForId:item.instructor];
     cell.instructor.text = artistO.name;
@@ -119,24 +102,13 @@
     
     cell.favorited = item.favorited.boolValue;
     
-    
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SAFWorkshopDetailsViewController *detailViewController = [[SAFWorkshopDetailsViewController alloc] init];
-    WorkshopDay *wsDay = self.objects[indexPath.section];
-    detailViewController.item = wsDay.workshops[indexPath.row];
+    detailViewController.item = self.wsDay.workshops[indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

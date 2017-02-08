@@ -10,4 +10,7 @@
 
 @interface SAFWorkshopTabsViewController : UITabBarController
 
+- (instancetype)init __attribute__((unavailable("use initWithDay")));
+- (instancetype)initWithDay:(NSDate *)day;
+
 @end
