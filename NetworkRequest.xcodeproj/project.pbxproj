@@ -322,6 +322,7 @@
 		1006CB201C62ABBC004F4C79 /* splash2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash2@2x.png"; sourceTree = "<group>"; };
 		1006CB211C62ABBC004F4C79 /* splash2@2x~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash2@2x~iPad.png"; sourceTree = "<group>"; };
 		1006CB221C62ABBC004F4C79 /* splash2~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash2~iPad.png"; sourceTree = "<group>"; };
+		102152921E51AD8800D244EF /* SAFapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SAFapp.entitlements; sourceTree = "<group>"; };
 		1025D88F1C30622F008D3D87 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = DataModel/MapAnnotation.h; sourceTree = "<group>"; };
 		1025D8901C30622F008D3D87 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = DataModel/MapAnnotation.m; sourceTree = "<group>"; };
 		10417D131C6E4300005BD819 /* SAFCreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFCreditsViewController.h; sourceTree = "<group>"; };
@@ -1149,6 +1150,7 @@
 		3BA6B7BD1750E35A006EB824 = {
 			isa = PBXGroup;
 			children = (
+				102152921E51AD8800D244EF /* SAFapp.entitlements */,
 				3BA6B7CF1750E35A006EB824 /* NetworkRequest */,
 				3BA6B7C81750E35A006EB824 /* Frameworks */,
 				3BA6B7C71750E35A006EB824 /* Products */,
@@ -1473,6 +1475,11 @@
 				TargetAttributes = {
 					3B86FFBE17999E14009624CA = {
 						DevelopmentTeam = HQQ63777MM;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					3BA6B7C51750E35A006EB824 = {
 						DevelopmentTeam = HQQ63777MM;
@@ -1860,6 +1867,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = SAFapp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HQQ63777MM;
@@ -1890,6 +1898,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = SAFapp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HQQ63777MM;
