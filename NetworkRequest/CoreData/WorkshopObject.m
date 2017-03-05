@@ -182,35 +182,33 @@
     return [NSArray arrayWithArray:[days sortedArrayUsingSelector:@selector(compare:)]];
 }
 
-+(NSArray *)distinctWorkshopHoursForArray:(NSArray *)array day:(NSDate *)day filterFavorites:(BOOL)filterFavorites {
++(NSDictionary *)favoritedWorkshopForArray:(NSArray *)array day:(NSDate *)day {
     
-    NSArray *results = array;
-    if (filterFavorites) {
-        NSPredicate *pred = [NSPredicate predicateWithFormat:@"favorited == %@", [NSNumber numberWithBool:YES]];
-        results = [array filteredArrayUsingPredicate:pred];
-    }
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"favorited == %@", [NSNumber numberWithBool:YES]];
+    NSArray *results = [array filteredArrayUsingPredicate:pred];
     
-    NSMutableArray *secondResults = [[NSMutableArray alloc] init];
+    NSMutableArray *workshopsOnGivenDay = [[NSMutableArray alloc] init];
     
     NSDate *startOfDay = [DateHelper begginingOfDay:day];
     NSDate *endOfDay = [DateHelper endOfDay:day];        
     [results enumerateObjectsUsingBlock:^(WorkshopObject *obj, NSUInteger idx, BOOL *stop) {
         
         if ([obj.time earlierDate:startOfDay] == startOfDay && [obj.time laterDate:endOfDay]==endOfDay) {
-            [secondResults addObject:obj];
+            [workshopsOnGivenDay addObject:obj];
         }
     }];
     
-    NSMutableArray *hours = [NSMutableArray array];
-    [secondResults enumerateObjectsUsingBlock:^(WorkshopObject *obj, NSUInteger idx, BOOL *stop) {
+    NSMutableDictionary *workshopsPerHour = [NSMutableDictionary dictionary];
+    [workshopsOnGivenDay enumerateObjectsUsingBlock:^(WorkshopObject *obj, NSUInteger idx, BOOL *stop) {
         
         NSDate *date = [obj.time copy];
-        if (![hours containsObject:date]) {
-            [hours addObject:date];
-        }
+        NSMutableArray *workshops = [NSMutableArray arrayWithArray:workshopsPerHour[date]];
+        [workshops addObject:obj];
+        workshopsPerHour[date] = workshops;
+        
     }];
     
-    return [NSArray arrayWithArray:[hours sortedArrayUsingSelector:@selector(compare:)]];
+    return [workshopsPerHour copy];
 }
 
 +(NSString *)stringForDifficulty:(int)value {

@@ -12,8 +12,6 @@
 
 @synthesize name,type,selectedValues,possibleValues;
 
-
-
 +(SettingOption*)settingOptionWithName:(NSString*)name{
     
     SettingOption *option = [[SettingOption alloc] init];

@@ -13,7 +13,7 @@
 #import "SAFMyAgendaTableViewCell.h"
 #import "SettingsManager.h"
 #import "SAFNavigationBar.h"
-#import "WorkshopDay.h"
+#import "SavedWorkshopsForDay.h"
 
 @interface SAFMyAgendaViewController ()
 
@@ -35,13 +35,6 @@
     [_cellDateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"Europe/Bucharest"]];
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    
-    [self.tableView reloadData];
-}
-
 - (void)refresh {
     
     self.objects = [NSMutableArray array];
@@ -49,22 +42,16 @@
     NSArray *days = [[WorkshopObject distinctWorkshopDays] mutableCopy];
     [days enumerateObjectsUsingBlock:^(NSDate *day, NSUInteger idx, BOOL * _Nonnull stop) {
         [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
-        NSArray *workshops = [WorkshopObject fetchWorkshopsForSelectedRooms];
-        WorkshopDay *wsDay = [WorkshopDay new];
-        
-        
-        //Create a method in workshopObject to return a WorkshopDay / FavoriteWorkshopsDay
-        
-        wsDay.distinctHours = [WorkshopObject distinctWorkshopHoursForArray:workshops day:day filterFavorites:YES];
+        NSArray *workshops = [WorkshopObject fetchWorkshops];
+        SavedWorkshopsForDay *wsDay = [SavedWorkshopsForDay new];
+        wsDay.workshops = [WorkshopObject favoritedWorkshopForArray:workshops day:day];
         wsDay.day = day;
-        wsDay.workshops = workshops;
+        wsDay.hours = [wsDay.workshops.allKeys sortedArrayUsingSelector:@selector(compare:)];
         [self.objects addObject:wsDay];
         if ([today isEqual:day]) {
             self.today = [NSIndexPath indexPathForRow:0 inSection:idx];
         }
     }];
-    
-    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,19 +62,19 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    WorkshopDay *wsDay = self.objects[indexPath.section];
-    NSDate *time = wsDay.distinctHours[indexPath.row];
-//    NSArray *array = [self.workshops objectForKey:time.description];
+    SavedWorkshopsForDay *wsDay = self.objects[indexPath.section];
+    NSDate *time = wsDay.hours[indexPath.row];
+    NSArray *array = wsDay.workshops[time];
     
-//    return (array.count*kTableViewCellHeight + 20);
+    return (array.count*kTableViewCellHeight + 20);
     
     return 44;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    WorkshopDay *wsDay = self.objects[section];
-    return wsDay.distinctHours.count;
+    SavedWorkshopsForDay *wsDay = self.objects[section];
+    return wsDay.hours.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -100,10 +87,9 @@
     }
     
     //data
-    WorkshopDay *wsDay = self.objects[indexPath.section];
-    NSDate *time = wsDay.distinctHours[indexPath.row];
-    NSArray *array = @[];
-    //[self.workshops objectForKey:time.description];
+    SavedWorkshopsForDay *wsDay = self.objects[indexPath.section];
+    NSDate *time = wsDay.hours[indexPath.row];
+    NSArray *array = wsDay.workshops[time];
     
     [cell clearRows];
 

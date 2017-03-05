@@ -29,6 +29,10 @@
 		10826EC01A79303000EFB63C /* RootViewController+UICreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10826EBE1A79303000EFB63C /* RootViewController+UICreation.m */; };
 		10826EC31A79331900EFB63C /* SAFStartupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10826EC21A79331900EFB63C /* SAFStartupManager.m */; };
 		10826EC41A79331900EFB63C /* SAFStartupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10826EC21A79331900EFB63C /* SAFStartupManager.m */; };
+		1097FF521E30BB40004A5C92 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF4E1E30BB40004A5C92 /* splash.png */; };
+		1097FF531E30BB40004A5C92 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF4F1E30BB40004A5C92 /* splash@2x.png */; };
+		1097FF541E30BB40004A5C92 /* splash@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF501E30BB40004A5C92 /* splash@2x~iPad.png */; };
+		1097FF551E30BB40004A5C92 /* splash~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1097FF511E30BB40004A5C92 /* splash~iPad.png */; };
 		109A12B61A84EE6500AB105C /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109A12B51A84EE6500AB105C /* Launch.xib */; };
 		10A3966C1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
 		10A3966D1C35413D004D1EE6 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A3966B1C35413D004D1EE6 /* POIAnnotation.m */; };
@@ -39,9 +43,9 @@
 		10A766AC1C7905CA00DD3C53 /* Default@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766AA1C7905CA00DD3C53 /* Default@2x~iPad.png */; };
 		10A766AD1C7905CA00DD3C53 /* Default~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A766AB1C7905CA00DD3C53 /* Default~iPad.png */; };
 		10BDF6F21E237BEC00A919D8 /* WorkshopDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BDF6F11E237BEC00A919D8 /* WorkshopDay.m */; };
-		10C4F60C1C725EE9005640E5 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1C1C62ABBC004F4C79 /* splash.png */; };
-		10C4F60D1C725EE9005640E5 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1D1C62ABBC004F4C79 /* splash@2x.png */; };
-		10C4F60E1C725EE9005640E5 /* splash~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1E1C62ABBC004F4C79 /* splash~iPad.png */; };
+		10BDF6F71E2622EB00A919D8 /* SavedWorkshopsForDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BDF6F61E2622EA00A919D8 /* SavedWorkshopsForDay.m */; };
+		10BDF6F81E26237A00A919D8 /* SavedWorkshopsForDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BDF6F61E2622EA00A919D8 /* SavedWorkshopsForDay.m */; };
+		10BDF6F91E26237E00A919D8 /* WorkshopDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BDF6F11E237BEC00A919D8 /* WorkshopDay.m */; };
 		10C4F60F1C725EE9005640E5 /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB1F1C62ABBC004F4C79 /* splash2.png */; };
 		10C4F6101C725EE9005640E5 /* splash2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB201C62ABBC004F4C79 /* splash2@2x.png */; };
 		10C4F6111C725EE9005640E5 /* splash2@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1006CB211C62ABBC004F4C79 /* splash2@2x~iPad.png */; };
@@ -49,7 +53,6 @@
 		10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */; };
 		10E84A831A664AF700FEF0C1 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E84A821A664AF700FEF0C1 /* UIColor+Additions.m */; };
 		10E84A841A664AF700FEF0C1 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E84A821A664AF700FEF0C1 /* UIColor+Additions.m */; };
-		10E9AC7D1C86C6DD00876128 /* splash@2x~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 10E9AC7C1C86C6DD00876128 /* splash@2x~iPad.png */; };
 		10FDC11F1A779C5B001402E0 /* ParsedArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC11E1A779C5B001402E0 /* ParsedArtist.m */; };
 		10FDC1201A779C5B001402E0 /* ParsedArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC11E1A779C5B001402E0 /* ParsedArtist.m */; };
 		10FDC1231A779F58001402E0 /* ParsedNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FDC1221A779F58001402E0 /* ParsedNews.m */; };
@@ -314,9 +317,6 @@
 		100377A81A769EB1008A93E4 /* ParsedWorkshop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedWorkshop.m; sourceTree = "<group>"; };
 		10066D151C753D2E008E384C /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		10066D161C753D2E008E384C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		1006CB1C1C62ABBC004F4C79 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
-		1006CB1D1C62ABBC004F4C79 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
-		1006CB1E1C62ABBC004F4C79 /* splash~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash~iPad.png"; sourceTree = "<group>"; };
 		1006CB1F1C62ABBC004F4C79 /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash2.png; sourceTree = "<group>"; };
 		1006CB201C62ABBC004F4C79 /* splash2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash2@2x.png"; sourceTree = "<group>"; };
 		1006CB211C62ABBC004F4C79 /* splash2@2x~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash2@2x~iPad.png"; sourceTree = "<group>"; };
@@ -340,6 +340,10 @@
 		10826EBE1A79303000EFB63C /* RootViewController+UICreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RootViewController+UICreation.m"; sourceTree = "<group>"; };
 		10826EC11A79331900EFB63C /* SAFStartupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAFStartupManager.h; path = ViewControllers/RootViewController/SAFStartupManager.h; sourceTree = "<group>"; };
 		10826EC21A79331900EFB63C /* SAFStartupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAFStartupManager.m; path = ViewControllers/RootViewController/SAFStartupManager.m; sourceTree = "<group>"; };
+		1097FF4E1E30BB40004A5C92 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ../../../../../Downloads/Archive/splash.png; sourceTree = "<group>"; };
+		1097FF4F1E30BB40004A5C92 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@2x.png"; path = "../../../../../Downloads/Archive/splash@2x.png"; sourceTree = "<group>"; };
+		1097FF501E30BB40004A5C92 /* splash@2x~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@2x~iPad.png"; path = "../../../../../Downloads/Archive/splash@2x~iPad.png"; sourceTree = "<group>"; };
+		1097FF511E30BB40004A5C92 /* splash~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash~iPad.png"; path = "../../../../../Downloads/Archive/splash~iPad.png"; sourceTree = "<group>"; };
 		109A12B51A84EE6500AB105C /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		10A3966A1C35413D004D1EE6 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIAnnotation.h; path = DataModel/POIAnnotation.h; sourceTree = "<group>"; };
 		10A3966B1C35413D004D1EE6 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIAnnotation.m; path = DataModel/POIAnnotation.m; sourceTree = "<group>"; };
@@ -349,11 +353,12 @@
 		10A766AB1C7905CA00DD3C53 /* Default~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iPad.png"; sourceTree = "<group>"; };
 		10BDF6F01E237BEC00A919D8 /* WorkshopDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkshopDay.h; sourceTree = "<group>"; };
 		10BDF6F11E237BEC00A919D8 /* WorkshopDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkshopDay.m; sourceTree = "<group>"; };
+		10BDF6F51E2622EA00A919D8 /* SavedWorkshopsForDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedWorkshopsForDay.h; sourceTree = "<group>"; };
+		10BDF6F61E2622EA00A919D8 /* SavedWorkshopsForDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedWorkshopsForDay.m; sourceTree = "<group>"; };
 		10C934211A8CC00300EB9126 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		10D7D3281C6292A20047FBCF /* Futura Condensed Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Condensed Bold.ttf"; sourceTree = "<group>"; };
 		10E84A811A664AF700FEF0C1 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		10E84A821A664AF700FEF0C1 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
-		10E9AC7C1C86C6DD00876128 /* splash@2x~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x~iPad.png"; sourceTree = "<group>"; };
 		10FDC11D1A779C5B001402E0 /* ParsedArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedArtist.h; sourceTree = "<group>"; };
 		10FDC11E1A779C5B001402E0 /* ParsedArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedArtist.m; sourceTree = "<group>"; };
 		10FDC1211A779F58001402E0 /* ParsedNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedNews.h; sourceTree = "<group>"; };
@@ -716,6 +721,33 @@
 			name = Feedback;
 			sourceTree = "<group>";
 		};
+		10BDF6F31E2622C400A919D8 /* All Workshops */ = {
+			isa = PBXGroup;
+			children = (
+				10BDF6F01E237BEC00A919D8 /* WorkshopDay.h */,
+				10BDF6F11E237BEC00A919D8 /* WorkshopDay.m */,
+				3BB9F8E2179BEFB900C91ABC /* SAFWorkshopTabsViewController.h */,
+				3BB9F8E3179BEFB900C91ABC /* SAFWorkshopTabsViewController.m */,
+				3BB9F8E4179BEFB900C91ABC /* SAFWorkshopTabsViewController.xib */,
+				3BB9F8E7179C7C5200C91ABC /* SAFWorkshopsViewController.h */,
+				3BB9F8E8179C7C5200C91ABC /* SAFWorkshopsViewController.m */,
+				3B8D9932179D01FD00939944 /* SAFWorkshopDetailsViewController.h */,
+				3B8D9933179D01FD00939944 /* SAFWorkshopDetailsViewController.m */,
+			);
+			name = "All Workshops";
+			sourceTree = "<group>";
+		};
+		10BDF6F41E2622CE00A919D8 /* Saved Workshops */ = {
+			isa = PBXGroup;
+			children = (
+				10BDF6F51E2622EA00A919D8 /* SavedWorkshopsForDay.h */,
+				10BDF6F61E2622EA00A919D8 /* SavedWorkshopsForDay.m */,
+				3B5E416717BBF3B500915772 /* SAFMyAgendaViewController.h */,
+				3B5E416817BBF3B600915772 /* SAFMyAgendaViewController.m */,
+			);
+			name = "Saved Workshops";
+			sourceTree = "<group>";
+		};
 		10D7D32C1C6295900047FBCF /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -903,10 +935,10 @@
 				1082117D1C77891600F67D33 /* Icons.xcassets */,
 				1082117E1C77891600F67D33 /* Images.xcassets */,
 				1082117F1C77891600F67D33 /* Menu.xcassets */,
-				1006CB1C1C62ABBC004F4C79 /* splash.png */,
-				1006CB1D1C62ABBC004F4C79 /* splash@2x.png */,
-				1006CB1E1C62ABBC004F4C79 /* splash~iPad.png */,
-				10E9AC7C1C86C6DD00876128 /* splash@2x~iPad.png */,
+				1097FF4E1E30BB40004A5C92 /* splash.png */,
+				1097FF4F1E30BB40004A5C92 /* splash@2x.png */,
+				1097FF501E30BB40004A5C92 /* splash@2x~iPad.png */,
+				1097FF511E30BB40004A5C92 /* splash~iPad.png */,
 				1006CB1F1C62ABBC004F4C79 /* splash2.png */,
 				1006CB201C62ABBC004F4C79 /* splash2@2x.png */,
 				1006CB211C62ABBC004F4C79 /* splash2@2x~iPad.png */,
@@ -1342,17 +1374,8 @@
 		3BB9F8E1179BEF2100C91ABC /* Workshops */ = {
 			isa = PBXGroup;
 			children = (
-				10BDF6F01E237BEC00A919D8 /* WorkshopDay.h */,
-				10BDF6F11E237BEC00A919D8 /* WorkshopDay.m */,
-				3BB9F8E2179BEFB900C91ABC /* SAFWorkshopTabsViewController.h */,
-				3BB9F8E3179BEFB900C91ABC /* SAFWorkshopTabsViewController.m */,
-				3BB9F8E4179BEFB900C91ABC /* SAFWorkshopTabsViewController.xib */,
-				3BB9F8E7179C7C5200C91ABC /* SAFWorkshopsViewController.h */,
-				3BB9F8E8179C7C5200C91ABC /* SAFWorkshopsViewController.m */,
-				3B8D9932179D01FD00939944 /* SAFWorkshopDetailsViewController.h */,
-				3B8D9933179D01FD00939944 /* SAFWorkshopDetailsViewController.m */,
-				3B5E416717BBF3B500915772 /* SAFMyAgendaViewController.h */,
-				3B5E416817BBF3B600915772 /* SAFMyAgendaViewController.m */,
+				10BDF6F31E2622C400A919D8 /* All Workshops */,
+				10BDF6F41E2622CE00A919D8 /* Saved Workshops */,
 				107B1A7E1A7FB6CC0089E57E /* Feedback */,
 			);
 			path = Workshops;
@@ -1462,15 +1485,14 @@
 			files = (
 				3B86000617999E14009624CA /* InfoPlist.strings in Resources */,
 				10A766AC1C7905CA00DD3C53 /* Default@2x~iPad.png in Resources */,
-				10E9AC7D1C86C6DD00876128 /* splash@2x~iPad.png in Resources */,
 				108211801C77891600F67D33 /* artists.xcassets in Resources */,
 				3B5872C2179AC37100813129 /* SettingsEnumControllerViewController.xib in Resources */,
 				3B5872C3179AC37700813129 /* SettingsViewController.xib in Resources */,
 				3B5872CB179AC6EB00813129 /* SAFNewDetailViewController.xib in Resources */,
 				3BB9F8DB179BE39400C91ABC /* ArtistDetailViewController.xib in Resources */,
 				3BB9F8DC179BE39A00C91ABC /* ArtistsViewController.xib in Resources */,
+				1097FF541E30BB40004A5C92 /* splash@2x~iPad.png in Resources */,
 				3BB9F8DD179BE39D00C91ABC /* NewsViewController.xib in Resources */,
-				10C4F60D1C725EE9005640E5 /* splash@2x.png in Resources */,
 				3BB9F8DE179BE3A000C91ABC /* DetailsViewController.xib in Resources */,
 				3BB9F8DF179BE3A300C91ABC /* WorkshopDetailsViewController.xib in Resources */,
 				10A766A91C78FADB00DD3C53 /* Default@2x.png in Resources */,
@@ -1479,7 +1501,6 @@
 				108211821C77891600F67D33 /* Images.xcassets in Resources */,
 				3BB9F8E6179BEFB900C91ABC /* SAFWorkshopTabsViewController.xib in Resources */,
 				10417D171C6E4300005BD819 /* SAFCreditsViewController.xib in Resources */,
-				10C4F60C1C725EE9005640E5 /* splash.png in Resources */,
 				3B87C29F179D1B7E0095362E /* SAFArtistTabsViewController.xib in Resources */,
 				3B8FF7BE17A2B2DB00046FD9 /* AgendaViewController.xib in Resources */,
 				10A766AD1C7905CA00DD3C53 /* Default~iPad.png in Resources */,
@@ -1488,12 +1509,14 @@
 				10C4F6121C725EE9005640E5 /* splash2~iPad.png in Resources */,
 				3B4EF89D17DE453D00D345E2 /* MyriadPro-It.otf in Resources */,
 				108211831C77891600F67D33 /* Menu.xcassets in Resources */,
+				1097FF531E30BB40004A5C92 /* splash@2x.png in Resources */,
 				3B4EF89E17DE453D00D345E2 /* MyriadPro-Regular.otf in Resources */,
 				10A766A51C78FADB00DD3C53 /* Default-568h@2x.png in Resources */,
 				3B4EF89F17DE453D00D345E2 /* MyriadPro-Semibold.otf in Resources */,
 				10D7D3291C6292A20047FBCF /* Futura Condensed Bold.ttf in Resources */,
+				1097FF551E30BB40004A5C92 /* splash~iPad.png in Resources */,
+				1097FF521E30BB40004A5C92 /* splash.png in Resources */,
 				10C4F6101C725EE9005640E5 /* splash2@2x.png in Resources */,
-				10C4F60E1C725EE9005640E5 /* splash~iPad.png in Resources */,
 				108211811C77891600F67D33 /* Icons.xcassets in Resources */,
 				3B2AA9771834D8670002B325 /* SAFPOIsViewController.xib in Resources */,
 				10C4F6111C725EE9005640E5 /* splash2@2x~iPad.png in Resources */,
@@ -1628,6 +1651,7 @@
 				3BB9F8E9179C7C5200C91ABC /* SAFWorkshopsViewController.m in Sources */,
 				3BB9F8EC179C7CBF00C91ABC /* SAFWorkshopsTableViewCell.m in Sources */,
 				3B8D991D179CFEF700939944 /* NSNotificationCenter+Additions.m in Sources */,
+				10BDF6F71E2622EB00A919D8 /* SavedWorkshopsForDay.m in Sources */,
 				3B8D991F179CFEF700939944 /* NSString+Additions.m in Sources */,
 				3B8D9921179CFEF700939944 /* UIApplication+Additions.m in Sources */,
 				10066D181C753D2E008E384C /* DataManager.m in Sources */,
@@ -1709,9 +1733,11 @@
 				3B1842CE175A426A00B2FFE7 /* WorkshopsDataManager.m in Sources */,
 				3B1842E6175A42D900B2FFE7 /* SettingsManager.m in Sources */,
 				3BB143741767932A000E1211 /* SettingsViewController.m in Sources */,
+				10BDF6F91E26237E00A919D8 /* WorkshopDay.m in Sources */,
 				3B350E24176A262B0018D336 /* SettingOption.m in Sources */,
 				3B350E2C176CB2C00018D336 /* SettingsEnumControllerViewController.m in Sources */,
 				10A3966C1C35413D004D1EE6 /* POIAnnotation.m in Sources */,
+				10BDF6F81E26237A00A919D8 /* SavedWorkshopsForDay.m in Sources */,
 				3BD4F1021796F73000A33946 /* SettingOptionGroup.m in Sources */,
 				3B6F778A1799A54E005AC0E7 /* AppDelegate+BaseApp.m in Sources */,
 				1025D8911C30622F008D3D87 /* MapAnnotation.m in Sources */,

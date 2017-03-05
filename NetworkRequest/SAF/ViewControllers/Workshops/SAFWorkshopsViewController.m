@@ -14,6 +14,7 @@
 #import "WorkshopsDataManager.h"
 #import "ArtistObject.h"
 #import "SettingsManager.h"
+#import "DateHelper.h"
 
 
 @interface SAFWorkshopsViewController ()
@@ -46,28 +47,28 @@
 - (void)refresh {
     
     self.objects = [NSMutableArray array];
-    NSDate *today = [DateHelper begginingOfDay:[NSDate date]];
     NSArray *days = [[WorkshopObject distinctWorkshopDays] mutableCopy];
     [days enumerateObjectsUsingBlock:^(NSDate *day, NSUInteger idx, BOOL * _Nonnull stop) {
         [[SettingsManager sharedInstance].selectedDay addToSelectedValues:day];
-        NSArray *workshops = [WorkshopObject fetchWorkshopsForSelectedRooms];
+        NSArray *workshops = [WorkshopObject fetchWorkshopsForDay:day rooms:[SettingsManager sharedInstance].workshopsFilter.selectedValues];
         WorkshopDay *wsDay = [WorkshopDay new];
         wsDay.day = day;
         wsDay.workshops = workshops;
         [self.objects addObject:wsDay];
-        if ([today isEqual:day]) {
+        
+        //decide where to scroll, if any
+        if ([day isEqual:[DateHelper begginingOfDay:[NSDate date]]]) {
             self.today = [NSIndexPath indexPathForRow:0 inSection:idx];
         }
     }];
-    
-    [self.tableView reloadData];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     if (self.today) {
-        [self.tableView scrollToRowAtIndexPath:self.today atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+        [self.tableView scrollToRowAtIndexPath:self.today atScrollPosition:UITableViewScrollPositionTop
+                                      animated:YES];
     }
 }
 
@@ -80,7 +81,6 @@
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateFormat = @"EEEE";
-//    formatter.doesRelativeDateFormatting = YES;
     
     return wsDay.workshops.count?[formatter stringFromDate:wsDay.day] : nil;
 }

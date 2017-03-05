@@ -12,6 +12,5 @@
 
 @property NSDate *day;
 @property NSArray *workshops;
-@property NSArray *distinctHours;
 
 @end

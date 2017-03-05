@@ -60,7 +60,7 @@ typedef enum WSDifficulty {
 +(NSArray *)fetchWorkshopsFromRooms:(NSArray*)rooms;
 
 +(NSArray *)distinctWorkshopDays;
-+(NSArray *)distinctWorkshopHoursForArray:(NSArray *)array day:(NSDate *)day filterFavorites:(BOOL)filterFavorites;
++(NSDictionary *)favoritedWorkshopForArray:(NSArray *)array day:(NSDate *)day;
 
 +(NSString *)stringForDifficulty:(int)value;
 @end
