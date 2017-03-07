@@ -23,7 +23,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -39,8 +39,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We would like to use your camera</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We would like to use your location.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We would like to use your photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Futura Condensed Bold.ttf</string>
